@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -62,11 +63,29 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
+    {        
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role' => 'participant',            
+            'email_verification' => 'unverified',
+            'email_token' => base64_encode($data['email'] . 'amswfkunairyahud')
         ]);
+    }
+
+    public function registerPage() {        
+        return view('auth.register');
+    }
+
+    public function register(Request $request) {
+        $validator = $this->validator($request->all())->validate();
+        $this->create($request->all());
+
+        // TODO: publish AccountRegistered event
+        
+        return redirect('login')->with('success', 'Account registration succesful!');
+
     }
 }

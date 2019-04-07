@@ -11,13 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+
+// accounts
+Route::get('register', 'Auth\RegisterController@registerPage');
+Route::post('register', 'Auth\RegisterController@register');
+Route::get('login', 'Auth\LoginController@loginPage');
+Route::post('login', 'Auth\LoginController@login');
+
+// Auth::routes();
+
+Route::get('/', 'HomepageController@index');
 Route::get('admin', 'AdminController@index');
-
 Route::get('participant', 'ParticipantController@index');
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

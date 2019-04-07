@@ -35,8 +35,13 @@
                         Login to AMSW
                     </span>
                     @if (\Session::has('message'))
-                        <div class="alert alert-danger" role="alert">
-                            <h6>{!! \Session::get('message') !!}</h6>
+                        <div class="alert alert-danger text-center" role="alert">
+                            <h6 style="font-size: 12px">{!! \Session::get('message') !!}</h6>
+                        </div>
+                    @endif
+                    @if (\Session::has('success'))
+                        <div class="alert alert-success text-center" role="alert" >
+                            <h6 style="font-size: 12px">{!! \Session::get('success') !!}</h6>
                         </div>
                     @endif
                     <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@gmail.com">

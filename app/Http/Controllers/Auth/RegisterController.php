@@ -71,6 +71,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'role' => 'participant',            
             'email_verification' => 'unverified',
+            'status' => 1, //account created
             'email_token' => base64_encode($data['email'] . 'amswfkunairyahud')
         ]);
     }

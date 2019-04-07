@@ -30,8 +30,27 @@
                                 <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
                             </ul>
                         </li> 
-
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="service.html">Services</a>
+                        @guest
+                            <li class="nav-item"><a class="nav-link" href="{{('login')}}"><strong>Login</strong></a></li>
+                        @else
+                            @if (Auth::user()->role == 'participant')
+                            <li class="nav-item"><a class="nav-link" href="{{url('participant')}}"><strong>Dashboard</strong></a></li>
+                            @else
+                            <li class="nav-item"><a class="nav-link" href="{{url('admin')}}"><strong>Dashboard</strong></a></li>
+                            @endif
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                        </li>
+                            <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        @endguest
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item"><a href="#" class="search"><i class="lnr lnr-magnifier"></i></a></li>

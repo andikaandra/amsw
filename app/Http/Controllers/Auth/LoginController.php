@@ -44,6 +44,7 @@ class LoginController extends Controller
     }
 
     public function login(Request $request) {
+      // return $request;
         $userdata = array(
             'email'     => Input::get('email'),
             'password'  => Input::get('password')

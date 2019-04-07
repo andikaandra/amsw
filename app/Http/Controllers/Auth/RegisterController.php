@@ -80,6 +80,7 @@ class RegisterController extends Controller
     }
 
     public function register(Request $request) {
+        // return $request;
         $validator = $this->validator($request->all())->validate();
         $this->create($request->all());
 

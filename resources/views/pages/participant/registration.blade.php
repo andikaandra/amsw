@@ -43,3 +43,38 @@
               </div>
             </div>
 @endsection
+
+@section('script')
+<script type="text/javascript">
+  //menghandle jika direfresh tapi udah diganti
+  let text = $('#cabang-list').find(":selected").text();
+  $('#rule-name').html(text);
+  $('#rule-link').html("<i class='fas fa-download'></i> Download " + text + " guidebook");
+  $('#rule-link').attr("href", "{{url('download/guidebook-')}}"+ (text.toLowerCase()).replace(" ", "-"));
+
+  $('#cabang-list').on('change', function() {
+
+    let text = $('#cabang-list').find(":selected").text();
+
+    $('#rule-name').html(text);
+    $('#rule-link').html("<i class='fas fa-download'></i> Download " + text + " guidebook");
+    $('#rule-link').attr("href", "{{url('download/guidebook-')}}"+ (text.toLowerCase()).replace(" ", "-"));
+
+    if($(this).val()==1) {
+      $('#rule-list').html(text);
+    }
+    else if($(this).val()==2) {
+      $('#rule-list').html(text);
+    }
+    else if($(this).val()==3) {
+      $('#rule-list').html(text);
+    }
+    else if($(this).val()==4) {
+      $('#rule-list').html(text);
+    }
+    else if($(this).val()==5) {
+      $('#rule-list').html(text);
+    }
+  });
+</script>
+@endsection

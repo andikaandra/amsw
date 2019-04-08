@@ -16,63 +16,26 @@
       </a>
     </li>
 
-    <li class="nav-title">Theme</li>
+    <li class="nav-title">Main Information</li>
     <li class="nav-item">
-        <a class="nav-link" href="colors.html">
-        <i class="nav-icon icon-drop"></i> Colors</a>
+        <a class="nav-link" href="{{ url('participant')}}">
+        <i class="nav-icon fas fa-clipboard"></i> Dashboard</a>
     </li>
-    <li class="nav-item nav-dropdown">
-        <a class="nav-link nav-dropdown-toggle" href="#">
-        <i class="nav-icon icon-cursor"></i> Buttons</a>
-        <ul class="nav-dropdown-items">
-        <li class="nav-item">
-            <a class="nav-link" href="buttons/buttons.html">
-            <i class="nav-icon icon-cursor"></i> Buttons</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="buttons/button-group.html">
-            <i class="nav-icon icon-cursor"></i> Buttons Group</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="buttons/dropdowns.html">
-            <i class="nav-icon icon-cursor"></i> Dropdowns</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="buttons/brand-buttons.html">
-            <i class="nav-icon icon-cursor"></i> Brand Buttons</a>
-        </li>
-        </ul>
-    </li>
+    <li class="nav-title">Pre Registration</li>
     <li class="nav-item">
-        <a class="nav-link" href="widgets.html">
-        <i class="nav-icon icon-calculator"></i> Widgets
+        <a class="nav-link" href="{{ url('participant/registration')}}">
+        <i class="nav-icon fas fa-code-branch"></i> Registration</a>
+    </li>
+    {{-- telah diverifikasi oleh admin (status == 4 keatas)--}}
+    @if(Auth::user()->status > 3)
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+        <i class="nav-icon fas fa-user-friends"></i> My Team
         <span class="badge badge-primary">NEW</span>
         </a>
     </li>
+    @endif
     <li class="divider"></li>
-    <li class="nav-title">Extras</li>
-    <li class="nav-item nav-dropdown">
-        <a class="nav-link nav-dropdown-toggle" href="#">
-        <i class="nav-icon icon-star"></i> Pages</a>
-        <ul class="nav-dropdown-items">
-        <li class="nav-item">
-            <a class="nav-link" href="login.html" target="_top">
-            <i class="nav-icon icon-star"></i> Login</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="register.html" target="_top">
-            <i class="nav-icon icon-star"></i> Register</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="404.html" target="_top">
-            <i class="nav-icon icon-star"></i> Error 404</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="500.html" target="_top">
-            <i class="nav-icon icon-star"></i> Error 500</a>
-        </li>
-        </ul>
-    </li>
     </ul>
 </nav>
 <button class="sidebar-minimizer brand-minimizer" type="button"></button>

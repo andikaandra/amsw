@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Register | AMSW 2019</title>
+    <title>Register | AMSW <?php echo date("Y"); ?></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
@@ -9,7 +9,8 @@
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/vendor/bootstrap/css/bootstrap.min.css') }}">
 <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/fonts/font-awesome-4.7.0/css') }}/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+{{--     <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/fonts/font-awesome-4.7.0/css') }}/font-awesome.min.css"> --}}
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/vendor/animate/animate.css') }}">
 <!--===============================================================================================-->  
@@ -49,7 +50,7 @@
 
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <i class="fas fa-user" aria-hidden="true"></i>
                         </span>
                     </div>
 
@@ -58,7 +59,7 @@
 
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                         </span>
                     </div>
 
@@ -67,7 +68,7 @@
 
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-                            <i class="fa fa-lock" aria-hidden="true"></i>
+                            <i class="fas fa-lock" aria-hidden="true"></i>
                         </span>
                     </div>
 
@@ -76,7 +77,7 @@
 
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-                            <i class="fa fa-lock" aria-hidden="true"></i>
+                            <i class="fas fa-lock" aria-hidden="true"></i>
                         </span>
                     </div>
 
@@ -90,7 +91,7 @@
                         Already have your account? Login by
                         <a class="txt2" href="{{ url('login')}}">
                             Click here
-                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                            <i class="fas fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                         </a>
                     </div>
                 </form>

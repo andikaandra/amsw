@@ -29,9 +29,8 @@ Route::get('participant/registration', 'ParticipantController@registrationPage')
 Route::post('participant/registration/choose-cabang', 'ParticipantController@chooseCabang')->name('choose.cabang');
 
 
-
-
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('email', function() {
     return view('email.index');

@@ -21,11 +21,13 @@
         <a class="nav-link" href="{{ url('participant')}}">
         <i class="nav-icon fas fa-clipboard"></i> Dashboard</a>
     </li>
+    @if(Auth::user()->email_verification == 'verified')
     <li class="nav-title">Pre Registration</li>
     <li class="nav-item">
         <a class="nav-link" href="{{ url('participant/registration')}}">
         <i class="nav-icon fas fa-code-branch"></i> Registration</a>
     </li>
+    @endif
     {{-- telah diverifikasi oleh admin (status == 4 keatas)--}}
     @if(Auth::user()->status > 3)
     <li class="nav-item">

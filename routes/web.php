@@ -13,6 +13,8 @@
 
 
 
+
+
 // accounts
 Route::get('register', 'Auth\RegisterController@registerPage');
 Route::post('register', 'Auth\RegisterController@register');
@@ -27,6 +29,15 @@ Route::get('admin', 'AdminController@index');
 Route::get('participant', 'ParticipantController@index');
 Route::get('participant/registration', 'ParticipantController@registrationPage');
 Route::post('participant/registration/choose-cabang', 'ParticipantController@chooseCabang')->name('choose.cabang');
+
+
+// amin routes
+Route::prefix('admin')->group(function() {
+    Route::get('teams', 'ParticipantManagementController@getAllTeams');
+});
+
+
+
 
 
 

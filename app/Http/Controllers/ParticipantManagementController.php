@@ -10,8 +10,13 @@ class ParticipantManagementController extends Controller
 
     private $_participantService;
 
-    function __construct(IParticipantManagement $service) {
-        $_participantService = $service;
+    public function __construct(IParticipantManagement $service) {
+        $this->_participantService = $service;
+    }
+    // to fill datatables
+    public function getAllTeams(Request $request) {
+        // return ($this->_participantService);
+        return response()->json(['data' => $this->_participantService->getAllTeams()]);
     }
 
     public function acceptParticipant(Request $request) {

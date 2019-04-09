@@ -1,9 +1,10 @@
 <?php
 namespace App\Contracts\Repositories;
 
-interface ParticipantRepository {
+interface IParticipantRepository {
     public function getAllParticipants();
     public function update($id, array $data);
+    public function getAllEmailVerifiedTeams();
 }
 
 ?>

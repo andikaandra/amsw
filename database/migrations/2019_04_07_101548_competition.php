@@ -19,6 +19,7 @@ class Competition extends Migration
             $table->string('type');
             $table->string('payment_status');
             $table->string('verification_status');
+            $table->string('competition_status');
             $table->integer('wave');
             $table->timestamps();
         });

@@ -24,9 +24,14 @@ Route::post('logout', 'Auth\LogoutController@logout');
 
 Route::get('/', 'HomepageController@index');
 Route::get('admin', 'AdminController@index');
-Route::get('participant', 'ParticipantController@index');
-Route::get('participant/registration', 'ParticipantController@registrationPage');
-Route::post('participant/registration/choose-cabang', 'ParticipantController@chooseCabang')->name('choose.cabang');
+
+
+Route::get('/participant', 'ParticipantController@index');
+
+Route::prefix('participant')->middleware(['has_verify_email'])->group(function () {
+	Route::get('/registration', 'ParticipantController@registrationPage');
+	Route::post('/registration/choose-cabang', 'ParticipantRegistrationController@chooseCabang')->name('choose.cabang');
+});
 
 
 Route::get('/home', 'HomeController@index')->name('home');

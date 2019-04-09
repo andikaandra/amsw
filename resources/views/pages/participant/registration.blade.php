@@ -29,6 +29,14 @@
             </div>
         @endif
         <div class="chart-wrapper mt-3" style="min-height:300px;">
+          @if(Auth::user()->status > 1)
+            <div class="alert alert-info">
+              You choose <strong>{{Auth::user()->competition}}</strong> As your competition, 
+               @if(Auth::user()->status < 4 )
+                Reset your data here.
+               @endif
+            </div>
+          @endif
           @if(Auth::user()->status==1)
             @include('includes.participant.form.choose-cabang')
           @elseif(Auth::user()->status==2)
@@ -54,28 +62,46 @@
 
   $('#cabang-list').on('change', function() {
 
-    let text = $('#cabang-list').find(":selected").text();
+    let text = $('#cabang-list').val();
 
     $('#rule-name').html(text);
     $('#rule-link').html("<i class='fas fa-download'></i> Download " + text + " guidebook");
     $('#rule-link').attr("href", "{{url('download/guidebook-')}}"+ (text.toLowerCase()).replace(" ", "-"));
 
     //todo : add rule
-    if($(this).val()==1) {
-      $('#rule-list').html(text);
+
+    $('#rule-list').html(text);
+  });
+
+
+    var addCols = function (num){
+        for (var iter = 1; iter <= num; iter++) {
+            var myCol = $('<div class=""></div>');
+            var myPanel = $('<div class="col-md-12"><div align="center"><strong>Participant '+iter+'</strong></div><div class="form-group"><label for="nama'+iter+'">Full Name</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-row"><div class="form-group col-md-6"><label for=""><em>Curriculum Vitae</em></label><br><input type="file" accept="application/pdf" name="cv'+iter+'" id="file" required><small class="form-text text-muted">File must be .pdf extension, Max size 1 mb.</small><a href="#">Download CV templates</a></div><div class="form-group col-md-6"><label for="">4x6 Photo</label><br><input type="file" accept="image/*" name="foto'+iter+'" id="file" required><small class="form-text text-muted">Max size 1 mb.</small></div></div><div class="form-row my-2"><div class="form-group col-md-6"><label for="">ID Card(KTP)</label><br><input type="file" accept="image/*" name="ktp'+iter+'" id="file" required><small class="form-text text-muted">Max size 1 mb.</small></div><div class="form-group col-md-6"><label for="">Student ID Card(KTM)</label><br><input type="file" accept="image/*" name="ktm'+iter+'" id="file" required><small class="form-text text-muted">Max size 1 mb.</small></div></div></div><hr>');
+            myPanel.appendTo(myCol);
+            myCol.appendTo('#participant-box');
+        }
+    };
+
+  let peserta = $('#participant').find(":selected").text();
+  $('#participant').on('change', function() {
+
+    let peserta = $('#participant').val();
+
+    $("#participant-box").empty();
+
+    if (peserta>=3 && peserta<=6) {
+        addCols(peserta);
     }
-    else if($(this).val()==2) {
-      $('#rule-list').html(text);
+    return false;
+
+  });
+
+  $("#dataPeserta").submit(e => {
+    if ($('#participant').val()==0) {
+      e.preventDefault();
     }
-    else if($(this).val()==3) {
-      $('#rule-list').html(text);
-    }
-    else if($(this).val()==4) {
-      $('#rule-list').html(text);
-    }
-    else if($(this).val()==5) {
-      $('#rule-list').html(text);
-    }
+    $('#jumlah_peserta').val($('#participant').val());
   });
 </script>
 @endsection

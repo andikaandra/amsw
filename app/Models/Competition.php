@@ -9,10 +9,10 @@ class Competition extends Model
     
     protected $table = 'competition';
 
-    protected $fillable = ['user_id', 'type', 'payment_status', 'verification_status', 'competition_status',
-    'wave'];
+    // protected $fillable = ['user_id', 'type', 'payment_status', 'verification_status', 'competition_status',
+    // 'wave'];
     
-    protected $guarder = [];
+    protected $guarded = [];
 
 
     public function participants() {

@@ -3,6 +3,7 @@ namespace App\Services;
 
 use App\Contracts\Repositories\IParticipantRegistrationRepository;
 use App\Contracts\IParticipantRegistrationManagement;
+use Illuminate\Http\Request;
 
 class ParticipantRegistrationManagement implements IParticipantRegistrationManagement
 {
@@ -12,15 +13,13 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
         $this->_participantsRegistration = $repo;
     }
 
-    public function updateRegistration($type, array $data) {
-    	if ($type == 1) {
-	        $this->_participantsRegistration->chooseCabang($data);
-    	}
-    	elseif ($type == 2) {
-    		
-    	}
+    public function chooseCabang(Request $request) {
+        $this->_participantsRegistration->chooseCabang($request);
     }
 
+    public function uploadData(Request $request){
+        $this->_participantsRegistration->uploadData($request);
+    }
 }
 
 ?>

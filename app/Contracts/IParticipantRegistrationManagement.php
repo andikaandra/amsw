@@ -1,7 +1,11 @@
 <?php
 namespace App\Contracts;
 
+use Illuminate\Http\Request;
+
 interface IParticipantRegistrationManagement {
-    public function updateRegistration($type, array $data);
+    public function chooseCabang(Request $request);
+
+    public function uploadData(Request $request);
 }
 ?>

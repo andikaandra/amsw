@@ -16,7 +16,7 @@ class ParticipantRegistrationController extends Controller
 
     public function chooseCabang(Request $request) {
 		try {
-			$this->_participantRegistrationService->updateRegistration(1, (array) $request->all());
+			$this->_participantRegistrationService->chooseCabang($request);
 		} catch (\Exception $e) {
 	        $eMessage = 'Choose Competition - User: ' . $request->user . ', error: ' . $e->getMessage();
 	        Log::emergency($eMessage);
@@ -26,13 +26,13 @@ class ParticipantRegistrationController extends Controller
     }
 
     public function uploadData(Request $request) {
-		try {
-			$this->_participantRegistrationService->updateRegistration(1, (array) $request->all());
-		} catch (\Exception $e) {
-	        $eMessage = 'Choose Competition - User: ' . $request->user . ', error: ' . $e->getMessage();
-	        Log::emergency($eMessage);
-	    	return redirect()->back()->with('error', 'Whoops, something error!'); 
-	    }
-        return redirect()->back()->with('success', 'Successfully choose competition branch'); 
+      	try {
+      		$this->_participantRegistrationService->uploadData($request);
+      	} catch (\Exception $e) {
+	        $message = 'Upload data: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+	        Log::emergency($message);
+	        return redirect()->back()->with('error', $e->getMessage());  
+      	}
+        return redirect()->back()->with('success', 'Successfully upload data'); 
     }
 }

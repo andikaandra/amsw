@@ -32,9 +32,9 @@
           @if(Auth::user()->status==1)
             @include('includes.participant.form.choose-cabang')
           @elseif(Auth::user()->status==2)
-            form upload personal data dan bukti pembayaran
-          @elseif(Auth::user()->status==2)
-            notifikasi menunggu pemberitahuan admin
+            @include('includes.participant.form.upload-data')
+          @elseif(Auth::user()->status==3)
+            hjh
           @endif
         </div>
       </div>

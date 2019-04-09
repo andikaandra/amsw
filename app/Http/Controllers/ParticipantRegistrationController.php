@@ -24,4 +24,15 @@ class ParticipantRegistrationController extends Controller
 	    }
         return redirect()->back()->with('success', 'Successfully choose competition branch'); 
     }
+
+    public function uploadData(Request $request) {
+		try {
+			$this->_participantRegistrationService->updateRegistration(1, (array) $request->all());
+		} catch (\Exception $e) {
+	        $eMessage = 'Choose Competition - User: ' . $request->user . ', error: ' . $e->getMessage();
+	        Log::emergency($eMessage);
+	    	return redirect()->back()->with('error', 'Whoops, something error!'); 
+	    }
+        return redirect()->back()->with('success', 'Successfully choose competition branch'); 
+    }
 }

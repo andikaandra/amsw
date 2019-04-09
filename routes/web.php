@@ -43,6 +43,7 @@ Route::get('/participant', 'ParticipantController@index');
 Route::prefix('participant')->middleware(['has_verify_email'])->group(function () {
 	Route::get('/registration', 'ParticipantController@registrationPage');
 	Route::post('/registration/choose-cabang', 'ParticipantRegistrationController@chooseCabang')->name('choose.cabang');
+	Route::post('/registration/upload-data', 'ParticipantRegistrationController@uploadData')->name('upload.data');
 });
 
 

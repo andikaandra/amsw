@@ -1,0 +1,56 @@
+1. in 'app/contracts' -> define your interfaces. Interfaces provide a high level abstraction of what the implementation
+will be like. No implementations in interfaces!!!
+2. implement your interface in 'app/services'. an interface implementation is a concrete class.
+3. any call to database you cannot call Model function directly in services or controller. you have to define a repository in 'app/repository'.
+
+
+example:
+I want to make participant registration management which consist of accept and decline.
+1. define interface -> 
+class Interface -> IParticipantManagement
+methods:  ->  
+    acceptParticipant(parameters)
+    declineParticipant(parameters)
+
+2. implement interface
+class ParticipantManagement implements IParticipantManagement
+
+methods:
+    acceptParticipant(parameters)
+        // logic goes here
+    declineParticipant(parameters)
+        //logic goes here
+            
+3. if you need to call DB use repository
+class interface -> IParticipantRepository
+methods: ->
+    getAllParticipants(parameters)
+
+4. implement repository interface
+class ParticipantRepository implements IParticipantRepository
+methods:
+        getAllParticipants(parameters)
+            //logic, Model functions goes here
+
+5. inject repository to services using constructor
+class ParticipantManagement implements IParticipantManagement
+
+    private _participants
+    constructor(IParticipantRepository participants)
+        _praticipants = participants;
+
+6. inject services to controller
+
+class ParticipantManagementController
+
+    private _participantsServices
+    constructor(IParticipantManagement participantsServices)
+        _participantsServices = participantsServices;
+
+    //call services functions
+    function acceptParticipant()
+        _participantsServices->acceptParticipant()
+
+
+Read here about Dependency Injection in Laravel
+https://laravel.com/docs/5.8/container#binding-interfaces-to-implementations

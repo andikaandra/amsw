@@ -13,6 +13,8 @@
 
 
 
+
+
 // accounts
 Route::get('register', 'Auth\RegisterController@registerPage');
 Route::post('register', 'Auth\RegisterController@register');
@@ -24,6 +26,16 @@ Route::post('logout', 'Auth\LogoutController@logout');
 
 Route::get('/', 'HomepageController@index');
 Route::get('admin', 'AdminController@index');
+
+
+// amin routes
+// TODO: add middleware
+Route::prefix('admin')->group(function() {
+    Route::get('teams', 'ParticipantManagementController@getAllTeams');
+    Route::get('teams/{id}/participants', 'ParticipantManagementController@getParticipantsByCompId');
+    Route::put('teams/{id}/accept', 'ParticipantManagementController@acceptParticipant');
+});
+
 
 
 Route::get('/participant', 'ParticipantController@index');

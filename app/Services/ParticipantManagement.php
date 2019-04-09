@@ -1,21 +1,34 @@
 <?php
 namespace App\Services;
 
-use App\Contracts\Repositories\IParticipantRepository;
 use App\Contracts\IParticipantManagement;
+use App\Contracts\Repositories\IParticipantRepository;
 
 class ParticipantManagement implements IParticipantManagement
 {
     // this variable holds repository for participant
     private $_participants;
-    function __construct(IParticipantRepository $repo) {
-        $this->_participants = $repo;
+    
+    public function __construct(IParticipantRepository $participantsRepo) {
+        $this->_participants = $participantsRepo;        
     }
 
     public function acceptParticipant($id) {
-        $this->_participants->update($id, ['verfication_status' => 'verified', 
-            'payment_status' => 'verified']);
+        return $this->_participants->acceptTeam($id, ['verification_status' => 'verified', 
+            'payment_status' => 'verified']);        
     }
+
+    public function declineParticipant($id) {
+        return $this->_participants->declineTeam($id);
+    }
+
+    public function getAllTeams() {
+        return $this->_participants->getAllEmailVerifiedTeams();
+    }
+
+    public function getParticipantsByCompId($id) {
+        return $this->_participants->getParticipantsByCompId($id);
+    }    
 
 }
 

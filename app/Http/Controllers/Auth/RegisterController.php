@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use Illuminate\Http\Request;
+use App\Events\UserRegistered;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -83,9 +84,10 @@ class RegisterController extends Controller
     public function register(Request $request) {
         // return $request;
         $validator = $this->validator($request->all())->validate();
-        $this->create($request->all());
+        $user = $this->create($request->all());
 
         // TODO: publish AccountRegistered event
+        event(new UserRegistered($user));
         
         return redirect('login')->with('success', 'Account registration succesful!');
 

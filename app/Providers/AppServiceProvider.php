@@ -14,7 +14,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // first paramater is the interface
+        // second parameter is the implementation
+        $this->app->bind(
+            'App\Contracts\Repositories\IParticipantRepository',
+            'App\Repositories\ParticipantRepository'
+        );
+
+        $this->app->bind(
+            'App\Contracts\IParticipantManagement',
+            'App\Services\ParticipantManagement'
+        );
     }
 
     /**

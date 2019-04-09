@@ -12,12 +12,24 @@ class ParticipantRepository implements IParticipantRepository
         return Competition::all();
     }
 
-    public function update($id, array $data) {
-        Competition::find($id)->update($data);
+    public function acceptTeam($id, array $data) {
+        $comp = Competition::find($id);
+        $comp->update($data);
+        return $comp->user()->update(['status' => 4]);
+    }
+
+    public function declineTeam($id) {
+        $comp = Competition::find($id);
+        return $comp->update(['verification_status' => 'declined']);        
     }
 
     public function getAllEmailVerifiedTeams() {
-        return User::where('email_verification', 'verified')->where('role', 'participant')->get();
+        return User::where('email_verification', 'verified')->where('role', 'participant')
+        ->with(['competitions:id,user_id,wave,verification_status'])->get();
+    }
+
+    public function getParticipantsByCompId($id) {
+        return Competition::find($id)->with('participants')->get();
     }
 
 

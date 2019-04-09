@@ -60,6 +60,7 @@
     $('#rule-link').html("<i class='fas fa-download'></i> Download " + text + " guidebook");
     $('#rule-link').attr("href", "{{url('download/guidebook-')}}"+ (text.toLowerCase()).replace(" ", "-"));
 
+    //todo : add rule
     if($(this).val()==1) {
       $('#rule-list').html(text);
     }

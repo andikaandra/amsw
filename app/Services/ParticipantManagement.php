@@ -14,7 +14,7 @@ class ParticipantManagement implements IParticipantManagement
     }
 
     public function acceptParticipant($id) {
-        $_participants->update($id)->update(['verfication_status' => 'verified', 
+        $this->_participants->update($id, ['verfication_status' => 'verified', 
             'payment_status' => 'verified']);
     }
 

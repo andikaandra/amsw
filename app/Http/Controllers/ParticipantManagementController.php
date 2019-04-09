@@ -14,13 +14,13 @@ class ParticipantManagementController extends Controller
         $this->_participantService = $service;
     }
     // to fill datatables
-    public function getAllTeams(Request $request) {
-        // return ($this->_participantService);
+    public function getAllTeams(Request $request) {        
         return response()->json(['data' => $this->_participantService->getAllTeams()]);
     }
 
     public function acceptParticipant(Request $request) {
-        $_participantService->acceptParticipant($request->id);
+        $this->_participantService->acceptParticipant($request->id);
         return response()->json(['message' => 'accepted'], 200);
     }
+
 }

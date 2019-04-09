@@ -19,9 +19,15 @@
         <hr>
         <div class="chart-wrapper mt-3" style="min-height:300px;">
           {{-- Not verified yet --}}
+          @if(Auth::user()->email_verification == 'unverified')
           <div class="email-unverified">
             <p>Hello <strong>{{Auth::user()->name}}</strong>. <br> Welcome to your AMSW Web Dashboard. Please verify your account by checking the email we sent you. Open your mailbox using the email you registered with.</p>
           </div>
+          @else
+          <div class="email-verified">
+            <p>Hello <strong>{{Auth::user()->name}}</strong>. <br> Welcome to your AMSW Web Dashboard. You can begin your registration from Registration menu or just click <a href="{{@url('participant/registration')}}">here</a> .</p>
+          </div>
+          @endif
         </div>
       </div>
       <div class="card-footer">

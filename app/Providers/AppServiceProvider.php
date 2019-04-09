@@ -25,6 +25,16 @@ class AppServiceProvider extends ServiceProvider
             'App\Contracts\IParticipantManagement',
             'App\Services\ParticipantManagement'
         );
+
+        $this->app->bind(
+            'App\Contracts\Repositories\IParticipantRegistrationRepository',
+            'App\Repositories\ParticipantRegistrationRepository'
+        );
+
+        $this->app->bind(
+            'App\Contracts\IParticipantRegistrationManagement',
+            'App\Services\ParticipantRegistrationManagement'
+        );
     }
 
     /**

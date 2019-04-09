@@ -17,7 +17,7 @@
     </li>
     <li class="nav-item d-md-down-none mx-5">
         <a class="nav-link" href="{{ url('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <i class="fa fa-sign-out" aria-hidden="true"></i> logout
+            <i class="fa fa-lock" aria-hidden="true"></i> Logout
         </a>
     </li>
     <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">

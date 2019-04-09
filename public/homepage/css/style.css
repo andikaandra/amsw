@@ -180,7 +180,7 @@ button:focus {
 }
 
 .header_area .navbar .nav .nav-item:hover .nav-link, .header_area .navbar .nav .nav-item.active .nav-link {
-  color: #8d83ff;
+  color: #d55c5a;
 }
 
 .header_area .navbar .nav .nav-item.submenu {
@@ -260,7 +260,7 @@ button:focus {
 }
 
 .header_area .navbar .nav .nav-item.submenu ul .nav-item:hover .nav-link {
-  background: #8d83ff;
+  background: #d55c5a;
   color: #fff;
 }
 
@@ -443,7 +443,7 @@ button:focus {
 }
 
 .home_banner_area .banner_inner .overlay {
-  background: url(../img/banner/home-banner.jpg) no-repeat scroll center center;
+  background: -moz-linear-gradient(-90deg,#edb4cc,#edb4cc 100%) no-repeat scroll center center;
   position: absolute;
   left: 0;
   right: 0;
@@ -1874,9 +1874,9 @@ button:focus {
   float: right;
   overflow: hidden;
   padding-left: 95px;
-  background-image: -moz-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
-  background-image: -webkit-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
-  background-image: -ms-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
+  background-image: -moz-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
+  background-image: -webkit-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
+  background-image: -ms-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
   min-height: 680px;
 }
 
@@ -3657,6 +3657,11 @@ h6 {
 /*----------------------------------------------------*/
 /* Offer Area css
 ============================================================================================ */
+
+.offer_area {
+  background: #ffe9e2;
+}
+
 .offer_title {
   text-align: center;
   max-width: 740px;
@@ -3705,9 +3710,10 @@ h6 {
 }
 
 .offer_item:hover .offer_text {
-  background-image: -moz-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
-  background-image: -webkit-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
-  background-image: -ms-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
+  background-image: -moz-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
+  background-image: -webkit-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
+  background-image: -ms-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
+  cursor: pointer;
 }
 
 .offer_item:hover .offer_text h4 {
@@ -3752,9 +3758,9 @@ h6 {
   box-shadow: 0px 10px 30px 0px rgba(98, 71, 234, 0.1);
   border-radius: 5px;
   color: #fff;
-  background-image: -moz-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
-  background-image: -webkit-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
-  background-image: -ms-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
+  background-image: -moz-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
+  background-image: -webkit-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
+  background-image: -ms-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
 }
 
 .feature_item:hover h4 {
@@ -3823,9 +3829,9 @@ h6 {
   height: 100%;
   left: 0px;
   top: 0px;
-  background-image: -moz-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
-  background-image: -webkit-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
-  background-image: -ms-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
+  background-image: -moz-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
+  background-image: -webkit-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
+  background-image: -ms-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
   position: absolute;
   opacity: 0;
   -webkit-transition: all 300ms ease;
@@ -3984,10 +3990,9 @@ h6 {
 }
 
 .team_item .team_img:before {
-  content: "";
-  background-image: -moz-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
-  background-image: -webkit-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
-  background-image: -ms-linear-gradient(90deg, #e187f0 0%, #f27fd3 33%, #a276ff 67%, #8889ff 100%);
+  background-image: -moz-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
+  background-image: -webkit-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
+  background-image: -ms-linear-gradient(-90deg, #894242 0%, #894242 33%, #d55c5a 67%, #d55c5a 100%);
   position: absolute;
   left: 0px;
   top: 0px;

@@ -23,14 +23,14 @@ class ParticipantRegistrationRepository implements IParticipantRegistrationRepos
             'university' =>  'required',
             'nama_bank' => 'required',
             'nama_pengirim' => 'required',
-            'jumlah_tf' => 'required',
+            'jumlah_tf' => 'required|max:10',
             'user' =>  'required',
             'jumlah_peserta' => 'required',
         ]);
 
-        if (strlen(str_replace('.','',$request->jumlah_tf))>=10) {
-          return redirect()->back();
-        }
+        // if (strlen(str_replace('.','',$request->jumlah_tf))>=10) {
+        //   return redirect()->back();
+        // }
 
         if ($validator->fails()) {
           return redirect()->back()->withErrors($validator)->withInput();
@@ -40,10 +40,10 @@ class ParticipantRegistrationRepository implements IParticipantRegistrationRepos
 
         for ($i=1; $i <=$request->jumlah_peserta ; $i++) {
             $rules['nama'.$i] = 'required';
-            $rules['cv'.$i] = 'bail|required|max:1024|mimes:pdf';
-            $rules['foto'.$i] = 'bail|required|max:1024|mimes:jpeg,jpg,png';
-            $rules['ktp'.$i] = 'bail|required|max:1024|mimes:jpeg,jpg,png';
-            $rules['ktm'.$i] = 'bail|required|max:1024|mimes:jpeg,jpg,png';
+            $rules['cv'.$i] = 'bail|required|max:2024|mimes:pdf';
+            $rules['foto'.$i] = 'bail|required|max:2024|mimes:jpeg,jpg,png';
+            $rules['ktp'.$i] = 'bail|required|max:2024|mimes:jpeg,jpg,png';
+            $rules['ktm'.$i] = 'bail|required|max:2024|mimes:jpeg,jpg,png';
         }
 
         $validator = Validator::make($request->all(), $rules);

@@ -22,8 +22,8 @@ class ParticipantManagement implements IParticipantManagement
         return $this->_participants->declineTeam($id);
     }
 
-    public function getAllTeams() {
-        return $this->_participants->getAllEmailVerifiedTeams();
+    public function getAllTeams($competition) {
+        return $this->_participants->getAllEmailVerifiedTeams($competition);
     }
 
     public function getParticipantsByCompId($id) {

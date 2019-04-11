@@ -16,7 +16,7 @@ class CompetitionManagement extends Migration
         Schema::create('competition_management', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('wave');
+            $table->integer('waves');
             $table->integer('current_wave');
             $table->string('registration_status');
             $table->string('submission_status');

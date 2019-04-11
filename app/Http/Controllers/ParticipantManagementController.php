@@ -16,7 +16,7 @@ class ParticipantManagementController extends Controller
 
     // to fill datatables
     public function getAllTeams(Request $request) {        
-        return response()->json(['data' => $this->_participantService->getAllTeams()]);
+        return response()->json(['data' => $this->_participantService->getAllTeams($request->competition)]);
     }
 
     // accept team

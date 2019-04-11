@@ -31,9 +31,15 @@ Route::get('admin', 'AdminController@index');
 // amin routes
 // TODO: add middleware
 Route::prefix('admin')->group(function() {
+    // team routes
     Route::get('teams', 'ParticipantManagementController@getAllTeams');
     Route::get('teams/{id}/participants', 'ParticipantManagementController@getParticipantsByCompId');
     Route::put('teams/{id}/accept', 'ParticipantManagementController@acceptParticipant');
+    
+    // comps routes
+    Route::get('competitions', 'CompetitionManagementController@getAllCompetitions');
+    Route::get('competitions/{comp_id}', 'CompetitionManagementController@findCompetition');
+    Route::put('competitions/{comp_id}', 'CompetitionManagementController@updateCompetition');
 });
 
 

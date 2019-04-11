@@ -23,8 +23,10 @@ class ParticipantRepository implements IParticipantRepository
         return $comp->update(['verification_status' => 'declined']);        
     }
 
-    public function getAllEmailVerifiedTeams() {
+    public function getAllEmailVerifiedTeams($competition) {
         return User::where('email_verification', 'verified')->where('role', 'participant')
+        ->where('competition', $competition)
+        ->whereHas('competitions')
         ->with(['competitions:id,user_id,wave,verification_status'])->get();
     }
 

@@ -19,12 +19,31 @@
     <li class="nav-title">Components</li>
     <li class="nav-item nav-dropdown">
         <a class="nav-link nav-dropdown-toggle" href="#">
-        <i class="nav-icon icon-puzzle"></i> Base</a>
+        <i class="nav-icon icon-puzzle"></i> Registrations</a>
         <ul class="nav-dropdown-items">
         <li class="nav-item">
-            <a class="nav-link" href="base/breadcrumb.html">
-            <i class="nav-icon icon-puzzle"></i> Breadcrumb</a>
+            <a class="nav-link" href="{{url('admin/registration/essays')}}">
+            <i class="nav-icon icon-puzzle"></i> Essay</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="base/breadcrumb.html">
+            <i class="nav-icon icon-puzzle"></i> Literature Review</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="base/breadcrumb.html">
+            <i class="nav-icon icon-puzzle"></i> Public Poster</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="base/breadcrumb.html">
+            <i class="nav-icon icon-puzzle"></i> Research Paper</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="base/breadcrumb.html">
+            <i class="nav-icon icon-puzzle"></i> Educational Video</a>
+        </li>
+
+
+
         <li class="nav-item">
             <a class="nav-link" href="base/cards.html">
             <i class="nav-icon icon-puzzle"></i> Cards</a>

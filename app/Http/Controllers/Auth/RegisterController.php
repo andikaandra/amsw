@@ -85,8 +85,7 @@ class RegisterController extends Controller
         // return $request;
         $validator = $this->validator($request->all())->validate();
         $user = $this->create($request->all());
-
-        // TODO: publish AccountRegistered event
+        
         event(new UserRegistered($user));
         
         return redirect('login')->with('success', 'Account registration succesful!');

@@ -19,23 +19,23 @@ class DatabaseSeeder extends Seeder
         $faker = Faker::create('id_ID');
         
         CompetitionManagement::create([
-        	'id' => 1, 'name' => 'Essay', 'wave' => 2, 'current_wave' => 1, 'registration_status' => 'Close', 'submission_status' => 'Close', 'registration_amount' => 150000, 'final_amount' => 150000
+        	'id' => 1, 'name' => 'Essay', 'waves' => 2, 'current_wave' => 1, 'registration_status' => 'close', 'submission_status' => 'close', 'registration_amount' => 150000, 'final_amount' => 150000
         ]);
 
         CompetitionManagement::create([
-        	'id' => 2, 'name' => 'Literature Review', 'wave' => 2, 'current_wave' => 1, 'registration_status' => 'Close', 'submission_status' => 'Close', 'registration_amount' => 150000, 'final_amount' => 150000
+        	'id' => 2, 'name' => 'Literature Review', 'waves' => 2, 'current_wave' => 1, 'registration_status' => 'close', 'submission_status' => 'close', 'registration_amount' => 150000, 'final_amount' => 150000
         ]);
 
         CompetitionManagement::create([
-        	'id' => 3, 'name' => 'Public Poster', 'wave' => 2, 'current_wave' => 1, 'registration_status' => 'Close', 'submission_status' => 'Close', 'registration_amount' => 150000, 'final_amount' => 150000
+        	'id' => 3, 'name' => 'Public Poster', 'waves' => 2, 'current_wave' => 1, 'registration_status' => 'close', 'submission_status' => 'close', 'registration_amount' => 150000, 'final_amount' => 150000
         ]);
 
         CompetitionManagement::create([
-        	'id' => 4, 'name' => 'Research Paper', 'wave' => 2, 'current_wave' => 1, 'registration_status' => 'Close', 'submission_status' => 'Close', 'registration_amount' => 150000, 'final_amount' => 150000
+        	'id' => 4, 'name' => 'Research Paper', 'waves' => 2, 'current_wave' => 1, 'registration_status' => 'close', 'submission_status' => 'close', 'registration_amount' => 150000, 'final_amount' => 150000
         ]);
 
         CompetitionManagement::create([
-        	'id' => 5, 'name' => 'Educational Video', 'wave' => 2, 'current_wave' => 1, 'registration_status' => 'Close', 'submission_status' => 'Close', 'registration_amount' => 150000, 'final_amount' => 150000
+        	'id' => 5, 'name' => 'Educational Video', 'waves' => 2, 'current_wave' => 1, 'registration_status' => 'close', 'submission_status' => 'close', 'registration_amount' => 150000, 'final_amount' => 150000
         ]);
         
         // participants

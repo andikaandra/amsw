@@ -100,10 +100,7 @@ class DatabaseSeeder extends Seeder
 
                 Participant::create([
                     'name' => $faker->name,
-                    'cv_path' => $faker->address,
-                    'foto_path' => $faker->address,
-                    'ktm_path' => $faker->address,
-                    'ktp_path' => $faker->address,
+                    'file_path' => $faker->address,
                     'competition_id' => $comp->id
                 ]);
               

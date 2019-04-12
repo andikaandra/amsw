@@ -4,7 +4,7 @@ namespace App\Contracts;
 use Illuminate\Http\Request;
 
 interface IParticipantRegistrationManagement {
-    public function chooseCabang(Request $request);
+    public function chooseCabang(array $data);
 
     public function uploadData(Request $request);
 }

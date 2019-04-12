@@ -18,31 +18,42 @@
           </div>
         </div>
         <hr>
-        @if (\Session::has('success'))
+        @if(Auth::user()->status > 1 && Auth::user()->status < 3)
+          <div class="alert alert-info">
+            You choose <strong>{{Auth::user()->competition}}</strong> As your competition, 
+             @if(Auth::user()->status < 4 )
+              Reset your data here.
+             @endif
+          </div>
+        @endif
+        @if($errors->any())
+          <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+              {{ $error }}<br>
+            @endforeach
+          </div>
+        @elseif(\Session::has('success'))
             <div class="alert alert-success">
               {!! \Session::get('success') !!}
             </div>
-        @endif
-        @if (\Session::has('error'))
+        @elseif(\Session::has('error'))
             <div class="alert alert-danger">
               {!! \Session::get('error') !!}
             </div>
         @endif
         <div class="chart-wrapper mt-3" style="min-height:300px;">
-          @if(Auth::user()->status > 1)
-            <div class="alert alert-info">
-              You choose <strong>{{Auth::user()->competition}}</strong> As your competition, 
-               @if(Auth::user()->status < 4 )
-                Reset your data here.
-               @endif
-            </div>
-          @endif
           @if(Auth::user()->status==1)
             @include('includes.participant.form.choose-cabang')
           @elseif(Auth::user()->status==2)
             @include('includes.participant.form.upload-data')
           @elseif(Auth::user()->status==3)
-            hjh
+            <div class="alert alert-info">
+              Tunggu dikonfirmasi
+            </div>
+          @else
+            <div class="alert alert-info">
+              Congratulation, your registration data has been verified.
+            </div>
           @endif
         </div>
       </div>

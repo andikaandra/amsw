@@ -21,16 +21,32 @@
                   </div>
                 </div>
               </div>
-              <div class="list-group-item list-group-item-accent-{{ Auth::user()->status >= 2 ? (Auth::user()->status == 2 ? 'info' : 'success' ) : 'danger' }} list-group-item-divider">
+              <div class="list-group-item list-group-item-accent-{{ Auth::user()->status >= 1 ? (Auth::user()->status == 1 ? 'info' : 'success' ) : 'danger' }} list-group-item-divider">
                 <div class="row">
                   <div class="col-10">
                   Choose competition branch
                   </div>
                   <div class="col-2 float-right text-right">
+                    @if(Auth::user()->status == 1)
+                      <i class="fa fa-chevron-circle-left text-info" aria-hidden="true"></i>
+                    @elseif(Auth::user()->status >= 2)
+                      <i class="fa fa-check text-success" aria-hidden="true"></i>
+                    @else
+                    <i class="fa fa-times text-danger" aria-hidden="true"></i>
+                    @endif
+                  </div>
+                </div>
+              </div>
+              <div class="list-group-item list-group-item-accent-{{ Auth::user()->status >= 2 ? (Auth::user()->status == 2 ? 'info' : 'success' ) : 'danger' }} list-group-item-divider">
+                <div class="row">
+                  <div class="col-10">
+                  Upload personal data & proof of payment
+                  </div>
+                  <div class="col-2 float-right text-right">
                     @if(Auth::user()->status == 2)
                       <i class="fa fa-chevron-circle-left text-info" aria-hidden="true"></i>
-                    @elseif(Auth::user()->status > 2)
-                      <i class="fa fa-check text-success" aria-hidden="true"></i>
+                    @elseif(Auth::user()->status >= 3)
+                    <i class="fa fa-check text-success" aria-hidden="true"></i>
                     @else
                     <i class="fa fa-times text-danger" aria-hidden="true"></i>
                     @endif
@@ -40,28 +56,12 @@
               <div class="list-group-item list-group-item-accent-{{ Auth::user()->status >= 3 ? (Auth::user()->status == 3 ? 'info' : 'success' ) : 'danger' }} list-group-item-divider">
                 <div class="row">
                   <div class="col-10">
-                  Upload personal data & proof of payment
+                  Verified by admin
                   </div>
                   <div class="col-2 float-right text-right">
                     @if(Auth::user()->status == 3)
                       <i class="fa fa-chevron-circle-left text-info" aria-hidden="true"></i>
-                    @elseif(Auth::user()->status > 3)
-                    <i class="fa fa-check text-success" aria-hidden="true"></i>
-                    @else
-                    <i class="fa fa-times text-danger" aria-hidden="true"></i>
-                    @endif
-                  </div>
-                </div>
-              </div>
-              <div class="list-group-item list-group-item-accent-{{ Auth::user()->status >= 4 ? (Auth::user()->status == 4 ? 'info' : 'success' ) : 'danger' }} list-group-item-divider">
-                <div class="row">
-                  <div class="col-10">
-                  Verified by admin
-                  </div>
-                  <div class="col-2 float-right text-right">
-                    @if(Auth::user()->status == 4)
-                      <i class="fa fa-chevron-circle-left text-info" aria-hidden="true"></i>
-                    @elseif(Auth::user()->status > 4)
+                    @elseif(Auth::user()->status >= 4)
                     <i class="fa fa-check text-success" aria-hidden="true"></i>
                     @else
                     <i class="fa fa-times text-danger" aria-hidden="true"></i>
@@ -75,9 +75,9 @@
                   Upload Submission
                   </div>
                   <div class="col-2 float-right text-right">
-                    @if(Auth::user()->status == 5)
+                    @if(Auth::user()->status == 4)
                       <i class="fa fa-chevron-circle-left text-info" aria-hidden="true"></i>
-                    @elseif(Auth::user()->status > 5)
+                    @elseif(Auth::user()->status >= 5)
                     <i class="fa fa-check text-success" aria-hidden="true"></i>
                     @else
                     <i class="fa fa-times text-danger" aria-hidden="true"></i>

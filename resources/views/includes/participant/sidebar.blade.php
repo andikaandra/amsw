@@ -10,7 +10,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="nav-profile-text d-flex flex-column">
-              <span class="font-weight-bold mb-2">{{Auth::user()->name}}</span>
+              <span class="font-weight-bold mb-2">{{Auth::user()->name}}@if(Auth::user()->status > 3) <i class="fas fa-check text-info"></i> @endif</span>
             </div>            
         </div>
       </a>

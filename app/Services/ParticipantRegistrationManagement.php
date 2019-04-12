@@ -23,18 +23,18 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
         $this->_participantsRegistration->chooseCabang($data['user'], $data['competition']);
     }
 
-    public function uploadData(Request $request){
-        $validator = Validator::make($request->all(), [
-            'university' =>  'required',
-            'nama_bank' => 'required',
-            'nama_pengirim' => 'required',
+    public function uploadData(array $data){
+        $validator = Validator::make($data, [
+            'university' =>  'required|max:255',
+            'nama_bank' => 'required|max:255',
+            'nama_pengirim' => 'required|max:255',
             'jumlah_tf' => 'required|max:10',
             'user' =>  'required',
-            'jumlah_peserta' => 'required',
+            'jumlah_peserta' => 'required|numeric|min:3|max:6',
         ]);
 
-        if (strlen(str_replace('.','',$request->jumlah_tf))>=10) {
-            return redirect()->back();
+        if (strlen(str_replace('.','',$data['jumlah_tf']))>=10) {
+            return redirect()->back()->withErrors(['Transfer amount'=>'Wrong number format']);
         }
 
         if ($validator->fails()) {
@@ -43,30 +43,30 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
 
         $rules = [];
 
-        for ($i=1; $i <=$request->jumlah_peserta ; $i++) {
-            $rules['nama'.$i] = 'required';
+        for ($i=1; $i <=$data['jumlah_peserta'] ; $i++) {
+            $rules['nama'.$i] = 'required|max:255';
             $rules['file'.$i] = 'bail|required|max:6000|mimes:zip';
         }
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($data, $rules);
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $competition = $this->_participantsRegistration->newCompetition($request->user, Auth::user()->competition);
+        $competition = $this->_participantsRegistration->newCompetition($data['user'], Auth::user()->competition);
 
-        $user = $this->_participantsRegistration->changeStatus($request->user, 3);
+        $user = $this->_participantsRegistration->changeStatus($data['user'], 3);
 
-        for ($i=1; $i <=$request->jumlah_peserta ; $i++) {
-            $file_path = $request->file('file' . $i)->store('public/file-participants');
+        for ($i=1; $i <=$data['jumlah_peserta'] ; $i++) {
+            $file_path = $data['file' . $i]->store('public/file-participants');
 
-            $this->_participantsRegistration->newParticipant($request->user, $request->{'nama'.$i}, $file_path);
+            $this->_participantsRegistration->newParticipant($data['user'], $data['nama'.$i], $file_path);
         }
 
-        $path = $request->file('bukti_pembayaran')->store('public/payments');
+        $path = $data['bukti_pembayaran']->store('public/payments');
         
-        $this->_participantsRegistration->newPayment(['user_id' => $request->user, 'competition' => Auth::user()->competition, 'file_path' => str_replace("public","", $path), 'bank_account_name' => $request->nama_pengirim, 'bank_name' => $request->nama_bank, 'payment_type' => 'group', 'amount' => str_replace('.','',$request->jumlah_tf)]);
+        $this->_participantsRegistration->newPayment(['user_id' => $data['user'], 'competition' => Auth::user()->competition, 'file_path' => str_replace("public","", $path), 'bank_account_name' => $data['nama_pengirim'], 'bank_name' => $data['nama_bank'], 'payment_type' => 'group', 'amount' => str_replace('.','',$data['jumlah_tf'])]);
 
     }
 }

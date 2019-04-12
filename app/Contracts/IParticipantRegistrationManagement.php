@@ -6,6 +6,6 @@ use Illuminate\Http\Request;
 interface IParticipantRegistrationManagement {
     public function chooseCabang(array $data);
 
-    public function uploadData(Request $request);
+    public function uploadData(array $data);
 }
 ?>

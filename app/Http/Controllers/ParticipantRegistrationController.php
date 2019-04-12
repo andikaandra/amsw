@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contracts\IParticipantRegistrationManagement;
+use Auth;
 use Log;
 
 class ParticipantRegistrationController extends Controller
@@ -26,14 +27,15 @@ class ParticipantRegistrationController extends Controller
     }
 
     public function uploadData(Request $request) {
+      // return (array) $request->all();
       // return $request;
       	try {
-      		$this->_participantRegistrationService->uploadData($request);
-      	} catch (\Exception $e) {
-  	        $message = 'Upload data: ' . Auth::user()->email . ', error: ' . $e->getMessage();
-  	        Log::emergency($message);
-  	        return redirect()->back()->with('error', $e->getMessage());  
-      	}
+      		$result = $this->_participantRegistrationService->uploadData((array) $request->all());
+        } catch (\Exception $e) {
+            $message = 'Upload data: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+            Log::emergency($message);
+            return redirect()->back()->with('error', $e->getMessage());  
+        }
         return redirect()->back()->with('success', 'Successfully upload data'); 
     }
 }

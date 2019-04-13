@@ -7,5 +7,7 @@ interface IParticipantRegistrationManagement {
     public function chooseCabang(array $data);
 
     public function uploadData(array $data);
+
+    public function resetData($id);
 }
 ?>

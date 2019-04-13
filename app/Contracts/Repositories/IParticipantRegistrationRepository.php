@@ -13,6 +13,8 @@ interface IParticipantRegistrationRepository {
     public function newParticipant($id, $name, $path);
 
     public function newPayment(array $data);
+
+    public function resetData($id);
 }
 
 ?>

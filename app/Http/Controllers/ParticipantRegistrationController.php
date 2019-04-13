@@ -15,6 +15,18 @@ class ParticipantRegistrationController extends Controller
         $this->_participantRegistrationService = $service;
     }
 
+    public function resetData(Request $request) {
+      // return $request;
+        try {
+          $this->_participantRegistrationService->resetData($request->user_id);
+        } catch (\Exception $e) {
+            $eMessage = 'Reset Data - User: ' . $request->user_id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!'); 
+        }
+        return redirect()->back()->with('success', 'Successfully reset data'); 
+    }
+
     public function chooseCabang(Request $request) {
     		try {
     			$this->_participantRegistrationService->chooseCabang((array) $request->all());

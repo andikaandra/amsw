@@ -17,6 +17,11 @@ class ParticipantRegistrationRepository implements IParticipantRegistrationRepos
   		User::where('id', $id)->update(['status' => 2, 'competition' => $competition]);
     }
 
+    public function resetData($id) {
+      User::find($id)->update(['competition' => NULL]);
+      $this->changeStatus($id, 1);
+    }
+
     public function newCompetition($id, $type) {
       return Competition::create([
           'user_id' => $id,

@@ -19,6 +19,10 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
         $this->_participantsRegistration = $repo;
     }
 
+    public function resetData($id) {
+        $this->_participantsRegistration->resetData($id);
+    }
+
     public function chooseCabang(array $data) {
         $this->_participantsRegistration->chooseCabang($data['user'], $data['competition']);
     }

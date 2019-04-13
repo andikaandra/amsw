@@ -19,12 +19,16 @@
         </div>
         <hr>
         @if(Auth::user()->status > 1 && Auth::user()->status < 3)
+          <form id="reset" method="post" action="{{route('reset.data')}}">
+            @csrf
           <div class="alert alert-info">
             You choose <strong>{{Auth::user()->competition}}</strong> As your competition, 
              @if(Auth::user()->status < 4 )
-              Reset your data here.
+              Reset your data <a href="#" onclick="$('#reset').submit(); return false;" id="submit">here</a>.
              @endif
           </div>
+          <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+          </form>
         @endif
         @if($errors->any())
           <div class="alert alert-danger">

@@ -20,9 +20,13 @@ interface IParticipantRegistrationRepository {
 
     public function checkCabangOpen($competition);
 
+    public function checkCabangSubmissionOpen($competition);
+
     public function getMyLomba($name);
 
     public function changeUniversity($id, $university);
+
+    public function newSubmission(array $data);
     
 }
 

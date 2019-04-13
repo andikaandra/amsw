@@ -42,7 +42,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Competition');
     }
 
-    public function competitionData() {
-        return $this->belongsTo('App\Models\Competition');
+    public function submissions() {
+        return $this->hasOne('App\Models\Submission', 'competition_user_id', 'id');
     }
+
 }

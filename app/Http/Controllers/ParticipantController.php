@@ -26,13 +26,22 @@ class ParticipantController extends Controller
         if (Auth::user()) {
             $cabang = Auth::user()->competition;
         }
-    	$listLomba = $this->_participantRegistrationService->getAllLomba();
+        $listLomba = $this->_participantRegistrationService->getAllLomba();
         $lomba = $this->_participantRegistrationService->getMyLomba($cabang);
 
         return view('pages.participant.registration', compact('listLomba', 'lomba'));
     }
 
     public function teamsPage() {
+        return Auth::user()->competitions[0]->participants;
         return view('pages.participant.teams');
     }
+
+    public function submissionPage() {
+        $submission = Auth::user()->submissions;
+        $cabang = Auth::user()->competition;
+        $lomba = $this->_participantRegistrationService->getMyLomba($cabang);
+        return view('pages.participant.submission', compact('lomba', 'submission'));
+    }
+    
 }

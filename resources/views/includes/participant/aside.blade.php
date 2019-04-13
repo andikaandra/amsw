@@ -69,7 +69,7 @@
                   </div>
                 </div>
               </div>
-              <div class="list-group-item list-group-item-accent-{{ Auth::user()->status >= 5 ? (Auth::user()->status == 5 ? 'info' : 'success' ) : 'danger' }} list-group-item-divider">
+              <div class="list-group-item list-group-item-accent-{{ Auth::user()->status >= 4 ? (Auth::user()->status == 4 ? 'info' : 'success' ) : 'danger' }} list-group-item-divider">
                 <div class="row">
                   <div class="col-10">
                   Upload Submission

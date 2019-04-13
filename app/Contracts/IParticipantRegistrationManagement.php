@@ -8,6 +8,8 @@ interface IParticipantRegistrationManagement {
 
     public function uploadData(array $data);
 
+    public function uploadSubmission(array $data);
+
     public function resetData($id);
 
     public function getAllLomba();

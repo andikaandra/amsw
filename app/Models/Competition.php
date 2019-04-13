@@ -18,10 +18,8 @@ class Competition extends Model
     public function participants() {
         return $this->hasMany('App\Models\Participant');
     }
-
+    
     public function user() {
         return $this->belongsTo('App\Models\User');
     }
-    
-
 }

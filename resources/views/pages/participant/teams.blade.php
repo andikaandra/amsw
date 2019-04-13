@@ -18,7 +18,6 @@
         </div>
         <hr>
         <div class="chart-wrapper mt-3" style="min-height:300px;">
-
         </div>
       </div>
       <div class="card-footer">

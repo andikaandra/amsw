@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Models\Competition;
 use Auth;
 
 class HasVerifiedByAdmin
@@ -11,7 +10,7 @@ class HasVerifiedByAdmin
     public function handle($request, Closure $next)
     {
         //todo
-        if (Auth::user()) {
+        if (Auth::user()->competitions[0]->verification_status == 'verified') {
             return $next($request);
         }
         if ($request->ajax()) {

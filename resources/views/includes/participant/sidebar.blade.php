@@ -33,6 +33,11 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ url('participant/teams')}}">
         <i class="nav-icon fas fa-user-friends"></i> My Team
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url('participant/submission')}}">
+        <i class="nav-icon fas fa-upload"></i> Submission
         <span class="badge badge-primary">NEW</span>
         </a>
     </li>

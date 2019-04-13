@@ -39,8 +39,6 @@ class ParticipantRegistrationController extends Controller
     }
 
     public function uploadData(Request $request) {
-      // return (array) $request->all();
-      // return $request;
       	try {
       		$result = $this->_participantRegistrationService->uploadData((array) $request->all());
         } catch (\Exception $e) {
@@ -50,4 +48,16 @@ class ParticipantRegistrationController extends Controller
         }
         return redirect()->back()->with('success', 'Successfully upload data'); 
     }
+
+    public function uploadSubmission(Request $request) {
+        try {
+          $result = $this->_participantRegistrationService->uploadSubmission((array) $request->all());
+        } catch (\Exception $e) {
+            $message = 'Upload data: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+            Log::emergency($message);
+            return redirect()->back()->with('error', $e->getMessage());  
+        }
+        return redirect()->back()->with('success', 'Successfully upload submission'); 
+    }
+
 }

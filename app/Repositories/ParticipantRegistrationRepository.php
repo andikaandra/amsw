@@ -7,6 +7,7 @@ use App\Models\CompetitionManagement;
 use Illuminate\Http\Request;
 use App\Models\Participant;
 use App\Models\Competition;
+use App\Models\Submission;
 use App\Models\Payment;
 use App\Models\User;
 use Validator;
@@ -36,6 +37,11 @@ class ParticipantRegistrationRepository implements IParticipantRegistrationRepos
     public function checkCabangOpen($competition) {
       $cabang = CompetitionManagement::where('name', $competition)->first();
       return $cabang->registration_status=='open' ? 1 : 0;
+    }
+
+    public function checkCabangSubmissionOpen($competition) {
+      $cabang = CompetitionManagement::where('name', $competition)->first();
+      return $cabang->submission_status=='open' ? 1 : 0;      
     }
 
     public function changeUniversity($id, $university) {
@@ -72,6 +78,10 @@ class ParticipantRegistrationRepository implements IParticipantRegistrationRepos
 
     public function newPayment(array $data) {
       Payment::create($data);
+    }
+
+    public function newSubmission(array $data) {
+      Submission::create($data);
     }
 
 }

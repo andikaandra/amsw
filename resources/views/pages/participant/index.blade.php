@@ -33,6 +33,9 @@
             @elseif(Auth::user()->status > 3)
               You will find relevant information like payment and account status,
               submissions and many things. You have been verified <i class="fas fa-check text-info"></i></p>
+              @if(Auth::user()->status == 5)
+              Congratulation, your registration and submission has been finished, please wait for further information. 
+              @endif
             @else
               You can begin your registration from Registration menu or just click <a href="{{@url('participant/registration')}}">here</a>.</p>
             @endif

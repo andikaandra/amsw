@@ -57,6 +57,9 @@ Route::prefix('participant')->middleware(['has_verify_email'])->group(function (
 
         Route::middleware(['has_verified_by_admin'])->group(function () {
             Route::get('/teams', 'ParticipantController@teamsPage');
+            Route::get('/submission', 'ParticipantController@submissionPage');
+
+            Route::post('/upload/submission', 'ParticipantRegistrationController@uploadSubmission')->name('upload.submission');
         });
     });
 });

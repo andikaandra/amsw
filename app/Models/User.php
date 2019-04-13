@@ -41,4 +41,8 @@ class User extends Authenticatable
     public function competitions() {
         return $this->hasMany('App\Models\Competition');
     }
+
+    public function competitionData() {
+        return $this->belongsTo('App\Models\Competition');
+    }
 }

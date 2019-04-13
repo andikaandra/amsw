@@ -19,15 +19,34 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
         $this->_participantsRegistration = $repo;
     }
 
+    public function getAllLomba() {
+        return $this->_participantsRegistration->getAllLomba();
+    }
+
+    public function getMyLomba($name) {
+        return $this->_participantsRegistration->getMyLomba($name);
+    }
+
     public function resetData($id) {
+        if (Auth::user()->status>=3) {
+            return redirect('participant')->withErrors(['Error'=>'Whoops, something wrong!']);
+        }
         $this->_participantsRegistration->resetData($id);
     }
 
     public function chooseCabang(array $data) {
+        if (Auth::user()->status>=2) {
+            return redirect('participant')->withErrors(['Error'=>'Whoops, something wrong!']);
+        }
         $this->_participantsRegistration->chooseCabang($data['user'], $data['competition']);
     }
 
     public function uploadData(array $data){
+        $status = $this->_participantsRegistration->checkCabangOpen(Auth::user()->competition);
+        //check cabang open or not
+        if (!$status) {
+            return redirect('participant')->withErrors(['Error'=>'Whoops, something wrong!']);
+        }
         $validator = Validator::make($data, [
             'university' =>  'required|max:255',
             'nama_bank' => 'required|max:255',
@@ -44,6 +63,9 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
+
+
+        $this->_participantsRegistration->changeUniversity($data['user'], $data['university']);
 
         $rules = [];
 

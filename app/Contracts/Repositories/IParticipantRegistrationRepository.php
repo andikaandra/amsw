@@ -15,6 +15,15 @@ interface IParticipantRegistrationRepository {
     public function newPayment(array $data);
 
     public function resetData($id);
+
+    public function getAllLomba();
+
+    public function checkCabangOpen($competition);
+
+    public function getMyLomba($name);
+
+    public function changeUniversity($id, $university);
+    
 }
 
 ?>

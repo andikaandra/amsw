@@ -21,10 +21,13 @@
         @if(Auth::user()->status > 1 && Auth::user()->status < 3)
           <form id="reset" method="post" action="{{route('reset.data')}}">
             @csrf
+
           <div class="alert alert-info">
-            You choose <strong>{{Auth::user()->competition}}</strong> As your competition, 
+            <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register <strong>{{Auth::user()->competition}}</strong> is <strong>Rp {{ number_format($lomba->registration_amount + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
+          <hr>
+{{--           <p>IMARC - Photography wave: {{$lomba->gelombang_sekarang}}</p> --}}
              @if(Auth::user()->status < 4 )
-              Reset your data <a href="#" onclick="$('#reset').submit(); return false;" id="submit">here</a>.
+              After you click submit button you cannot undo the changes. If you would like to start over, you may <a href="#" style="text-decoration: none;" onclick="$('#reset').submit(); return false;" id="submit">Click here to reset</a>
              @endif
           </div>
           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
@@ -52,11 +55,12 @@
             @include('includes.participant.form.upload-data')
           @elseif(Auth::user()->status==3)
             <div class="alert alert-info">
-              Tunggu dikonfirmasi
+              Your registration and payment data is still to <strong>verify</strong>.<br>
+              Please contact .... for more information
             </div>
           @else
             <div class="alert alert-info">
-              Congratulation, your registration data has been verified.
+              <strong>Congratulation</strong>, your registration data has been verified.
             </div>
           @endif
         </div>

@@ -38,7 +38,7 @@
   </div>
   <input type="hidden" name="user" value="{{Auth::user()->id}}">
   <input type="hidden" id="jumlah_peserta" name="jumlah_peserta" value="">
-  <small class="text-danger">* By submitting this form, you cant reset your registration data</small><br>
+  <small class="text-danger">* By submitting this form, you cannot reset your registration data</small><br>
   <button class="btn btn-sm btn-info text-white" type="submit">
     <i class="far fa-paper-plane"></i>&nbsp; Submit
   </button>

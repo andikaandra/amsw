@@ -3,6 +3,7 @@ namespace App\Repositories;
 
 // use required dependencies
 use App\Contracts\Repositories\IParticipantRegistrationRepository;
+use App\Models\CompetitionManagement;
 use Illuminate\Http\Request;
 use App\Models\Participant;
 use App\Models\Competition;
@@ -13,8 +14,32 @@ use Auth;
 
 class ParticipantRegistrationRepository implements IParticipantRegistrationRepository
 {
+
+    public function getAllLomba() {
+      return CompetitionManagement::all();
+    }
+
+    public function getMyLomba($name) {
+        return CompetitionManagement::where('name', $name)->first();
+    }
+
     public function chooseCabang($id, $competition) {
-  		User::where('id', $id)->update(['status' => 2, 'competition' => $competition]);
+      $status = $this->checkCabangOpen($competition);
+      if ($status) {
+    		User::where('id', $id)->update(['status' => 2, 'competition' => $competition]);
+      }
+      else{
+        return redirect('participant')->withErrors(['Error'=>'Whoops, something wrong!']);
+      }
+    }
+
+    public function checkCabangOpen($competition) {
+      $cabang = CompetitionManagement::where('name', $competition)->first();
+      return $cabang->registration_status=='open' ? 1 : 0;
+    }
+
+    public function changeUniversity($id, $university) {
+      User::find($id)->update(['university' => $university]);
     }
 
     public function resetData($id) {

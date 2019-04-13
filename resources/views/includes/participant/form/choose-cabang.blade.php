@@ -3,11 +3,13 @@
   <div class="form-group">
     <label for="competition">Competition Branch</label>
     <select class="form-control" name="competition" id="cabang-list" required>
-      <option value="Essay">Essay</option>
-      <option value="Literature Review">Literature Review</option>
-      <option value="Public Poster">Public Poster</option>
-      <option value="Research Paper">Research Paper</option>
-      <option value="Educational Video">Educational Video</option>
+      @foreach($listLomba as $lomba)
+        @if($lomba->registration_status=="open")
+        <option value="{{$lomba->name}}">{{$lomba->name}}</option>
+        @else
+        <option value="{{$lomba->name}}" disabled>{{$lomba->name}}</option>
+        @endif
+      @endforeach
     </select>
   </div>
   <div class="rule-box">

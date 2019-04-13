@@ -9,5 +9,9 @@ interface IParticipantRegistrationManagement {
     public function uploadData(array $data);
 
     public function resetData($id);
+
+    public function getAllLomba();
+
+    public function getMyLomba($name);
 }
 ?>

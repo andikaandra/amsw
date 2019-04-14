@@ -50,6 +50,8 @@ Route::prefix('participant')->middleware(['has_verify_email'])->group(function (
 	Route::get('/registration', 'ParticipantController@registrationPage');
     Route::post('/registration/choose-cabang', 'ParticipantRegistrationController@chooseCabang')->name('choose.cabang');
 
+    Route::get('/download/templates/cv', 'ParticipantController@getCVTemplate');
+
 
     Route::middleware(['has_choose_cabang'])->group(function () {
         Route::post('/registration/upload-data', 'ParticipantRegistrationController@uploadData')->name('upload.data');

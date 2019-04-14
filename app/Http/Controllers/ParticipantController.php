@@ -33,8 +33,9 @@ class ParticipantController extends Controller
     }
 
     public function teamsPage() {
-        return Auth::user()->competitions[0]->participants;
-        return view('pages.participant.teams');
+        // return Auth::user();
+        $participants = Auth::user()->competitions[0]->participants;
+        return view('pages.participant.teams', compact('participants'));
     }
 
     public function submissionPage() {
@@ -43,5 +44,10 @@ class ParticipantController extends Controller
         $lomba = $this->_participantRegistrationService->getMyLomba($cabang);
         return view('pages.participant.submission', compact('lomba', 'submission'));
     }
+
+    public function getCVTemplate() {
+        return response()->download(storage_path("app/public/files/curriculum_vitae_template.docx"));
+    }
+
     
 }

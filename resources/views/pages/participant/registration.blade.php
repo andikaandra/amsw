@@ -95,7 +95,7 @@
     var addCols = function (num){
         for (var iter = 1; iter <= num; iter++) {
             var myCol = $('<div class=""></div>');
-            var myPanel = $('<div class="col-md-12"><div align="center"><strong>Participant '+iter+'</strong></div><div class="form-group"><label for="nama'+iter+'">Full Name</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-group"><label for="">Personal Data</label><br><input type="file" accept="application/zip" name="file'+iter+'" id="file" required><small class="form-text text-muted">File must be .zip extension contains <em>Curriculum vitae</em>, ID card, Student card, 4x6 photo , Max size 5 mb.</small><a href="#">Download CV templates</a></div></div><hr>');
+            var myPanel = $('<div class="col-md-12"><div align="center"><strong>Participant '+iter+'</strong></div><div class="form-group"><label for="nama'+iter+'">Full Name</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-group"><label for="">Personal Data</label><br><input type="file" accept="application/zip" name="file'+iter+'" id="file" required><small class="form-text text-muted">File must be .zip extension contains <em>Curriculum vitae</em>, ID card, Student card, 4x6 photo , Max size 5 mb.</small><a href="{{url('participant/download/templates/cv')}}">Download CV templates</a></div></div><hr>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#participant-box');
         }

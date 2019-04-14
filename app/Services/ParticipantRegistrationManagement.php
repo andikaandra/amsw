@@ -102,17 +102,31 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
             return redirect('participant')->withErrors(['Error'=>'Whoops, something wrong!']);
         }
         //todo: spesifikasikan jumlah max size sesuai cabang (kalau ada)
-        $validator = Validator::make($data, [
-            'title' => 'required|max:128',
-            'description' => 'required|max:255',
-            'file' => 'bail|required|max:10000|mimes:zip'
-        ]);
+        if (Auth::user()->competition == "Educational Video") {
+            $validator = Validator::make($data, [
+                'title' => 'required|max:128',
+                'description' => 'required|max:255',
+                'file' => 'required|max:255'
+            ]);
+        }
+        else{
+            $validator = Validator::make($data, [
+                'title' => 'required|max:128',
+                'description' => 'required|max:255',
+                'file' => 'bail|required|max:8000|mimes:zip'
+            ]);
+        }
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $path = $data['file']->store('public/submissions');
+        if (Auth::user()->competition == "Educational Video") {
+            $path = $data['file'];
+        }
+        else{
+            $path = $data['file']->store('public/submissions');
+        }
         
         $this->_participantsRegistration->newSubmission(['competition_id' => Auth::user()->competitions[0]->id, 'competition_user_id' => $data['user'], 'title' => $data['title'], 'description' => $data['description'], 'file_path' => $path]);
 

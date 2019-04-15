@@ -1,6 +1,6 @@
 @extends('layouts.participant')
 
-@section('path', 'Dashboard')
+@section('path', 'Submission')
 
 @section('style')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css" />

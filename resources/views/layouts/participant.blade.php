@@ -32,6 +32,28 @@
         box-shadow: 1px 8px 20px grey;
           -webkit-transition:  box-shadow .2s ease-in;
       }
+
+      .heartbeat {
+        animation: .8s infinite beatHeart;
+      }
+
+      @keyframes beatHeart {
+      0% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.1);
+      }
+      40% {
+        transform: scale(1);
+      }
+      60% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
     </style>
     @yield('style')
   </head>
@@ -74,7 +96,7 @@
     </div>
     <footer class="app-footer">
       <div>
-        <span>Hand-crafted & made with <i class="fas fa-heart" style="color: red" aria-hidden="true"></i></span>
+        <span>Copyright AMSW 2019 © | Handcrafted & Nurtured with huge <i class="fas fa-heart heartbeat" style="color: red" aria-hidden="true"></i> by Software Silo</span>
       </div>
     </footer>
     <!-- CoreUI and necessary plugins-->
@@ -84,6 +106,21 @@
     <script src="{{asset('dashboard/node_modules/pace-progress/pace.min.js')}}"></script>
     <script src="{{asset('dashboard/node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('dashboard/node_modules/@coreui/coreui/dist/js/coreui.min.js')}}"></script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+      (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/5cb4c169d6e05b735b42b36b/default';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+      })();
+      </script>
+      <!--End of Tawk.to Script-->
+
     <!-- Plugins and scripts required by this view-->
     {{-- <script src="{{asset('dashboard/node_modules/chart.js/dist/Chart.min.js')}}"></script> --}}
 {{--     <script src="{{asset('dashboard/node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js')}}"></script> --}}

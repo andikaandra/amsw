@@ -1,6 +1,6 @@
 @extends('layouts.participant')
 
-@section('path', 'Dashboard')
+@section('path', 'My Team')
 
 @section('style')
 

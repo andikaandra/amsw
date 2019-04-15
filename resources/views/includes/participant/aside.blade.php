@@ -1,11 +1,4 @@
-      <aside class="aside-menu">
-        <ul class="nav nav-tabs" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link">
-              <i class="icon-list"></i>
-            </a>
-          </li>
-        </ul>
+      <aside class="aside-menu">        
         <!-- Tab panes-->
         <div class="tab-content">
           <div class="tab-pane active" id="timeline" role="tabpanel">

@@ -18,31 +18,49 @@
           </div>
         </div>
         <hr>
-        @if (\Session::has('success'))
+        @if(Auth::user()->status > 1 && Auth::user()->status < 3)
+          <form id="reset" method="post" action="{{route('reset.data')}}">
+            @csrf
+
+          <div class="alert alert-info">
+            <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register <strong>{{Auth::user()->competition}}</strong> is <strong>Rp {{ number_format($lomba->registration_amount + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
+          <hr>
+             @if(Auth::user()->status < 4 )
+              After you click submit button you cannot undo the changes. If you would like to start over, you may <a href="#" style="text-decoration: none;" onclick="$('#reset').submit(); return false;" id="submit">Click here to reset</a>
+             @endif
+          </div>
+          <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+          </form>
+        @endif
+        @if($errors->any())
+          <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+              {{ $error }}<br>
+            @endforeach
+          </div>
+        @elseif(\Session::has('success'))
             <div class="alert alert-success">
               {!! \Session::get('success') !!}
             </div>
-        @endif
-        @if (\Session::has('error'))
+        @elseif(\Session::has('error'))
             <div class="alert alert-danger">
               {!! \Session::get('error') !!}
             </div>
         @endif
         <div class="chart-wrapper mt-3" style="min-height:300px;">
-          @if(Auth::user()->status > 1)
-            <div class="alert alert-info">
-              You choose <strong>{{Auth::user()->competition}}</strong> As your competition, 
-               @if(Auth::user()->status < 4 )
-                Reset your data here.
-               @endif
-            </div>
-          @endif
           @if(Auth::user()->status==1)
             @include('includes.participant.form.choose-cabang')
           @elseif(Auth::user()->status==2)
             @include('includes.participant.form.upload-data')
           @elseif(Auth::user()->status==3)
-            hjh
+            <div class="alert alert-info">
+              Your registration and payment data is still to <strong>verify</strong>.<br>
+              Please contact .... for more information
+            </div>
+          @else
+            <div class="alert alert-info">
+              <strong>Congratulation</strong>, your registration data has been verified.
+            </div>
           @endif
         </div>
       </div>
@@ -77,7 +95,7 @@
     var addCols = function (num){
         for (var iter = 1; iter <= num; iter++) {
             var myCol = $('<div class=""></div>');
-            var myPanel = $('<div class="col-md-12"><div align="center"><strong>Participant '+iter+'</strong></div><div class="form-group"><label for="nama'+iter+'">Full Name</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-row"><div class="form-group col-md-6"><label for=""><em>Curriculum Vitae</em></label><br><input type="file" accept="application/pdf" name="cv'+iter+'" id="file" required><small class="form-text text-muted">File must be .pdf extension, Max size 1 mb.</small><a href="#">Download CV templates</a></div><div class="form-group col-md-6"><label for="">4x6 Photo</label><br><input type="file" accept="image/*" name="foto'+iter+'" id="file" required><small class="form-text text-muted">Max size 1 mb.</small></div></div><div class="form-row my-2"><div class="form-group col-md-6"><label for="">ID Card(KTP)</label><br><input type="file" accept="image/*" name="ktp'+iter+'" id="file" required><small class="form-text text-muted">Max size 1 mb.</small></div><div class="form-group col-md-6"><label for="">Student ID Card(KTM)</label><br><input type="file" accept="image/*" name="ktm'+iter+'" id="file" required><small class="form-text text-muted">Max size 1 mb.</small></div></div></div><hr>');
+            var myPanel = $('<div class="col-md-12"><div align="center"><strong>Participant '+iter+'</strong></div><div class="form-group"><label for="nama'+iter+'">Full Name</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-group"><label for="">Personal Data</label><br><input type="file" accept="application/zip" name="file'+iter+'" id="file" required><small class="form-text text-muted">File must be .zip extension contains <em>Curriculum vitae</em>, ID card, Student card, 4x6 photo , Max size 5 mb.</small><a href="{{url('participant/download/templates/cv')}}">Download CV templates</a></div></div><hr>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#participant-box');
         }

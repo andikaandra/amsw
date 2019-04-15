@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function payments() {
         return $this->hasMany('App\Models\Payment');
     }
+    public function submissions() {
+        return $this->hasOne('App\Models\Submission', 'competition_user_id', 'id');
+    }
+
 }

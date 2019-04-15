@@ -17,10 +17,7 @@ class Participant extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('competition_id')->unsigned();
             $table->string('name');
-            $table->string('cv_path');
-            $table->string('foto_path');
-            $table->string('ktp_path');
-            $table->string('ktm_path');
+            $table->string('file_path');
             $table->timestamps();
         });
     }

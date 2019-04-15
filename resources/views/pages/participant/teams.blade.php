@@ -18,13 +18,13 @@
         </div>
         <hr>
         <div class="chart-wrapper mt-3" style="min-height:300px;">
-          <h6>Your Data</h6>
+          <h6><strong>Your Data</strong></h6>
           <ul>
             <li><p>University : {{Auth::user()->university}}</p></li>
             <li><p>Competition Branch : {{Auth::user()->competition}}</p></li>
-            <li><p>Wave : {{Auth::user()->competitions[0]->wave}}</p></li>
+            <li><p>Registered during wave : {{Auth::user()->competitions[0]->wave}}</p></li>
           </ul>
-          <h6>Your Team</h6>
+          <h6><strong>Your Team Members</strong></h6>
           <ol>
           @foreach($participants as $participant)
             <li><p>Name : {{$participant->name}}</p></li>

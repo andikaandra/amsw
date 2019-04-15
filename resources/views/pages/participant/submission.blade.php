@@ -3,6 +3,7 @@
 @section('path', 'Dashboard')
 
 @section('style')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css" />
 
 @endsection
 @section('content')
@@ -29,7 +30,7 @@
                 <br>Title may not exceed 256 characters
               @endif
               @if ($errors->has('description'))
-                <br>Description may not exceed 256 characters
+                <br>Description may not exceed 700 characters
               @endif
             </div>
           @elseif(\Session::has('success'))
@@ -44,7 +45,7 @@
 
             {{-- ceksudah upload apa belum --}}
             @if(isset($submission))
-              <p>You have uploaded "{{$submission->title}}".</p>
+              <p>You have uploaded "<strong>{{$submission->title}}</strong>".</p>
               @if(Auth::user()->competition == "Educational Video")
               <p>Video Link : <a target="_blank" href="{{$submission->file_path}}">here</a></p>
               @endif
@@ -52,19 +53,24 @@
             @else
               @if($lomba->submission_status=='close')
                 <div class="alert alert-danger">
-                  Sorry, you cant submit your work for a while!. Submissions for <strong>{{$lomba->name}}</strong> is not open.
+                  Sorry, submissions for <strong>{{$lomba->name}}</strong> is not open. Contact the commitee for more details.
                 </div>
               @else
-                <form method="post" id="" enctype="multipart/form-data" action="{{route('upload.submission')}}">
+                <form method="post" id="submission" enctype="multipart/form-data" action="{{route('upload.submission')}}">
                   @csrf
                   <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" class="form-control" name="title" placeholder="Your submission title" maxlength="128" required>
                   </div>
                   <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea class="form-control" name="description" rows="3" id="field" onkeyup="countChar(this)" maxlength="255" required>Describe your submission</textarea>
-                    <small id="charNum">0</small>/<small>255</small>
+                    <label for="description">Description</label>                    
+                    <div id="editor">
+                        <p>Describe your submission.</p>
+                    </div>
+                    <small id="charNum">0</small>/<small>700</small>
+
+                    <input type="hidden" name="description">
+
                   </div>
                   <div class="form-group">
                   @if(Auth::user()->competition == "Educational Video")
@@ -94,10 +100,48 @@
 @endsection
 
 @section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.js"></script>
+
 <script>
-      function countChar(val) {
-        var len = val.value.length;
-          $('#charNum').text(len);
+    @if(!isset($submission))
+
+      function countChar(val) {        
+          $('#charNum').text(val);
       };
+
+      const toolbarOptions = ['bold', 'italic', 'underline', 'strike'];
+
+      const quill = new Quill('#editor', {
+        theme: 'snow',        
+      });
+
+      quill.on('text-change', function(delta, old, source) {
+        const desc_len = quill.getLength();
+        if (quill.getLength() > 700) {
+          quill.deleteText(700, quill.getLength());
+          $('#charNum').text(700);
+
+        } else {
+
+        countChar(desc_len);
+        }
+      });
+
+
+      $("#submission").submit(function(e) {                
+        var myEditor = document.querySelector('#editor')
+        var html = myEditor.children[0].innerHTML
+
+        if (!html.length) {
+          alert("Cannot be empty!");
+          return false;
+        }
+          
+        $("input[name='description']").val(html);
+
+      });
+
+      @endif
+
     </script>
 @endsection

@@ -6,6 +6,17 @@
 
 @endsection
 @section('content')
+
+@if(\Session::has('email_verified'))
+<div class="row">
+  <div class="col-md-12">
+      <div class="alert alert-success">
+        <p>{!! \Session::get('email_verified') !!}</p>
+      </div>
+  </div>
+</div>
+@endif
+
     <div class="card card-content">
       <div class="card-body">
         <div class="row">
@@ -13,7 +24,7 @@
             <h4 class="card-title mb-0">AMSW <?php echo date("Y"); ?></h4>
             <div class="small text-muted">Dashboard</div>
           </div>
-          <div class="col-sm-7 d-none d-md-block">            
+          <div class="col-sm-7 d-none d-md-block">
           </div>          
         </div>
         <hr>
@@ -32,7 +43,7 @@
               verify your payment(s).</p>
             @elseif(Auth::user()->status > 3)
               You will find relevant information like payment and account status,
-              submissions and many things. You have been verified <i class="fas fa-check text-info"></i></p>
+              submissions and many things. You have been verified by the committee. Check out the <strong>Submissions</strong> menu if you're ready to upload your work.</p>
               @if(Auth::user()->status == 5)
               Congratulation, your registration and submission has been finished, please wait for further information. 
               @endif

@@ -21,6 +21,7 @@ Route::post('register', 'Auth\RegisterController@register');
 Route::get('login', 'Auth\LoginController@loginPage');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LogoutController@logout');
+ROute::get('verify/email/{hash}', 'ParticipantController@verifyEmail');
 
 // Auth::routes();
 
@@ -35,14 +36,24 @@ Route::prefix('admin')->group(function() {
     Route::get('teams', 'ParticipantManagementController@getAllTeams');
     Route::get('teams/{id}/participants', 'ParticipantManagementController@getParticipantsByCompId');
     Route::put('teams/{id}/accept', 'ParticipantManagementController@acceptParticipant');
-    
+    Route::put('teams/{id}/decline', 'ParticipantManagementController@declineParticipant');
+    Route::get('participant/{id}/files', 'ParticipantManagementController@downloadParticipantFiles');
+
+    // payments
+    Route::get('payments/{id}', 'ParticipantManagementController@viewPayment');
+
     // comps routes
     Route::get('competitions', 'CompetitionManagementController@getAllCompetitions');
     Route::get('competitions/{comp_id}', 'CompetitionManagementController@findCompetition');
     Route::put('competitions/{comp_id}', 'CompetitionManagementController@updateCompetition');
 
     // registrations
-    Route::get('registration/essays', 'AdminController@essayRegistration');
+    Route::get('registration/essay', 'AdminController@essayRegistration');
+    Route::get('registration/literature-review', 'AdminController@litRevRegistration');
+    Route::get('registration/public-poster', 'AdminController@pubPosRegistration');
+    Route::get('registration/research-paper', 'AdminController@researchPaperRegistration');
+    Route::get('registration/educational-video', 'AdminController@educationalVideoRegistration');
+
 });
 
 

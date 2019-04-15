@@ -7,7 +7,7 @@
 @endsection
 @section('content')
     <div class="card card-content">
-      <div class="card-body">
+      <div class="card-body">        
         <div class="row">
           <div class="col-sm-5">
             <h4 class="card-title mb-0">Registration</h4>
@@ -53,15 +53,23 @@
           @elseif(Auth::user()->status==2)
             @include('includes.participant.form.upload-data')
           @elseif(Auth::user()->status==3)
-            <div class="alert alert-info">
-              Your registration and payment data is still to <strong>verify</strong>.<br>
-              Please contact .... for more information
-            </div>
+            @if(Auth::User()->competitions[0]->verification_status == 'declined')
+              <div class="alert alert-danger">
+                  Unfortunately, your registration has been <strong>declined</strong> by the committee. Contact the committee for more details.
+              </div>
+            @else
+              <div class="alert alert-info">
+                Your registration and payment data is still to <strong>verify</strong>.<br>
+                Please contact .... for more information
+              </div>
+            @endif            
           @else
             <div class="alert alert-info">
-              <strong>Congratulation</strong>, your registration data has been verified.
+              <strong>Congratulations</strong>, your registration data has been verified.
             </div>
           @endif
+          {{-- <h6>Here are your account data</h6> --}}
+          
         </div>
       </div>
       <div class="card-footer">

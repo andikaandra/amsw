@@ -12,33 +12,30 @@
         <a class="nav-link" href="{{url('admin')}}">
         <i class="nav-icon icon-home"></i> Home</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="typography.html">
-        <i class="nav-icon icon-pencil"></i> Typography</a>
-    </li>
+    
     <li class="nav-title">Components</li>
     <li class="nav-item nav-dropdown">
         <a class="nav-link nav-dropdown-toggle" href="#">
         <i class="nav-icon icon-puzzle"></i> Registrations</a>
         <ul class="nav-dropdown-items">
         <li class="nav-item">
-            <a class="nav-link" href="{{url('admin/registration/essays')}}">
+            <a class="nav-link" href="{{url('admin/registration/essay')}}">
             <i class="nav-icon icon-puzzle"></i> Essay</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="base/breadcrumb.html">
+            <a class="nav-link" href="{{url('admin/registration/literature-review')}}">
             <i class="nav-icon icon-puzzle"></i> Literature Review</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="base/breadcrumb.html">
+            <a class="nav-link" href="{{url('admin/registration/public-poster')}}">
             <i class="nav-icon icon-puzzle"></i> Public Poster</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="base/breadcrumb.html">
+            <a class="nav-link" href="{{url('admin/registration/research-paper')}}">
             <i class="nav-icon icon-puzzle"></i> Research Paper</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="base/breadcrumb.html">
+            <a class="nav-link" href="{{url('admin/registration/educational-video')}}">
             <i class="nav-icon icon-puzzle"></i> Educational Video</a>
         </li>
 

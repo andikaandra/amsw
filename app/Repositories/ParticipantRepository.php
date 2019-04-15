@@ -20,7 +20,7 @@ class ParticipantRepository implements IParticipantRepository
 
     public function declineTeam($id) {
         $comp = Competition::find($id);
-        return $comp->update(['verification_status' => 'declined']);        
+        return $comp->update(['verification_status' => 'declined', 'payment_status' => 'declined']);        
     }
 
     public function getAllEmailVerifiedTeams($competition) {

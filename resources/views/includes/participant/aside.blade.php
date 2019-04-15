@@ -56,7 +56,7 @@
               <div class="list-group-item list-group-item-accent-{{ Auth::user()->status >= 3 ? (Auth::user()->status == 3 ? 'info' : 'success' ) : 'danger' }} list-group-item-divider">
                 <div class="row">
                   <div class="col-10">
-                  Verified by admin
+                  Verification by committee
                   </div>
                   <div class="col-2 float-right text-right">
                     @if(Auth::user()->status == 3)
@@ -72,7 +72,7 @@
               <div class="list-group-item list-group-item-accent-{{ Auth::user()->status >= 4 ? (Auth::user()->status == 4 ? 'info' : 'success' ) : 'danger' }} list-group-item-divider">
                 <div class="row">
                   <div class="col-10">
-                  Upload Submission
+                  Upload submission
                   </div>
                   <div class="col-2 float-right text-right">
                     @if(Auth::user()->status == 4)

@@ -22,7 +22,8 @@
     <link href="{{asset('dashboard/vendors/pace-progress/css/pace.min.css')}}" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/datatables.min.css"/>
-
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/alertify.min.css"/>    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/themes/bootstrap.min.css"/>
     <style>
     .card-content{
         box-shadow: 0px 0px 0px grey;
@@ -34,6 +35,10 @@
         box-shadow: 1px 8px 20px grey;
           -webkit-transition:  box-shadow .2s ease-in;
       }
+      .form-control:disabled, .form-control[readonly] {
+        background: #fff;
+      }
+      
     </style>
     
     @yield('style')
@@ -364,12 +369,12 @@
     </div>
     <footer class="app-footer">
       <div>
-        <a href="https://coreui.io">CoreUI</a>
+        <a href="https://coreui.io">AMSW 2019</a>
         <span>&copy; 2018 creativeLabs.</span>
       </div>
       <div class="ml-auto">
         <span>Powered by</span>
-        <a href="https://coreui.io">CoreUI</a>
+        <a href="https://coreui.io">AMSW 2019</a>
       </div>
     </footer>
     <!-- CoreUI and necessary plugins-->
@@ -384,7 +389,7 @@
     <script src="{{asset('dashboard/node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js')}}"></script>
     <script src="{{asset('dashboard/js/main.js')}}"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/alertify.min.js"></script>    
     @yield('script')
 
   </body>

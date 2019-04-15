@@ -132,33 +132,97 @@ $(document).ready(function() {
             alert('error');
             console.log(error);
             return;
+        }        
+
+        const participants = compData[0].participants;
+        let participants_html = '';
+
+        for (let index = 0; index < participants.length; index++) {
+            participants_html +=    `<div class="participant-${index+1}">
+                    <div class="form-group">
+                        <h5><strong>Participant ${index+1}</strong></h5>
+                        <label for="participant">Name</label>
+                        <input type="text" name="" id="" value="${participants[index].name}" class="form-control"
+                        readonly>
+                        <br>
+                        <a class="text-info" href="/admin/participant/${participants[index].id}/files">Download Participant's Files</a>
+                    </div>
+                    <hr>                        
+                </div>`
+            
         }
 
-        console.log(compData[0]);
+        const payment = compData[0].user.payments[0];        
 
-        // compData[0].map((el, idx) => {
+        const payment_html = `<div class="payment">
+            <div class="form-group">
+                <h5><strong>Payment</strong></h5>                            
+                <a class="text-info" target='_blank' href="/admin/payments/${payment.id}">Check Payment </a>
+            </div>
+        </div>`;
 
-        //     el.participants.map((participant, index) => {
-
-        //     })
-        //     const participants = ``;
-
-        //     const html = `<div class="participant-${idx+1}">
-        //             <div class="form-group">
-        //                 <h5><strong>Participant ${idx+1}</strong></h5>
-        //                 <label for="participant">${el.}</label>
-        //                 <input type="text" name="" id="" value="Adis Azhar" class="form-control"
-        //                 readonly>
-        //                 <br>
-        //                 <a class="text-info" href="#">Download Participant's Files</a>
-        //             </div>
-        //             <hr>                        
-        //         </div>`;
-        // });
-
+        $(".registration-form").html(participants_html + payment_html);
         $(".modal.registration").modal('show');
 
     });
+
+    $(document).on('click', '.comp-accept', function() {
+
+        const comp_id = $(this).attr('comp-id');
+
+        alertify.confirm('Confirmation', 'Would you like to accept this team?', async function() {
+                let res;
+                try {
+                    res = await $.ajax({
+                                url: `/admin/teams/${comp_id}/accept`, 
+                                method: 'PUT',
+                                data: {'_token': '{{ csrf_token() }}'}
+                            });    
+                } catch (error) {
+                    alert("error accepting");
+                    console.log(error);
+                    return;
+                }
+                
+                alertify.success('Team and participants accepted!');
+                essays_table.ajax.reload(null, false);
+
+            }, 
+            function() { 
+                // alertify.error('Cancel')
+            }
+        );
+    });
+
+    $(document).on('click', '.comp-decline', function() {
+
+        const comp_id = $(this).attr('comp-id');
+
+        alertify.confirm('Confirmation', 'Would you like to decline this team?', async function() {
+                let res;
+                try {
+                    res = await $.ajax({
+                                url: `/admin/teams/${comp_id}/decline`, 
+                                method: 'PUT',
+                                data: {'_token': '{{ csrf_token() }}'}
+                            });    
+                } catch (error) {
+                    alert("error declining");
+                    console.log(error);
+                    return;
+                }
+                
+                alertify.success('Team and participants declined!');
+                essays_table.ajax.reload(null, false);
+
+            }, 
+            function() { 
+                // alertify.error('Cancel')
+            }
+        );
+
+    });
+
 
 });
 </script>

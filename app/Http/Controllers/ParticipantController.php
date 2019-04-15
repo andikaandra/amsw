@@ -49,5 +49,19 @@ class ParticipantController extends Controller
         return response()->download(storage_path("app/public/files/curriculum_vitae_template.docx"));
     }
 
+    public function verifyEmail($hash) {
+        try {
+            $user = User::where('email_token', $hash)->first();
+            if (!$user)
+                return "Not found";
+            $user->update(['email_verification' => 'verified']);
+        } catch (Exception $e) {
+            Log::emergency('In email verification ' . $hash . ' ' . $e->getMessage());
+            return $e->getException();
+            return;
+        }
+        return redirect('participant')->with('email_verified', 'Your e-mail has been verified!');
+    }
+
     
 }

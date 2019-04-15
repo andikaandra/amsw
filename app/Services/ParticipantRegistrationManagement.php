@@ -45,7 +45,7 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
         //check cabang open or not
         $status = $this->_participantsRegistration->checkCabangOpen(Auth::user()->competition);
         if (!$status) {
-            return redirect('participant')->withErrors(['Error'=>'Whoops, something wrong!']);
+            return redirect('participant')->withErrors(['Error'=>"We're sorry. The registration for " . Auth::user()->competition . " isn't opened yet."]);
         }
         $validator = Validator::make($data, [
             'university' =>  'required|max:255',
@@ -87,7 +87,7 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
         for ($i=1; $i <=$data['jumlah_peserta'] ; $i++) {
             $file_path = $data['file' . $i]->store('public/file-participants');
 
-            $this->_participantsRegistration->newParticipant($data['user'], $data['nama'.$i], $file_path);
+            $this->_participantsRegistration->newParticipant($competition->id, $data['nama'.$i], $file_path);
         }
 
         $path = $data['bukti_pembayaran']->store('public/payments');
@@ -112,7 +112,7 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
         else{
             $validator = Validator::make($data, [
                 'title' => 'required|max:128',
-                'description' => 'required|max:255',
+                'description' => 'required|max:2000',
                 'file' => 'bail|required|max:8000|mimes:zip'
             ]);
         }

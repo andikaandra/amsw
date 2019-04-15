@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Log;
 
 class RegisterController extends Controller
 {
@@ -90,5 +91,5 @@ class RegisterController extends Controller
         
         return redirect('login')->with('success', 'Account registration succesful!');
 
-    }
+    }    
 }

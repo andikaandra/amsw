@@ -22,9 +22,9 @@ class ParticipantRegistrationController extends Controller
         } catch (\Exception $e) {
             $eMessage = 'Reset Data - User: ' . $request->user_id . ', error: ' . $e->getMessage();
             Log::emergency($eMessage);
-            return redirect()->back()->with('error', 'Whoops, something error!'); 
+            return redirect()->back()->with('error', 'Whoops, an  error has accoured. If it persists, please contact the committe!');
         }
-        return redirect()->back()->with('success', 'Successfully reset data'); 
+        return redirect()->back()->with('success', 'Successfully reset data.'); 
     }
 
     public function chooseCabang(Request $request) {
@@ -33,9 +33,9 @@ class ParticipantRegistrationController extends Controller
     		} catch (\Exception $e) {
   	        $eMessage = 'Choose Competition - User: ' . $request->user . ', error: ' . $e->getMessage();
   	        Log::emergency($eMessage);
-    	    	return redirect()->back()->with('error', 'Whoops, something error!'); 
+            return redirect()->back()->with('error', 'Whoops, an  error has accoured. If it persists, please contact the committe!');
   	    }
-        return redirect()->back()->with('success', 'Successfully choose competition branch'); 
+        return redirect()->back()->with('success', 'Successfully chose competition branch.'); 
     }
 
     public function uploadData(Request $request) {
@@ -44,9 +44,9 @@ class ParticipantRegistrationController extends Controller
         } catch (\Exception $e) {
             $message = 'Upload data: ' . Auth::user()->email . ', error: ' . $e->getMessage();
             Log::emergency($message);
-            return redirect()->back()->with('error', $e->getMessage());  
+            return redirect()->back()->with('error', $e->getMessage());
         }
-        return redirect()->back()->with('success', 'Successfully upload data'); 
+        return redirect()->back()->with('success', 'Successfully uploaded registration data.'); 
     }
 
     public function uploadSubmission(Request $request) {
@@ -55,9 +55,9 @@ class ParticipantRegistrationController extends Controller
         } catch (\Exception $e) {
             $message = 'Upload data: ' . Auth::user()->email . ', error: ' . $e->getMessage();
             Log::emergency($message);
-            return redirect()->back()->with('error', $e->getMessage());  
+            return redirect()->back()->with('error', $e->getMessage());
         }
-        return redirect()->back()->with('success', 'Successfully upload submission'); 
+        return redirect()->back()->with('success', 'Successfully uploaded submission.'); 
     }
 
 }

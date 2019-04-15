@@ -9,8 +9,8 @@
     </li>
     <li class="nav-title">Theme</li>
     <li class="nav-item">
-        <a class="nav-link" href="colors.html">
-        <i class="nav-icon icon-drop"></i> Colors</a>
+        <a class="nav-link" href="{{url('admin')}}">
+        <i class="nav-icon icon-home"></i> Home</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="typography.html">

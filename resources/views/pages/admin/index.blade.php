@@ -1,41 +1,33 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 col-md-12">
+<div class="row">
+    <div class="col-lg-12 col-md-12">
 
-            <div class="card">
-                <div class="card-header">
-                    <h5>Competitions Management</h5>
-                </div>
-                <div class="card-body">
-                   <div class="comps">
-                       <table class="table table-striped comps-table">
-                           <thead>
-                               <tr>
-                                   <th>Name</th>
-                                   <th>Registration Status</th>
-                                   <th>Submission Status</th>
-                                   <th></th>
-                               </tr>
-                           </thead>
-                           <tbody>
-                               {{-- <tr>
-                                   <td>Essay</td>
-                                   <td>Open</td>
-                                   <td>Close</td>
-                                   <th>
-                                       <button class="btn btn-warning comp-info">Info</button>
-                                   </th>
-                               </tr> --}}
-                           </tbody>
-                       </table>
-                   </div>
+        <div class="card card-content">
+            <div class="card-header">
+                <h5>Competitions Management</h5>
+            </div>
+            <div class="card-body">
+                <div class="comps">
+                    <table class="table table-hover table-striped comps-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Registration Status</th>
+                                <th>Submission Status</th>                                
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>                               
+                        </tbody>
+                    </table>
                 </div>
             </div>
-
         </div>
+
     </div>
+</div>
 
 
 <div class="modal comp-management fade" tabindex="-1" role="dialog">
@@ -106,11 +98,18 @@
 $(document).ready(function() {
 
     const compsTable = $('.comps-table').DataTable({
+        responsive: true,
         ajax: '{{url('admin/competitions')}}',
         columns: [
             {data: 'name'},
-            {data: 'registration_status'},
-            {data: 'submission_status'},
+            {data: 'registration_status', render: function(data, type, row) {
+                    return data.replace(/\b\w/g, l => l.toUpperCase());
+                }
+            },
+            {data: 'submission_status', render: function(data, type, row) {
+                    return data.replace(/\b\w/g, l => l.toUpperCase());
+                }
+            },
             {data: 'id', render:function(data, type, row) {
                     return `<button class='btn btn-warning comp-info' comp-id='${data}'>Info</button>`;
                 }, orderable: false

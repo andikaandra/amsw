@@ -27,11 +27,11 @@ class ParticipantRepository implements IParticipantRepository
         return User::where('email_verification', 'verified')->where('role', 'participant')
         ->where('competition', $competition)
         ->whereHas('competitions')
-        ->with(['competitions:id,user_id,wave,verification_status'])->get();
+        ->with(['competitions:id,user_id,wave,verification_status,created_at'])->get();
     }
 
-    public function getParticipantsByCompId($id) {
-        return Competition::find($id)->with('participants')->get();
+    public function getParticipantsByCompId($id) {        
+        return Competition::with(['participants', 'user.payments'])->find($id);
     }
 
 

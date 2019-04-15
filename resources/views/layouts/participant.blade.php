@@ -29,9 +29,9 @@
       }
 
       .card-content:hover{ 
-          box-shadow: 1px 8px 20px grey;
-            -webkit-transition:  box-shadow .2s ease-in;
-        }
+        box-shadow: 1px 8px 20px grey;
+          -webkit-transition:  box-shadow .2s ease-in;
+      }
     </style>
     @yield('style')
   </head>

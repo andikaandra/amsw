@@ -22,7 +22,22 @@
     <link href="{{asset('dashboard/vendors/pace-progress/css/pace.min.css')}}" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/datatables.min.css"/>
+
+    <style>
+    .card-content{
+        box-shadow: 0px 0px 0px grey;
+            -webkit-transition:  box-shadow .2s ease-out;
+          box-shadow: .8px .9px 3px grey;
+      }
+
+      .card-content:hover{ 
+        box-shadow: 1px 8px 20px grey;
+          -webkit-transition:  box-shadow .2s ease-in;
+      }
+    </style>
+    
     @yield('style')
+    
   </head>
   <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
    

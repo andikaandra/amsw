@@ -30,7 +30,7 @@ class ParticipantManagementController extends Controller
         return response()->json(['message' => 'declined'], 200);
     }
     // get particiapnts
-    public function getParticipantsByCompId($id) {
+    public function getParticipantsByCompId($id) {        
         return response()->json([$this->_participantService->getParticipantsByCompId($id)]);
     }
 

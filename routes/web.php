@@ -40,6 +40,9 @@ Route::prefix('admin')->group(function() {
     Route::get('competitions', 'CompetitionManagementController@getAllCompetitions');
     Route::get('competitions/{comp_id}', 'CompetitionManagementController@findCompetition');
     Route::put('competitions/{comp_id}', 'CompetitionManagementController@updateCompetition');
+
+    // registrations
+    Route::get('registration/essays', 'AdminController@essayRegistration');
 });
 
 

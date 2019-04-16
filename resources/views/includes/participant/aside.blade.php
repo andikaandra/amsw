@@ -25,7 +25,7 @@
                     @elseif(Auth::user()->status >= 2)
                       <i class="fa fa-check text-success" aria-hidden="true"></i>
                     @else
-                    <i class="fa fa-times text-danger" aria-hidden="true"></i>
+                    <i data-toggle="tooltip" title="You aren't up to this step yet." class="fa fa-times text-danger" aria-hidden="true"></i>
                     @endif
                   </div>
                 </div>
@@ -41,7 +41,7 @@
                     @elseif(Auth::user()->status >= 3)
                     <i class="fa fa-check text-success" aria-hidden="true"></i>
                     @else
-                    <i class="fa fa-times text-danger" aria-hidden="true"></i>
+                    <i data-toggle="tooltip" title="You aren't up to this step yet." class="fa fa-times text-danger" aria-hidden="true"></i>
                     @endif
                   </div>
                 </div>
@@ -57,11 +57,12 @@
                     @elseif(Auth::user()->status >= 4)
                     <i class="fa fa-check text-success" aria-hidden="true"></i>
                     @else
-                    <i class="fa fa-times text-danger" aria-hidden="true"></i>
+                    <i data-toggle="tooltip" title="You aren't up to this step yet." class="fa fa-times text-danger" aria-hidden="true"></i>
                     @endif
                   </div>
                 </div>
               </div>
+              
               <div class="list-group-item list-group-item-accent-{{ Auth::user()->status >= 4 ? (Auth::user()->status == 4 ? 'info' : 'success' ) : 'danger' }} list-group-item-divider">
                 <div class="row">
                   <div class="col-10">
@@ -73,31 +74,45 @@
                     @elseif(Auth::user()->status >= 5)
                     <i class="fa fa-check text-success" aria-hidden="true"></i>
                     @else
-                    <i class="fa fa-times text-danger" aria-hidden="true"></i>
+                    <i data-toggle="tooltip" title="You aren't up to this step yet." class="fa fa-times text-danger" aria-hidden="true"></i>
                     @endif
                   </div>
                 </div>
               </div>
+
             </div>
-            @if(Auth::user()->status > 5)
+
             <div class="list-group list-group-accent">
-              <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Final Steps</div>
-              <div class="list-group-item list-group-item-accent-success list-group-item-divider">
+              <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Registration for Final - Only for selected participants</div>
+              
+                @if(Auth::user()->status < 5)
+                <div data-toggle="tooltip" title="You aren't up to this step yet." class="list-group-item list-group-item-accent-danger list-group-item-divider">
+                @elseif(Auth::user()->status == 5 )
+                <div class="list-group-item list-group-item-accent-warning list-group-item-divider">
+                @elseif(Auth::user()->status == 6)
+                <div class="list-group-item list-group-item-accent-info list-group-item-divider">
+                @else
+                <div class="list-group-item list-group-item-accent-success list-group-item-divider">
+                @endif
+                
                 <div class="row">
                   <div class="col-10">
                   Final registration
                   </div>
                   <div class="col-2 float-right text-right">
-                    @if(Auth::user()->status > 6)
+                    @if(Auth::user()->status == 5)
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    @elseif(Auth::user()->status == 6)
+                    <i class="fa fa-chevron-circle-left text-info" aria-hidden="true"></i>
+                    @elseif(Auth::user()->status > 6)
                     <i class="fa fa-check text-success" aria-hidden="true"></i>
                     @else
-                    <i class="fa fa-times text-danger" aria-hidden="true"></i>
+                    <i data-toggle="tooltip" title="You aren't up to this step yet." class="fa fa-times text-danger" aria-hidden="true"></i>
                     @endif
                   </div>
                 </div>
               </div>
             </div>
-            @endif
           </div>
         </div>
       </aside>

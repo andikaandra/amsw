@@ -53,6 +53,9 @@
       100% {
         transform: scale(1);
       }
+    }    
+    .list-group-item:hover {
+      font-weight: 600;
     }
     </style>
     @yield('style')

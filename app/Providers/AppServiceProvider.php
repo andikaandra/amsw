@@ -45,6 +45,16 @@ class AppServiceProvider extends ServiceProvider
             'App\Contracts\ICompetitionManagement',
             'App\Services\CompetitionManagement'
         );
+
+        $this->app->bind(
+            'App\Contracts\Repositories\ISubmissionRepository',
+            'App\Repositories\SubmissionRepository'
+        );
+
+        $this->app->bind(
+            'App\Contracts\ISubmissionManagement',
+            'App\Services\SubmissionManagement'
+        );
       
     }
 

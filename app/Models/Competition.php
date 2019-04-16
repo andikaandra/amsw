@@ -22,4 +22,8 @@ class Competition extends Model
     public function user() {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function submission() {
+        return $this->hasOne('App\Models\Submission');
+    }
 }

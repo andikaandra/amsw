@@ -19,7 +19,12 @@
     <li class="nav-title">Main Information</li>
     <li class="nav-item">
         <a class="nav-link" href="{{ url('participant')}}">
-        <i class="nav-icon fas fa-clipboard"></i> Dashboard</a>
+        <i class="nav-icon fas fa-home"></i> Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url('participant/teams')}}">
+        <i class="nav-icon fas fa-user-friends"></i> My Team
+        </a>
     </li>
     @if(Auth::user()->email_verification == 'verified')
     <li class="nav-title">Pre Registration</li>
@@ -30,11 +35,6 @@
     @endif
     {{-- telah diverifikasi oleh admin (status == 4 keatas)--}}
     @if(Auth::user()->status > 3)
-    <li class="nav-item">
-        <a class="nav-link" href="{{ url('participant/teams')}}">
-        <i class="nav-icon fas fa-user-friends"></i> My Team
-        </a>
-    </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ url('participant/submission')}}">
         <i class="nav-icon fas fa-upload"></i> Submission

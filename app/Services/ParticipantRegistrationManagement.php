@@ -105,7 +105,7 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
         if (Auth::user()->competition == "Educational Video") {
             $validator = Validator::make($data, [
                 'title' => 'required|max:128',
-                'description' => 'required|max:255',
+                'description' => 'required|max:2000',
                 'file' => 'required|max:255'
             ]);
         }

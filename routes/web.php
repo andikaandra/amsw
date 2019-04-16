@@ -54,6 +54,10 @@ Route::prefix('admin')->group(function() {
     Route::get('registration/research-paper', 'AdminController@researchPaperRegistration');
     Route::get('registration/educational-video', 'AdminController@educationalVideoRegistration');
 
+    // submissions
+    Route::get('submissions', 'SubmissionController@getAllSubmissions');
+    Route::put('submissions/{comp_id}', 'SubmissionController@acceptSubmission');
+    Route::get('submissions/{id}', 'SubmissionController@getSubmissionDetails');
 });
 
 

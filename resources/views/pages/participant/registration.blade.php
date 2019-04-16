@@ -65,7 +65,7 @@
             @endif            
           @else
             <div class="alert alert-info">
-              <strong>Congratulations</strong>, your registration data has been verified.
+              Your registration data has been verified.
             </div>
           @endif
           {{-- <h6>Here are your account data</h6> --}}

@@ -20,6 +20,8 @@ class Competition extends Migration
             $table->string('payment_status');
             $table->string('verification_status');
             $table->string('competition_status');
+            $table->string('can_go_to_final')->default('no');
+            $table->text('travel_plan')->nullable();
             $table->integer('wave');
             $table->timestamps();
         });

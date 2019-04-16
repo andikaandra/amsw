@@ -45,8 +45,13 @@
               You will find relevant information like payment and account status,
               submissions and many things. You have been verified by the committee. Check out the <strong>Submissions</strong> menu if you're ready to upload your work.</p>
               @if(Auth::user()->status == 5)
-              Congratulation, your registration and submission has been finished, please wait for further information. 
+              Your registration and submission has been finished, please wait for further information. 
+              @elseif(Auth::user()->status == 6 && Auth::user()->competitions[0]->competition_status == 'final'
+              )
+                <p>The committe has viewed your work submission.</p>
+                <p><strong>Congratulations</strong>, you are selected to continue to the Final. Please confirm your availability to attend the Final event <br>at: _____ <br>on: ______.<br>Please click <a href="#">Here</a></p>
               @endif
+
             @else
               You can begin your registration from Registration menu or just click <a href="{{@url('participant/registration')}}">here</a>.</p>
             @endif

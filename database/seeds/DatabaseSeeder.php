@@ -94,17 +94,17 @@ class DatabaseSeeder extends Seeder
             ]);
             
             // participants
-            for ($j=0; $j < 3; $j++) {
-                $comps = ['Essay', 'Literature Review', 'Public Poster', 'Research Paper', 'Educational Video'];
-                $comp_num = mt_rand(0, 4);
+            // for ($j=0; $j < 3; $j++) {
+            //     $comps = ['Essay', 'Literature Review', 'Public Poster', 'Research Paper', 'Educational Video'];
+            //     $comp_num = mt_rand(0, 4);
 
-                Participant::create([
-                    'name' => $faker->name,
-                    'file_path' => $faker->address,
-                    'competition_id' => $comp->id
-                ]);
+            //     Participant::create([
+            //         'name' => $faker->name,
+            //         'file_path' => $faker->address,
+            //         'competition_id' => $comp->id
+            //     ]);
               
-            }
+            // }
 
         }
 

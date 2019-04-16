@@ -101,7 +101,7 @@
                   </div>
                   <div class="col-2 float-right text-right">
                     @if(Auth::user()->status == 5)
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    <i data-toggle="tooltip" title="Committee is still reviewing your work submission." class="fa fa-question-circle" aria-hidden="true"></i>
                     @elseif(Auth::user()->status == 6)
                     <i class="fa fa-chevron-circle-left text-info" aria-hidden="true"></i>
                     @elseif(Auth::user()->status > 6)

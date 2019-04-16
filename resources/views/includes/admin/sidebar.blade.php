@@ -16,7 +16,7 @@
     <li class="nav-title">Competitions</li>
     <li class="nav-item nav-dropdown">
         <a class="nav-link nav-dropdown-toggle" href="#">
-        <i class="nav-icon icon-puzzle"></i> Registrations</a>
+        <i class="nav-icon icon-pencil"></i> Registrations</a>
         <ul class="nav-dropdown-items">
             <li class="nav-item">
                 <a class="nav-link" href="{{url('admin/registration/essay')}}">
@@ -42,7 +42,7 @@
     </li>
     <li class="nav-item nav-dropdown">
         <a class="nav-link nav-dropdown-toggle" href="#">
-        <i class="nav-icon icon-cursor"></i> Submissions</a>
+        <i class="nav-icon icon-note"></i> Submissions</a>
         <ul class="nav-dropdown-items">
         <li class="nav-item">
             <a class="nav-link" href="{{url('admin/verify/submissions/essay')}}">

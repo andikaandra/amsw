@@ -63,6 +63,7 @@ Route::prefix('admin')->group(function() {
     Route::get('verify/submissions/essay', 'AdminController@essaySubmission');
     Route::get('verify/submissions/literature-review', 'AdminController@litrevSubmission');
     Route::get('verify/submissions/public-poster', 'AdminController@pubposSubmission');
+    Route::get('verify/submissions/research-paper', 'AdminController@researchPaperSubmission');
 
 
     Route::get('download/submissions/{id}', 'SubmissionController@downloadSubmission');

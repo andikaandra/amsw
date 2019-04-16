@@ -50,8 +50,8 @@ class ParticipantManagementController extends Controller
     public function viewPayment($id) {
         $payment = Payment::find($id);
         if (!$payment)
-            return response()->json(['message' => 'not found'], 404);
-        return response()->file(storage_path('app') .'/public' . $payment->file_path);
+            return response()->json(['message' => 'not found'], 404);            
+        return response()->file(storage_path('app') .'/public/' . $payment->file_path);
     }
 
 }

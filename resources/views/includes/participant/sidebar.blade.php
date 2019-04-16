@@ -16,32 +16,55 @@
       </a>
     </li>
 
-    <li class="nav-title">Main Information</li>
+    <li class="nav-title">Main</li>
     <li class="nav-item">
         <a class="nav-link" href="{{ url('participant')}}">
         <i class="nav-icon fas fa-home"></i> Home</a>
     </li>
+    @if(Auth::user()->status >= 3)
     <li class="nav-item">
         <a class="nav-link" href="{{ url('participant/teams')}}">
         <i class="nav-icon fas fa-user-friends"></i> My Team
         </a>
     </li>
-    @if(Auth::user()->email_verification == 'verified')
-    <li class="nav-title">Pre Registration</li>
+    @else
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('participant/registration')}}">
-        <i class="nav-icon fas fa-code-branch"></i> Registration</a>
-    </li>
-    @endif
-    {{-- telah diverifikasi oleh admin (status == 4 keatas)--}}
-    @if(Auth::user()->status > 3)
-    <li class="nav-item">
-        <a class="nav-link" href="{{ url('participant/submission')}}">
-        <i class="nav-icon fas fa-upload"></i> Submission
-        <span class="badge badge-primary">NEW</span>
+        <a class="nav-link disabled" href="#">
+        <i class="nav-icon fas fa-user-friends"></i> My Team
         </a>
     </li>
     @endif
+
+    @if(Auth::user()->status > 3)
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url('participant/submission')}}">
+        <i class="nav-icon fas fa-upload"></i> Submission        
+        </a>
+    </li>
+    @else
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#">
+        <i class="nav-icon fas fa-upload"></i> Submission        
+        </a>
+    </li>
+
+    @endif
+
+    @if(Auth::user()->email_verification == 'verified')
+      <li class="nav-title">Registration</li>
+      <li class="nav-item">
+          <a class="nav-link" href="{{ url('participant/registration')}}">
+          <i class="nav-icon fas fa-code-branch"></i> Registration</a>
+      </li>
+    @else
+    <li class="nav-title">Registration</li>
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#">
+        <i class="nav-icon fas fa-code-branch"></i> Registration</a>
+    </li>
+
+    @endif    
+    
     <li class="divider"></li>
     </ul>
 </nav>

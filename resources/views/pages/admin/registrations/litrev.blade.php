@@ -157,6 +157,12 @@ $(document).ready(function() {
         const payment_html = `<div class="payment">
             <div class="form-group">
                 <h5><strong>Payment</strong></h5>                            
+                <label for="">Bank Account Name</label>
+                <input type="text" readonly class="form-control" value="${payment.bank_account_name}">
+                <label for="">Bank Name</label>
+                <input type="text" readonly class="form-control" value="${payment.bank_name}">
+                <label for="">Amount Transferred</label>
+                <input type="text" readonly class="form-control" value="${payment.amount}">  
                 <a class="text-info" target='_blank' href="/admin/payments/${payment.id}">Check Payment </a>
             </div>
         </div>`;

@@ -101,6 +101,7 @@ $(document).ready(function() {
             },
             {data: 'competitions.0.created_at'},            
             {data: 'competitions.0.id', render: function(data, type, row) {
+                console.log(data);
                 if(row.competitions[0].verification_status == 'unverified') {
                     return `<button class='btn btn-success comp-accept mr-2' comp-id='${data}'>Accept</button><button class='btn btn-danger comp-decline mr-2' comp-id='${data}'>Decline</button><button class='btn btn-warning comp-info' comp-id='${data}'>Info</button>`;
                 }
@@ -152,11 +153,19 @@ $(document).ready(function() {
             
         }
 
-        const payment = compData[0].user.payments[0];        
+        const payment = compData[0].user.payments[0]; 
+        
+        console.log(payment);
 
         const payment_html = `<div class="payment">
             <div class="form-group">
                 <h5><strong>Payment</strong></h5>                            
+                <label for="">Bank Account Name</label>
+                <input type="text" readonly class="form-control" value="${payment.bank_account_name}">
+                <label for="">Bank Name</label>
+                <input type="text" readonly class="form-control" value="${payment.bank_name}">
+                <label for="">Amount Transferred</label>
+                <input type="text" readonly class="form-control" value="${payment.amount}">  
                 <a class="text-info" target='_blank' href="/admin/payments/${payment.id}">Check Payment </a>
             </div>
         </div>`;

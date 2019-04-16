@@ -45,4 +45,8 @@ class AdminController extends Controller
     public function pubposSubmission() {
         return view('pages.admin.submissions.pubpos');
     }
+
+    public function researchPaperSubmission() {
+        return view('pages.admin.submissions.research-paper');
+    }
 }

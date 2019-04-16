@@ -75,8 +75,8 @@
                   <div class="form-group">
                   @if(Auth::user()->competition == "Educational Video")
                     <label for="">Video</label>
-                    <br><input type="text" class="form-control" name="file" value="" placeholder="Your uploaded video link" maxlength="255" required><br>
-                    <small class="form-text text-muted">Video must uploaded before submitted</small>
+                    <br><input type="text" class="form-control" name="file" value="" placeholder="Example: https://youtube.com/watch?podH9ijs" maxlength="255" required><br>
+                    <small class="form-text text-muted">The link contains your video. It must be accessible for us. It must be the <strong>complete</strong> link!</small>
                   @else
                     <label for="">File</label>
                     <br><input type="file" name="file" accept="application/zip" value="" required><br>

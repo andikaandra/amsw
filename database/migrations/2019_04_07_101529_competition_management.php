@@ -20,8 +20,9 @@ class CompetitionManagement extends Migration
             $table->integer('current_wave');
             $table->string('registration_status');
             $table->string('submission_status');
+            $table->string('final_registration_status');
             $table->decimal('registration_amount', 15, 2);
-            $table->decimal('final_amount', 15, 2);    
+            $table->decimal('final_amount', 15, 2);                    
             $table->timestamps();
         });
     }

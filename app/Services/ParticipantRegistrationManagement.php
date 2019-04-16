@@ -54,11 +54,7 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
             'jumlah_tf' => 'required|max:10',
             'user' =>  'required',
             'jumlah_peserta' => 'required|numeric|min:3|max:6',
-        ]);
-
-        if (strlen(str_replace('.','',$data['jumlah_tf']))>=10) {
-            return redirect()->back()->withErrors(['Transfer amount'=>'Wrong number format']);
-        }
+        ]);        
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
@@ -125,7 +121,7 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
             $path = $data['file'];
         }
         else{
-            $path = $data['file']->store('public/submissions');
+            $path = str_replace("public","", $data['file']->store('public/submissions'));
         }
         
         $this->_participantsRegistration->newSubmission(['competition_id' => Auth::user()->competitions[0]->id, 'competition_user_id' => $data['user'], 'title' => $data['title'], 'description' => $data['description'], 'file_path' => $path]);

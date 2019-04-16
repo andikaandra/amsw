@@ -58,6 +58,14 @@ Route::prefix('admin')->group(function() {
     Route::get('submissions', 'SubmissionController@getAllSubmissions');
     Route::put('submissions/{comp_id}', 'SubmissionController@acceptSubmission');
     Route::get('submissions/{id}', 'SubmissionController@getSubmissionDetails');
+
+    Route::get('verify/submissions/educational-video', 'AdminController@educationalVideoSubmission');
+    Route::get('verify/submissions/essay', 'AdminController@essaySubmission');
+    Route::get('verify/submissions/literature-review', 'AdminController@litrevSubmission');
+    Route::get('verify/submissions/public-poster', 'AdminController@pubposSubmission');
+
+
+    Route::get('download/submissions/{id}', 'SubmissionController@downloadSubmission');
 });
 
 

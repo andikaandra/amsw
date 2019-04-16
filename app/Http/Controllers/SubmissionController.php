@@ -13,8 +13,8 @@ class SubmissionController extends Controller
         $this->_smService = $service;
     }
 
-    public function getAllSubmissions() {
-        return response()->json(['data' => $this->_smService->getAllSubmissions()]);
+    public function getAllSubmissions(Request $request) {
+        return response()->json(['data' => $this->_smService->getAllSubmissions($request->competition)]);
     }
 
     public function acceptSubmission($comp_id) {
@@ -25,5 +25,11 @@ class SubmissionController extends Controller
     public function getSubmissionDetails($id) {
         $submission = $this->_smService->getSubmissionDetails($id);
         return response()->json($submission);
+    }
+
+    public function downloadSubmission($id) {
+        $submission = $this->_smService->downloadSubmission($id);
+        return response()->download(storage_path('app') .'/public/' . $submission->file_path, $submission->title . '.zip');
+
     }
 }

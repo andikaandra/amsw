@@ -23,7 +23,7 @@ class CompetitionManagementController extends Controller
     
     public function updateCompetition(Request $request, $comp_id) {
         try {
-            $this->_cmService->updateCompetition($comp_id, $request->only(['waves', 'current_wave', 'registration_status', 'submission_status', 'registration_amount', 'final_amount']));
+            $this->_cmService->updateCompetition($comp_id, $request->only(['waves', 'current_wave', 'registration_status', 'final_registration_status','submission_status', 'registration_amount', 'final_amount']));
         } catch (\Exception $e) {
             // TODO: logging
             return response()->json(['message' => $e->getMessage()], 500);

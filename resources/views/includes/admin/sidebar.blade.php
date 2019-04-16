@@ -13,115 +13,56 @@
         <i class="nav-icon icon-home"></i> Home</a>
     </li>
     
-    <li class="nav-title">Components</li>
+    <li class="nav-title">Competitions</li>
     <li class="nav-item nav-dropdown">
         <a class="nav-link nav-dropdown-toggle" href="#">
         <i class="nav-icon icon-puzzle"></i> Registrations</a>
         <ul class="nav-dropdown-items">
-        <li class="nav-item">
-            <a class="nav-link" href="{{url('admin/registration/essay')}}">
-            <i class="nav-icon icon-puzzle"></i> Essay</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{url('admin/registration/literature-review')}}">
-            <i class="nav-icon icon-puzzle"></i> Literature Review</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{url('admin/registration/public-poster')}}">
-            <i class="nav-icon icon-puzzle"></i> Public Poster</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{url('admin/registration/research-paper')}}">
-            <i class="nav-icon icon-puzzle"></i> Research Paper</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{url('admin/registration/educational-video')}}">
-            <i class="nav-icon icon-puzzle"></i> Educational Video</a>
-        </li>
-
-
-
-        <li class="nav-item">
-            <a class="nav-link" href="base/cards.html">
-            <i class="nav-icon icon-puzzle"></i> Cards</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="base/carousel.html">
-            <i class="nav-icon icon-puzzle"></i> Carousel</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="base/collapse.html">
-            <i class="nav-icon icon-puzzle"></i> Collapse</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="base/forms.html">
-            <i class="nav-icon icon-puzzle"></i> Forms</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="base/jumbotron.html">
-            <i class="nav-icon icon-puzzle"></i> Jumbotron</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="base/list-group.html">
-            <i class="nav-icon icon-puzzle"></i> List group</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="base/navs.html">
-            <i class="nav-icon icon-puzzle"></i> Navs</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="base/pagination.html">
-            <i class="nav-icon icon-puzzle"></i> Pagination</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="base/popovers.html">
-            <i class="nav-icon icon-puzzle"></i> Popovers</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="base/progress.html">
-            <i class="nav-icon icon-puzzle"></i> Progress</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="base/scrollspy.html">
-            <i class="nav-icon icon-puzzle"></i> Scrollspy</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="base/switches.html">
-            <i class="nav-icon icon-puzzle"></i> Switches</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="base/tables.html">
-            <i class="nav-icon icon-puzzle"></i> Tables</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="base/tabs.html">
-            <i class="nav-icon icon-puzzle"></i> Tabs</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="base/tooltips.html">
-            <i class="nav-icon icon-puzzle"></i> Tooltips</a>
-        </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('admin/registration/essay')}}">
+                <i class="nav-icon icon-puzzle"></i> Essay</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('admin/registration/literature-review')}}">
+                <i class="nav-icon icon-puzzle"></i> Literature Review</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('admin/registration/public-poster')}}">
+                <i class="nav-icon icon-puzzle"></i> Public Poster</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('admin/registration/research-paper')}}">
+                <i class="nav-icon icon-puzzle"></i> Research Paper</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('admin/registration/educational-video')}}">
+                <i class="nav-icon icon-puzzle"></i> Educational Video</a>
+            </li>
         </ul>
     </li>
     <li class="nav-item nav-dropdown">
         <a class="nav-link nav-dropdown-toggle" href="#">
-        <i class="nav-icon icon-cursor"></i> Buttons</a>
+        <i class="nav-icon icon-cursor"></i> Submissions</a>
         <ul class="nav-dropdown-items">
         <li class="nav-item">
-            <a class="nav-link" href="buttons/buttons.html">
-            <i class="nav-icon icon-cursor"></i> Buttons</a>
+            <a class="nav-link" href="{{url('admin/verify/submissions/essay')}}">
+            <i class="nav-icon icon-cursor"></i> Essay</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="buttons/button-group.html">
-            <i class="nav-icon icon-cursor"></i> Buttons Group</a>
+            <a class="nav-link" href="{{url('admin/verify/submissions/literature-review')}}">
+            <i class="nav-icon icon-cursor"></i> Literature Review</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="buttons/dropdowns.html">
-            <i class="nav-icon icon-cursor"></i> Dropdowns</a>
+            <a class="nav-link" href="{{url('admin/verify/submissions/public-poster')}}">
+            <i class="nav-icon icon-cursor"></i> Public Poster</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="buttons/brand-buttons.html">
-            <i class="nav-icon icon-cursor"></i> Brand Buttons</a>
+            <a class="nav-link" href="{{url('admin/verify/submissions/research-paper')}}">
+            <i class="nav-icon icon-cursor"></i> Research Paper</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('admin/verify/submissions/educational-video')}}">
+            <i class="nav-icon icon-cursor"></i> Educational Video</a>
         </li>
         </ul>
     </li>

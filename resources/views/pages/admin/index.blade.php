@@ -69,6 +69,14 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="final_registration_status">Final Registration Status</label>
+                        <select name="final_registration_status" id="final_registration_status" class="form-control" required>
+                            <option value="close">Close</option>
+                            <option value="open">Open</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label for="registration_amount">Registration Amount</label>
                         <input type="text" name="registration_amount" id="registration_amount" class="form-control" required>
                     </div>
@@ -141,6 +149,8 @@ $(document).ready(function() {
         $("[name='waves']").val(compData.waves);
         $("[name='current_wave']").val(compData.current_wave);
         $("[name='registration_status']").val(compData.registration_status);
+        $("[name='final_registration_status']").val(compData.final_registration_status);
+
         $("[name='submission_status']").val(compData.submission_status);
         $("[name='registration_amount']").val(compData.registration_amount);
         $("[name='final_amount']").val(compData.final_amount);
@@ -177,6 +187,8 @@ $(document).ready(function() {
         $(".comp-form form")[0].reset();
 
         compsTable.ajax.reload(null, false);
+
+        alertify.success("Competition updated!");
     });
 });
 

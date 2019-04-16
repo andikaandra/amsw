@@ -7,8 +7,8 @@ use App\Models\Competition;
 use App\Models\Submission;
 
 class SubmissionRepository implements ISubmissionRepository {
-    public function getAllSubmissions() {
-        $submissions = User::whereHas('submissions')->with('submissions.competition')->get();
+    public function getAllSubmissions($competition) {
+        $submissions = User::where('competition', $competition)->whereHas('submissions')->with('submissions.competition')->get();
         return $submissions;
     }
 

@@ -12,8 +12,8 @@ class SubmissionManagement implements ISubmissionManagement {
         $this->_smRepo = $repo;
     }
 
-    public function getAllSubmissions() {
-        return $this->_smRepo->getAllSubmissions();
+    public function getAllSubmissions($competition) {
+        return $this->_smRepo->getAllSubmissions($competition);
     }
 
     public function acceptSubmission($comp_id) {
@@ -23,4 +23,11 @@ class SubmissionManagement implements ISubmissionManagement {
     public function getSubmissionDetails($id) {
         return $this->_smRepo->getSubmissionDetails($id);
     }
+
+    public function downloadSubmission($id) {
+        $submission = $this->_smRepo->getSubmissionDetails($id);
+        return $submission;
+
+    }
+
 }

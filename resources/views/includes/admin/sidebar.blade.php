@@ -32,26 +32,34 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('admin/registration/essay')}}">
-                <i class="nav-icon icon-puzzle"></i> Essay</a>
+                <i class="nav-icon fas fa-code-branch"></i> Essay</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('admin/registration/literature-review')}}">
-                <i class="nav-icon icon-puzzle"></i> Literature Review</a>
+                <i class="nav-icon fas fa-code-branch"></i> Literature Review</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('admin/registration/public-poster')}}">
-                <i class="nav-icon icon-puzzle"></i> Public Poster</a>
+                <i class="nav-icon fas fa-code-branch"></i> Public Poster</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('admin/registration/research-paper')}}">
-                <i class="nav-icon icon-puzzle"></i> Research Paper</a>
+                <i class="nav-icon fas fa-code-branch"></i> Research Paper</a>
             </li>
+<<<<<<< HEAD
+=======
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('admin/registration/educational-video')}}">
+                <i class="nav-icon fas fa-code-branch"></i> Educational Video</a>
+            </li>
+>>>>>>> 71829122871af3cc8a06f792cd39f380d1167a2b
         </ul>
     </li>
     <li class="nav-item nav-dropdown">
         <a class="nav-link nav-dropdown-toggle" href="#">
         <i class="nav-icon icon-note"></i> Submissions</a>
         <ul class="nav-dropdown-items">
+<<<<<<< HEAD
             <li class="nav-item">
                 <a class="nav-link" href="{{url('admin/verify/submissions/educational-video')}}">
                 <i class="nav-icon icon-cursor"></i> Educational Video</a>
@@ -102,6 +110,30 @@
         </ul>
     </li>
    
+=======
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('admin/verify/submissions/essay')}}">
+            <i class="nav-icon icon-cursor"></i> Essay</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('admin/verify/submissions/literature-review')}}">
+            <i class="nav-icon icon-cursor"></i> Literature Review</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('admin/verify/submissions/public-poster')}}">
+            <i class="nav-icon icon-cursor"></i> Public Poster</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('admin/verify/submissions/research-paper')}}">
+            <i class="nav-icon icon-cursor"></i> Research Paper</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('admin/verify/submissions/educational-video')}}">
+            <i class="nav-icon icon-cursor"></i> Educational Video</a>
+        </li>
+        </ul>
+    </li>
+>>>>>>> 71829122871af3cc8a06f792cd39f380d1167a2b
     </ul>
 </nav>
 

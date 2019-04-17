@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Contracts\IParticipantRegistrationManagement;
-use Illuminate\Http\Request;
-use App\Models\User;
-use Auth;
 use Log;
+use Auth;
+use App\Models\User;
+use Illuminate\Http\Request;
+use App\Models\CompetitionManagement;
+use App\Contracts\IParticipantRegistrationManagement;
 
 class ParticipantController extends Controller
 {
@@ -64,6 +65,12 @@ class ParticipantController extends Controller
     }
 
     public function finalRegistration(Request $request) {
+        $waiting_list_open = CompetitionManagement::where('name', Auth::user()->competition)->first()->final_registration_status;
+        
+        if($waiting_list_open == 'close') {
+            return redirect('participant')->with('waiting_list_close', 'Sorry, final registration is still closed. Please wait. Contact the committee for details.');
+        }
+
         if($request->page == 2)
             return view('pages.participant.final-registration-2');       
         else

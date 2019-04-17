@@ -10,7 +10,7 @@
       <div class="card-body">
         <div class="row">
           <div class="col-sm-5">
-            <h4 class="card-title mb-0">My Teams</h4>
+            <h4 class="card-title mb-0">My Team</h4>
             <div class="small text-muted">AMSW <?php echo date("Y"); ?></div>
           </div>
           <div class="col-sm-7 d-none d-md-block">            

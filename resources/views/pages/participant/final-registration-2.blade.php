@@ -38,17 +38,23 @@
     </div>
     <div class="col-md-6">
             <div class="chart-wrapper mt-3" style="min-height:300px;">        
-                <form action="{{url('participant/final-registration')}}" method="post">
+                <form action="{{url('participant/final-registration')}}" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="_method" value="PUT">
+                    <input type="hidden" name="comp_id" value="{{Auth::user()->competitions[0]->id}}">
+
                     {{ csrf_field() }}
                     <div class="can-go-to-final">  
-                        
+                        <div class="form-group">
+                        <label for="nama_bank">Travel Plan Link</label>
+                        <input type="text" class="form-control" name="travel_plan" placeholder="ex : https://travelamsw.com?plan=surabata" required>
+                        <small class="text-muted">Please attach the full link</small>
+                        </div>   
+
                         <div class="form-group">
                         <label for="nama_bank">Bank name</label>
                         <input type="text" class="form-control" name="nama_bank" placeholder="ex : BNI" required>
                         </div>   
-                          
-                          
+                                                    
                         <div class="form-group">
                         <label for="nama_pengirim">Account Sender</label>
                         <input type="text" class="form-control" name="nama_pengirim" placeholder="Account Sender" required>

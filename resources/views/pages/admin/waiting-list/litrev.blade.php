@@ -7,7 +7,7 @@
 
         <div class="card card-content">
             <div class="card-header">
-                <h5>Essay Final Registration</h5>
+                <h5>Literature Review Final Registration</h5>
             </div>
             <div class="card-body">
                 <div class="essays">
@@ -93,7 +93,7 @@
 $(document).ready(function() {
     const essays_table = $(".essays-table").DataTable({
         responsive: true,
-        ajax: '{{url('admin/waiting-list')}}?competition=Essay',
+        ajax: '{{url('admin/waiting-list')}}?competition=Literature+Review',
         columns: [
             {data: 'name'},
             {data: 'email'},

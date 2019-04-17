@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Payment;
+use App\Models\Competition;
+use App\Models\Participant;
 use Illuminate\Http\Request;
 use App\Contracts\IParticipantManagement;
-use App\Models\Participant;
-use App\Models\Payment;
 
 class ParticipantManagementController extends Controller
 {    
@@ -53,5 +54,34 @@ class ParticipantManagementController extends Controller
             return response()->json(['message' => 'not found'], 404);            
         return response()->file(storage_path('app') .'/public/' . $payment->file_path);
     }
+
+    public function getFinalPayment($user_id) {
+        return response()->json(
+            Payment::where('user_id', $user_id)->where('payment_type', 'final')
+            ->first()
+        );
+    }
+
+    public function declineFinalRegistration($comp_id) {        
+        $comp = Competition::find($comp_id);
+        $comp->update([
+            'final_verification_status' => 'declined'
+        ]);
+
+        $comp->user->update(['status' => 7]);
+
+    }
+
+    public function acceptFinalRegistration($comp_id) {
+        $comp = Competition::find($comp_id);
+        $comp->update([
+            'final_verification_status' => 'verified'
+        ]);
+
+        $comp->user->update(['status' => 8]);
+        
+    }
+
+
 
 }

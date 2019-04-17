@@ -64,7 +64,10 @@ class Kernel extends HttpKernel
         'event_registration_opened' => \App\Http\Middleware\EventRegistrationOpened::class,
         'has_choose_cabang' => \App\Http\Middleware\HasChooseCabang::class,
         'has_verified_by_admin' => \App\Http\Middleware\HasVerifiedByAdmin::class,
-        
+        'selected_for_final' => \App\Http\Middleware\HasVerifiedByAdmin::class,
+        'has_not_confirmed_final' => \App\Http\Middleware\HasNotConfirmedFinalAttendance::class,
+        'is_admin' => \App\Http\Middleware\IsAdmin::class,
+        'is_participant' => \App\Http\Middleware\IsParticipant::class,
     ];
 
     /**

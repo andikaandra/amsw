@@ -23,15 +23,13 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LogoutController@logout');
 ROute::get('verify/email/{hash}', 'ParticipantController@verifyEmail');
 
-// Auth::routes();
-
 Route::get('/', 'HomepageController@index');
-Route::get('admin', 'AdminController@index');
+
 
 
 // amin routes
-// TODO: add middleware
-Route::prefix('admin')->group(function() {
+Route::prefix('admin')->middleware(['is_admin'])->group(function() {
+    Route::get('/', 'AdminController@index');
     // team routes
     Route::get('teams', 'ParticipantManagementController@getAllTeams');
     Route::get('teams/{id}/participants', 'ParticipantManagementController@getParticipantsByCompId');
@@ -67,40 +65,53 @@ Route::prefix('admin')->group(function() {
 
     Route::get('waiting-list', 'WaitingListController@getWaitingList');
     Route::get('waiting-list/essay', 'AdminController@essayWl');
+    Route::get('waiting-list/educational-video', 'AdminController@edvidWl');
+    Route::get('waiting-list/literature-review', 'AdminController@litrevWl');
+    Route::get('waiting-list/public-poster', 'AdminController@pubposWl');
+    Route::get('waiting-list/research-paper', 'AdminController@rpWl');
 
     Route::get('download/submissions/{id}', 'SubmissionController@downloadSubmission');
+
+    Route::get('users/{user_id}/payments', 'ParticipantManagementController@getFinalPayment');
+
+    // final registration verification
+    Route::put('final-registration/accept/teams/{comp_id}', 'ParticipantManagementController@acceptFinalRegistration');
+    Route::put('final-registration/decline/teams/{comp_id}', 'ParticipantManagementController@declineFinalRegistration');
+
+
 });
 
 
+Route::middleware(['is_participant'])->group(function() {
+    Route::get('/participant', 'ParticipantController@index');
 
-Route::get('/participant', 'ParticipantController@index');
-
-Route::prefix('participant')->middleware(['has_verify_email'])->group(function () {
-	Route::get('/registration', 'ParticipantController@registrationPage');
-    Route::post('/registration/choose-cabang', 'ParticipantRegistrationController@chooseCabang')->name('choose.cabang');
-
-    Route::get('/download/templates/cv', 'ParticipantController@getCVTemplate');
-
-
-    Route::middleware(['has_choose_cabang'])->group(function () {
-        Route::post('/registration/upload-data', 'ParticipantRegistrationController@uploadData')->name('upload.data');
-        Route::post('/reset/data', 'ParticipantRegistrationController@resetData')->name('reset.data');
-
-        Route::middleware(['has_verified_by_admin'])->group(function () {
-            Route::get('/teams', 'ParticipantController@teamsPage');
-            Route::get('/submission', 'ParticipantController@submissionPage');
-
-            Route::post('/upload/submission', 'ParticipantRegistrationController@uploadSubmission')->name('upload.submission');
-
-            // TODO: add middleware lolos_ke_final
-            Route::get('final-registration', 'ParticipantController@finalRegistration');
-            Route::put('final-registration', 'ParticipantRegistrationController@finalRegistration');
+    Route::prefix('participant')->middleware(['has_verify_email'])->group(function () {
+        Route::get('/registration', 'ParticipantController@registrationPage');
+        Route::post('/registration/choose-cabang', 'ParticipantRegistrationController@chooseCabang')->name('choose.cabang');
+    
+        Route::get('/download/templates/cv', 'ParticipantController@getCVTemplate');
+    
+    
+        Route::middleware(['has_choose_cabang'])->group(function () {
+            Route::post('/registration/upload-data', 'ParticipantRegistrationController@uploadData')->name('upload.data');
+            Route::post('/reset/data', 'ParticipantRegistrationController@resetData')->name('reset.data');
+    
+            Route::middleware(['has_verified_by_admin'])->group(function () {
+                Route::get('/teams', 'ParticipantController@teamsPage');
+                Route::get('/submission', 'ParticipantController@submissionPage');
+    
+                Route::post('/upload/submission', 'ParticipantRegistrationController@uploadSubmission')->name('upload.submission');
+                    
+                Route::middleware(['selected_for_final', 'has_not_confirmed_final'])->group(function() {
+                    Route::get('final-registration', 'ParticipantController@finalRegistration');
+                    Route::put('final-registration', 'ParticipantRegistrationController@finalRegistration');
+                });
+            });
         });
     });
 });
 
-
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('email', function() {

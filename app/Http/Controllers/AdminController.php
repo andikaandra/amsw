@@ -49,8 +49,25 @@ class AdminController extends Controller
     public function researchPaperSubmission() {
         return view('pages.admin.submissions.research-paper');
     }
-
+    
+    // wl == waiting list
     public function essayWl() {
         return view('pages.admin.waiting-list.essay');
+    }
+
+    public function edvidWl() {
+        return view('pages.admin.waiting-list.educational-video');
+    }
+
+    public function litrevWl() {
+        return view('pages.admin.waiting-list.litrev');
+    }
+
+    public function pubposWl() {
+        return view('pages.admin.waiting-list.pubpos');
+    }
+
+    public function rpWl() {
+        return view('pages.admin.waiting-list.research-paper');
     }
 }

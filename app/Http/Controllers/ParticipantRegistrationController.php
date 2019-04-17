@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Log;
 use Auth;
+use Validator;
 use App\Models\Payment;
 use App\Models\Competition;
 use Illuminate\Http\Request;
-use Validator;
 use App\Contracts\IParticipantRegistrationManagement;
 
 
@@ -65,7 +65,7 @@ class ParticipantRegistrationController extends Controller
     }
 
     public function finalRegistration(Request $request) {
-        // cannot attend final
+        // cannot attend final        
         if($request->can_attend == 'no') {
             Competition::find($request->comp_id)
             ->update([
@@ -78,6 +78,8 @@ class ParticipantRegistrationController extends Controller
                 'jumlah_tf' => 'required|max:10',
                 'nama_bank' => 'required|max:255',
                 'bukti_pembayaran' => 'required|max:2000|image',
+                'comp_id' => 'required',
+                'travel_plan' => 'required'
             ]);        
     
             if ($validator->fails()) {
@@ -86,20 +88,27 @@ class ParticipantRegistrationController extends Controller
 
             Competition::find($request->comp_id)
             ->update([
-                'can_go_to_final' => 'yes'
+                'can_go_to_final' => 'yes',
+                'travel_plan' => $request->travel_plan
             ]);
 
             Payment::create([
                 'competition' => Auth::user()->competition,
-                'file_path' => str_replace("public","", $data['file']->store('public/submissions')),
+                'file_path' => str_replace("public","", $request['bukti_pembayaran']->store('public/payments')),
                 'payment_type' => 'final',
                 'bank_account_name' => $request->nama_pengirim,
                 'bank_name' => $request->nama_bank,
                 'amount' => $request->jumlah_tf,
                 'user_id' => Auth::user()->id
             ]);
+
+            Auth::user()->update([
+                'status' => 7
+            ]);
         }
         return redirect('participant')->with('success', 'Succesfully confirmed Final registration.'); 
     }
+
+
 
 }

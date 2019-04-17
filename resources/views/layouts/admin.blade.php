@@ -83,9 +83,9 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item">Home</li>
           <li class="breadcrumb-item">
-            <a href="#">Admin</a>
+            Admin
           </li>
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item active">@yield('path')</li>
       
         </ol>
         <div class="container-fluid">
@@ -156,6 +156,10 @@
     <script src="{{asset('dashboard/js/main.js')}}"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/alertify.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js" integrity="sha256-u7MY6EG5ass8JhTuxBek18r5YG6pllB9zLqE4vZyTn4=" crossorigin="anonymous"></script>
+    <script>      
+      $('.price').mask('0.000.000.000.000', {reverse: true});
+    </script>
     @yield('script')
 
   </body>

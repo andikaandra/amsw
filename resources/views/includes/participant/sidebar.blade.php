@@ -1,4 +1,4 @@
-<div class="sidebar" data-step="3" data-intro="You can complete your registration by this menu">
+<div class="sidebar" data-step="3" data-intro="You can access different pages by choosing a Menu from this side bar.">
 <nav class="sidebar-nav" >
     <ul class="nav">
     <li class="nav-item nav-profile">

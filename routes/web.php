@@ -89,20 +89,20 @@ Route::middleware(['is_participant'])->group(function() {
         Route::post('/finish-tour', 'ParticipantController@finishTour')->name('finish.tour');
         Route::get('/registration', 'ParticipantController@registrationPage');
         Route::post('/registration/choose-cabang', 'ParticipantRegistrationController@chooseCabang')->name('choose.cabang');
-    
         Route::get('/download/templates/cv', 'ParticipantController@getCVTemplate');
-    
     
         Route::middleware(['has_choose_cabang'])->group(function () {
             Route::post('/registration/upload-data', 'ParticipantRegistrationController@uploadData')->name('upload.data');
             Route::post('/reset/data', 'ParticipantRegistrationController@resetData')->name('reset.data');
+
+            Route::middleware(['has_filled_registration'])->group(function() {
+                Route::get('/teams', 'ParticipantController@teamsPage');
+            });
     
             Route::middleware(['has_verified_by_admin'])->group(function () {
-                Route::get('/teams', 'ParticipantController@teamsPage');
                 Route::get('/submission', 'ParticipantController@submissionPage');
-    
                 Route::post('/upload/submission', 'ParticipantRegistrationController@uploadSubmission')->name('upload.submission');
-                    
+
                 Route::middleware(['selected_for_final', 'has_not_confirmed_final'])->group(function() {
                     Route::get('final-registration', 'ParticipantController@finalRegistration');
                     Route::put('final-registration', 'ParticipantRegistrationController@finalRegistration');

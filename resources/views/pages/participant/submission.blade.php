@@ -7,6 +7,37 @@
 
 @endsection
 @section('content')
+
+@if($errors->any())
+<div class="alert alert-danger">
+  <strong>Failed to submit: </strong>
+  @if ($errors->has('file'))
+    <br>Uploaded file file cannot exceed 7 mb.
+    <br>Uploaded file has to be zip format.
+  @endif
+  @if ($errors->has('title'))
+    <br>Title may not exceed 256 characters
+  @endif
+  @if ($errors->has('description'))
+    <br>Description may not exceed 700 characters
+  @endif
+</div>
+@elseif(\Session::has('success'))
+  <div class="alert alert-success">
+    {!! \Session::get('success') !!}
+  </div>
+@elseif(\Session::has('error'))
+  <div class="alert alert-danger">
+    {!! \Session::get('error') !!}
+  </div>
+@endif
+
+@if($lomba->submission_status=='close')
+  <div class="alert alert-danger">
+    Sorry, submissions for <strong>{{$lomba->name}}</strong> is not open. Contact the commitee for more details.
+  </div>
+@endif
+
     <div class="card card-content">
       <div class="card-body">
         <div class="row">
@@ -19,30 +50,6 @@
         </div>
         <hr>
         <div class="chart-wrapper mt-3" style="min-height:300px;">
-          @if($errors->any())
-            <div class="alert alert-danger">
-              <strong>Failed to submit: </strong>
-              @if ($errors->has('file'))
-                <br>Uploaded file file cannot exceed 7 mb.
-                <br>Uploaded file has to be zip format.
-              @endif
-              @if ($errors->has('title'))
-                <br>Title may not exceed 256 characters
-              @endif
-              @if ($errors->has('description'))
-                <br>Description may not exceed 700 characters
-              @endif
-            </div>
-          @elseif(\Session::has('success'))
-              <div class="alert alert-success">
-                {!! \Session::get('success') !!}
-              </div>
-          @elseif(\Session::has('error'))
-              <div class="alert alert-danger">
-                {!! \Session::get('error') !!}
-              </div>
-          @endif
-
             {{-- ceksudah upload apa belum --}}
             @if(isset($submission))
               <p>You have uploaded "<strong>{{$submission->title}}</strong>".</p>
@@ -50,12 +57,8 @@
               <p>Video Link : <a target="_blank" href="{{$submission->file_path}}">here</a></p>
               @endif
               <p>Submission time : {{date('M d Y', strtotime($submission->created_at))}}</p>
-            @else
-              @if($lomba->submission_status=='close')
-                <div class="alert alert-danger">
-                  Sorry, submissions for <strong>{{$lomba->name}}</strong> is not open. Contact the commitee for more details.
-                </div>
-              @else
+            @else              
+                @if($lomba->submission_status=='open')
                 <form method="post" id="submission" enctype="multipart/form-data" action="{{route('upload.submission')}}">
                   @csrf
                   <div class="form-group">

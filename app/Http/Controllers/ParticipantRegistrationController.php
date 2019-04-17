@@ -26,7 +26,7 @@ class ParticipantRegistrationController extends Controller
         } catch (\Exception $e) {
             $eMessage = 'Reset Data - User: ' . $request->user_id . ', error: ' . $e->getMessage();
             Log::emergency($eMessage);
-            return redirect()->back()->with('error', 'Whoops, an  error has accoured. If it persists, please contact the committe!');
+            return redirect()->back()->with('error', 'An error occured. If it persists please contact the committee.');
         }
         return redirect()->back()->with('success', 'Successfully reset data.'); 
     }
@@ -48,7 +48,7 @@ class ParticipantRegistrationController extends Controller
         } catch (\Exception $e) {
             $message = 'Upload data: ' . Auth::user()->email . ', error: ' . $e->getMessage();
             Log::emergency($message);
-            return redirect()->back()->with('error', $e->getMessage());
+            return redirect()->back()->with('error', 'An error occured. If it persists please contact the committee.');
         }
         return redirect()->back()->with('success', 'Successfully uploaded registration data.'); 
     }
@@ -59,53 +59,64 @@ class ParticipantRegistrationController extends Controller
         } catch (\Exception $e) {
             $message = 'Upload data: ' . Auth::user()->email . ', error: ' . $e->getMessage();
             Log::emergency($message);
-            return redirect()->back()->with('error', $e->getMessage());
+            return redirect()->back()->with('error', 'An error occured. If it persists please contact the committee.');
         }
         return redirect()->back()->with('success', 'Successfully uploaded submission.'); 
     }
 
     public function finalRegistration(Request $request) {
-        // cannot attend final        
-        if($request->can_attend == 'no') {
-            Competition::find($request->comp_id)
-            ->update([
-                'can_go_to_final' => 'no'
-            ]);
-        } else {
-            // return $request->all();
-            $validator = Validator::make($request->all(), [
-                'nama_pengirim' =>  'required|max:255',
-                'jumlah_tf' => 'required|max:10',
-                'nama_bank' => 'required|max:255',
-                'bukti_pembayaran' => 'required|max:2000|image',
-                'comp_id' => 'required',
-                'travel_plan' => 'required'
-            ]);        
-    
-            if ($validator->fails()) {
-                return redirect()->back()->withErrors($validator)->withInput();
+        try {
+
+            // cannot attend final        
+            if($request->can_attend == 'no') {
+                Competition::find($request->comp_id)
+                ->update([
+                    'can_go_to_final' => 'no'
+                ]);
+            } else {            
+                $data = $request->all();
+                $data['jumlah_tf'] = str_replace('.','',$data['jumlah_tf']);
+
+                $validator = Validator::make($data, [
+                    'nama_pengirim' =>  'required|max:255',
+                    'jumlah_tf' => 'required|max:10',
+                    'nama_bank' => 'required|max:255',
+                    'bukti_pembayaran' => 'required|max:2000|image',
+                    'comp_id' => 'required',
+                    'travel_plan' => 'required'
+                ]);        
+        
+                if ($validator->fails()) {
+                    return redirect()->back()->withErrors($validator)->withInput();
+                }
+
+                Competition::find($request->comp_id)
+                ->update([
+                    'can_go_to_final' => 'yes',
+                    'travel_plan' => $request->travel_plan
+                ]);
+
+                Payment::create([
+                    'competition' => Auth::user()->competition,
+                    'file_path' => str_replace("public","", $request['bukti_pembayaran']->store('public/payments')),
+                    'payment_type' => 'final',
+                    'bank_account_name' => $request->nama_pengirim,
+                    'bank_name' => $request->nama_bank,
+                    'amount' => $request->jumlah_tf,
+                    'user_id' => Auth::user()->id
+                ]);
+
+                Auth::user()->update([
+                    'status' => 7
+                ]);
             }
 
-            Competition::find($request->comp_id)
-            ->update([
-                'can_go_to_final' => 'yes',
-                'travel_plan' => $request->travel_plan
-            ]);
-
-            Payment::create([
-                'competition' => Auth::user()->competition,
-                'file_path' => str_replace("public","", $request['bukti_pembayaran']->store('public/payments')),
-                'payment_type' => 'final',
-                'bank_account_name' => $request->nama_pengirim,
-                'bank_name' => $request->nama_bank,
-                'amount' => $request->jumlah_tf,
-                'user_id' => Auth::user()->id
-            ]);
-
-            Auth::user()->update([
-                'status' => 7
-            ]);
+        } catch(\Exception $e) {
+            $message = 'Final registration: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+            Log::emergency($message);
+            return redirect()->back()->with('error', 'An error occured. If it persists please contact the committee.');
         }
+      
         return redirect('participant')->with('success', 'Succesfully confirmed Final registration.'); 
     }
 

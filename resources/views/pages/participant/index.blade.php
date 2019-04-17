@@ -37,6 +37,12 @@
 </div>
 @endif @endif
 
+@if(Auth::User()->competitions[0]->verification_status == 'declined')
+<div class="alert alert-danger">
+    Unfortunately, your registration has been <strong>declined</strong> by the committee. Contact the committee for more details.
+</div>
+@endif
+
 <div class="card card-content">
   <div class="card-body">
     <div class="row">
@@ -50,7 +56,7 @@
       </div>
     </div>
     <hr>
-    <div class="chart-wrapper mt-3" data-step="1" data-intro="Hello, This is your AMSW user Dashboard." style="min-height:300px;">
+    <div class="chart-wrapper mt-3" data-step="1" data-intro="Important informations and alerts can be found here, on the Home page." style="min-height:300px;">
       {{-- Not verified yet --}} @if(Auth::user()->email_verification == 'unverified')
       <div class="email-unverified">
         <p>Hello <strong>{{Auth::user()->name}}</strong>. <br> Welcome to your AMSW user Dashboard. Please verify your account

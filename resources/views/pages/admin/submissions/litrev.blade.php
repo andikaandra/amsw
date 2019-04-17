@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 
+@section('path', 'Submission')
 
 @section('content')
 <div class="row">

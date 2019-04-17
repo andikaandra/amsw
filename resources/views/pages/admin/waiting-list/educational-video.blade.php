@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 
+@section('path', 'Waiting List')
 
 @section('content')
 <div class="row">
@@ -42,30 +43,6 @@
         </div>
         <div class="modal-body">
             <div class="registration-form">                
-                <div class="participant-1">
-                    <div class="form-group">
-                        <h5><strong>Participant 1</strong></h5>
-                        <label for="participant">Name</label>
-                        <input type="text" name="" id="" value="Adis Azhar" class="form-control"
-                        readonly>
-                        <br>
-                        <a class="text-info" href="#">Download Participant's Files</a>
-                    </div>
-                    <hr>                        
-                </div>
-
-                <div class="participant-2">
-                    <div class="form-group">
-                        <h5><strong>Participant 2</strong></h5>
-                        <label for="participant">Name</label>
-                        <input type="text" name="" id="" value="Adis Azhar" class="form-control"
-                        readonly>
-                        <br>
-                        <a class="text-info" href="#">Download Participant's Files</a>
-                    </div>
-                    <hr>                        
-                </div>
-
                 <div class="payment">
                     <div class="form-group">
                         <h5><strong>Payment</strong></h5>                            
@@ -159,12 +136,15 @@ $(document).ready(function() {
                 <label for="">Bank Name</label>
                 <input type="text" readonly class="form-control" value="${payment.bank_name}">
                 <label for="">Amount Transferred</label>
-                <input type="text" readonly class="form-control" value="${payment.amount}">  
+                <input type="text" readonly class="form-control price" value="${parseInt(payment.amount)}">  
                 <a class="text-info" target='_blank' href="{{url('admin/payments/${payment.id}')}}">Check Payment </a>
             </div>
         </div>`;
 
         $(".registration-form").html(payment_html);
+
+        $('.price').unmask().mask('0.000.000.000.000', {reverse: true});
+
         $(".modal.registration").modal('show');
 
     });

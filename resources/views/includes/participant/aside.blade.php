@@ -1,5 +1,5 @@
-<aside class="aside-menu" data-step="2" data-intro="This is your registration status">
-  <!-- Tab panes-->
+<aside class="aside-menu" data-step="2" data-intro="These are the registration steps. Red color indicates <strong>undone</strong> step, green indicates <strong>completed</strong> step, blue indicates <strong>current</strong> step, and yellow indicates <strong>under review</strong> step.">
+  
   <div class="tab-content">
     <div class="tab-pane active" id="timeline" role="tabpanel">
       <div class="list-group list-group-accent">
@@ -89,7 +89,7 @@
                   </div>
                   <div class="col-2 float-right text-right">
                     @if(Auth::user()->status == 5)
-                    <i data-toggle="tooltip" title="Committee is still reviewing your work submission." class="fa fa-question-circle" aria-hidden="true"></i>                    @elseif(Auth::user()->status == 6)
+                    <i data-toggle="tooltip" title="Committee is still reviewing your work submission." class="fa fa-question-circle" aria-hidden="true" style="color: #ffc107"></i>                    @elseif(Auth::user()->status == 6)
                     <i class="fa fa-chevron-circle-left text-info" aria-hidden="true"></i> @elseif(Auth::user()->status >
                     6)
                     <i class="fa fa-check text-success" aria-hidden="true"></i> @else

@@ -68,6 +68,7 @@ class Kernel extends HttpKernel
         'has_not_confirmed_final' => \App\Http\Middleware\HasNotConfirmedFinalAttendance::class,
         'is_admin' => \App\Http\Middleware\IsAdmin::class,
         'is_participant' => \App\Http\Middleware\IsParticipant::class,
+        'has_filled_registration' => \App\Http\Middleware\HasFilledRegistration::class,
     ];
 
     /**

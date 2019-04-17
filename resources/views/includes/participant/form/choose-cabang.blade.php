@@ -14,7 +14,7 @@
   </div>
   <div class="rule-box">
     <div class="card">
-      <div class="card-header bg-danger" id="rule-name">
+      <div class="card-header bg-info" id="rule-name">
         
       </div>
       <div class="card-body text-justify">

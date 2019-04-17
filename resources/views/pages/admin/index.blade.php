@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('path', 'Home')
+
 @section('content')
 <div class="row">
     <div class="col-lg-12 col-md-12">
@@ -78,12 +80,12 @@
 
                     <div class="form-group">
                         <label for="registration_amount">Registration Amount</label>
-                        <input type="text" name="registration_amount" id="registration_amount" class="form-control" required>
+                        <input type="text" name="registration_amount" id="registration_amount" class="form-control price" required>
                     </div>
 
                     <div class="form-group">
                         <label for="final_amount">Final Amount</label>
-                        <input type="text" name="final_amount" id="final_amount" class="form-control" required>
+                        <input type="text" name="final_amount" id="final_amount" class="form-control price" required>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success comp-save">Save changes</button>
@@ -126,7 +128,6 @@ $(document).ready(function() {
     });
 
     $(document).on('click', '.comp-info', async function() {
-        
         const comp_id = $(this).attr('comp-id');
         $("#comp_id").val(comp_id);
 
@@ -152,8 +153,10 @@ $(document).ready(function() {
         $("[name='final_registration_status']").val(compData.final_registration_status);
 
         $("[name='submission_status']").val(compData.submission_status);
-        $("[name='registration_amount']").val(compData.registration_amount);
-        $("[name='final_amount']").val(compData.final_amount);
+        $("[name='registration_amount']").val(parseInt(compData.registration_amount));
+        $("[name='final_amount']").val(parseInt(compData.final_amount));
+        $(".price").trigger("paste");
+        $('.price').unmask().mask('0.000.000.000.000', {reverse: true});
 
         $(".modal.comp-management").modal('show');
 

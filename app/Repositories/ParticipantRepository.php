@@ -20,6 +20,7 @@ class ParticipantRepository implements IParticipantRepository
 
     public function declineTeam($id) {
         $comp = Competition::find($id);
+        $comp->user()->update(['status' => 3]);
         return $comp->update(['verification_status' => 'declined', 'payment_status' => 'declined']);        
     }
 
@@ -31,7 +32,9 @@ class ParticipantRepository implements IParticipantRepository
     }
 
     public function getParticipantsByCompId($id) {        
-        return Competition::with(['participants', 'user.payments'])->find($id);
+        return Competition::with(['participants', 'user.payments' => function($q) {
+            $q->where('payment_type', 'group');
+        }])->find($id);
     }
 
     public function getWaitingList($competition) {

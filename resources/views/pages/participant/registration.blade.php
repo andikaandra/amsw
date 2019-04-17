@@ -58,8 +58,8 @@
               </div>
             @else
               <div class="alert alert-info">
-                Your registration and payment data is still to <strong>verify</strong>.<br>
-                Please contact .... for more information
+                Your registration and payment data is being <strong> verified</strong> by the committee.<br>
+                Please contact .... for more information.
               </div>
             @endif            
           @else

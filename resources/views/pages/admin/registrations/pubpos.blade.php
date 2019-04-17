@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 
+@section('path', 'Registration')
 
 @section('content')
 <div class="row">
@@ -162,12 +163,14 @@ $(document).ready(function() {
                 <label for="">Bank Name</label>
                 <input type="text" readonly class="form-control" value="${payment.bank_name}">
                 <label for="">Amount Transferred</label>
-                <input type="text" readonly class="form-control" value="${payment.amount}">  
+                <input type="text" readonly class="form-control price" value="${parseInt(payment.amount)}">  
                 <a class="text-info" target='_blank' href="{{url('admin/payments/${payment.id}')}}">Check Payment </a>
             </div>
         </div>`;
 
         $(".registration-form").html(participants_html + payment_html);
+        $('.price').unmask().mask('0.000.000.000.000', {reverse: true});
+
         $(".modal.registration").modal('show');
 
     });

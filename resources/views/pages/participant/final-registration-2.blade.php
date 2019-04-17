@@ -62,7 +62,7 @@
                         </div>
                         <div class="form-group">
                         <label for="jumlah_tf">Amount</label>
-                        <input type="text" class="form-control" name="jumlah_tf" placeholder="Amount" required>
+                        <input type="text" class="form-control price" name="jumlah_tf" placeholder="Amount" required>
                         <small class="text-muted">The amount you transferred</small>
                         </div>
                         <div class="form-group">

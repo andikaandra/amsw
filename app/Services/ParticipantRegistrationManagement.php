@@ -51,6 +51,9 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
         if (!$status) {
             return redirect('participant')->withErrors(['Error'=>"We're sorry. The registration for " . Auth::user()->competition . " isn't opened yet."]);
         }
+        
+        $data['jumlah_tf'] = str_replace('.','',$data['jumlah_tf']);
+
         $validator = Validator::make($data, [
             'university' =>  'required|max:255',
             'nama_bank' => 'required|max:255',

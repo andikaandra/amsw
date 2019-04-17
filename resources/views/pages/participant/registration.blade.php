@@ -21,7 +21,6 @@
         @if(Auth::user()->status > 1 && Auth::user()->status < 3)
           <form id="reset" method="post" action="{{route('reset.data')}}">
             @csrf
-
           <div class="alert alert-info">
             <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register <strong>{{Auth::user()->competition}}</strong> is <strong>Rp {{ number_format($lomba->registration_amount + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
           <hr>

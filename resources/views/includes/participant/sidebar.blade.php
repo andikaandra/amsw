@@ -1,5 +1,5 @@
-<div class="sidebar">
-<nav class="sidebar-nav">
+<div class="sidebar" data-step="3" data-intro="You can complete your registration by this menu">
+<nav class="sidebar-nav" >
     <ul class="nav">
     <li class="nav-item nav-profile">
       <a href="{{url('participant')}}" class="nav-link" style="cursor: default;">

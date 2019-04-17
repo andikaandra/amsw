@@ -50,7 +50,7 @@
       </div>
     </div>
     <hr>
-    <div class="chart-wrapper mt-3" data-step="1" style="min-height:300px;">
+    <div class="chart-wrapper mt-3" data-step="1" data-intro="Hello, This is your AMSW user Dashboard." style="min-height:300px;">
       {{-- Not verified yet --}} @if(Auth::user()->email_verification == 'unverified')
       <div class="email-unverified">
         <p>Hello <strong>{{Auth::user()->name}}</strong>. <br> Welcome to your AMSW user Dashboard. Please verify your account
@@ -90,13 +90,28 @@
 
 @section('script')
 <script>
+  function completeTour() {
+    try {
+        res = $.ajax({
+          url: '{{url('participant/finish-tour')}}',
+          method: 'POST',
+          data: {'_token': '{{ csrf_token() }}'}
+        });
+        console.log(res);
+    } catch (error) {
+        alert("error");
+        console.log(error);
+        return;
+    }
+  }
+
   $(function() {  
-    var hadTour = localStorage.getItem('firstTimeDashboard');
+    var hadTour = {{Auth::user()->has_complete_tour}};
     if(!hadTour){
       introJs().oncomplete(function() {
-        localStorage.setItem('firstTimeDashboard', true);
+        completeTour();
       }).onexit(function(){
-        localStorage.setItem('firstTimeDashboard', true);
+        completeTour();
       }).start();
     }
   });

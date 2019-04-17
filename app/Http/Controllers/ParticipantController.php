@@ -33,6 +33,11 @@ class ParticipantController extends Controller
         return view('pages.participant.registration', compact('listLomba', 'lomba'));
     }
 
+    public function finishTour(Request $request) {
+        $this->_participantRegistrationService->completeTour(Auth::user()->id);
+        return response()->json(['message' => $user], 200);
+    }
+
     public function teamsPage() {
         // return Auth::user();
         $participants = Auth::user()->competitions[0]->participants;

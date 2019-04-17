@@ -20,6 +20,10 @@ class ParticipantRegistrationRepository implements IParticipantRegistrationRepos
       return CompetitionManagement::all();
     }
 
+    public function completeTour($id){
+      User::find($id)->update(['has_complete_tour' => 1]);
+    }
+
     public function getMyLomba($name) {
         return CompetitionManagement::where('name', $name)->first();
     }

@@ -8,6 +8,8 @@ interface IParticipantRegistrationRepository {
 
     public function newCompetition($id, $type);
 
+    public function completeTour($id);
+
     public function changeStatus($id, $status);
 
     public function newParticipant($id, $name, $path);

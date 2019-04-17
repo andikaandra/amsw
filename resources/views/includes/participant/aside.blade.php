@@ -1,4 +1,4 @@
-<aside class="aside-menu" data-step="2" >
+<aside class="aside-menu" data-step="2" data-intro="This is your registration status">
   <!-- Tab panes-->
   <div class="tab-content">
     <div class="tab-pane active" id="timeline" role="tabpanel">

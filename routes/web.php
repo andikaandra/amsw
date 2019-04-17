@@ -86,6 +86,7 @@ Route::middleware(['is_participant'])->group(function() {
     Route::get('/participant', 'ParticipantController@index');
 
     Route::prefix('participant')->middleware(['has_verify_email'])->group(function () {
+        Route::post('/finish-tour', 'ParticipantController@finishTour')->name('finish.tour');
         Route::get('/registration', 'ParticipantController@registrationPage');
         Route::post('/registration/choose-cabang', 'ParticipantRegistrationController@chooseCabang')->name('choose.cabang');
     

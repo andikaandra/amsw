@@ -19,6 +19,10 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
         $this->_participantsRegistration = $repo;
     }
 
+    public function completeTour($id){
+        $this->_participantsRegistration->completeTour($id);
+    }
+
     public function getAllLomba() {
         return $this->_participantsRegistration->getAllLomba();
     }

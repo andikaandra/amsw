@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('competition')->nullable();
             $table->string('email_verification')->default('unverified');
             $table->string('email_token');
+            $table->integer('has_complete_tour')->default('0');
             $table->rememberToken();
             $table->timestamps();
         });

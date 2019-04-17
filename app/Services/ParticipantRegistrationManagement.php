@@ -54,6 +54,7 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
             'jumlah_tf' => 'required|max:10',
             'user' =>  'required',
             'jumlah_peserta' => 'required|numeric|min:3|max:6',
+            'bukti_pembayaran' => 'required|image|max:2000'
         ]);        
 
         if ($validator->fails()) {

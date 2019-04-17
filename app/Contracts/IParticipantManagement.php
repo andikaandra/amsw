@@ -6,5 +6,6 @@ interface IParticipantManagement {
     public function declineParticipant($id);
     public function getAllTeams($competition);
     public function getParticipantsByCompId($id);
+    public function getWaitingList($competition);
 }
 ?>

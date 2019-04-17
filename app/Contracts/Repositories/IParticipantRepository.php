@@ -7,7 +7,7 @@ interface IParticipantRepository {
     public function declineTeam($id);
     public function getAllEmailVerifiedTeams($competition);
     public function getParticipantsByCompId($id);
-    // public function finalRegistration(array $data);
+    public function getWaitingList($competition);
 }
 
 ?>

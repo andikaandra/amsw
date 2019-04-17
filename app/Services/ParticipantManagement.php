@@ -28,7 +28,11 @@ class ParticipantManagement implements IParticipantManagement
 
     public function getParticipantsByCompId($id) {
         return $this->_participants->getParticipantsByCompId($id);
-    }    
+    }
+
+    public function getWaitingList($competition) {
+        return $this->_participants->getWaitingList($competition);
+    }
 
 }
 

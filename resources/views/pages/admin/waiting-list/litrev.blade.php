@@ -142,7 +142,7 @@ $(document).ready(function() {
 
         try {
             payment = await $.ajax({                
-                url: '../../admin/users/' + user_id +'/payments',
+                url: `{{url('admin/users/${user_id}/payments')}}`,
                 dataType: 'json'                
             });
         } catch (error) {
@@ -160,7 +160,7 @@ $(document).ready(function() {
                 <input type="text" readonly class="form-control" value="${payment.bank_name}">
                 <label for="">Amount Transferred</label>
                 <input type="text" readonly class="form-control" value="${payment.amount}">  
-                <a class="text-info" target='_blank' href="/admin/payments/${payment.id}">Check Payment </a>
+                <a class="text-info" target='_blank' href="{{url('admin/payments/${payment.id}')}}">Check Payment </a>
             </div>
         </div>`;
 

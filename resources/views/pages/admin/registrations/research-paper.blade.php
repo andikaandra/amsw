@@ -145,7 +145,7 @@ $(document).ready(function() {
                         <input type="text" name="" id="" value="${participants[index].name}" class="form-control"
                         readonly>
                         <br>
-                        <a class="text-info" href="/admin/participant/${participants[index].id}/files">Download Participant's Files</a>
+                        <a class="text-info" href="{{url('admin/participant/${participants[index].id}/files')}}">Download Participant's Files</a>
                     </div>
                     <hr>                        
                 </div>`
@@ -163,7 +163,7 @@ $(document).ready(function() {
                 <input type="text" readonly class="form-control" value="${payment.bank_name}">
                 <label for="">Amount Transferred</label>
                 <input type="text" readonly class="form-control" value="${payment.amount}">  
-                <a class="text-info" target='_blank' href="/admin/payments/${payment.id}">Check Payment </a>
+                <a class="text-info" target='_blank' href="{{url('admin/payments/${payment.id}')}}">Check Payment </a>
             </div>
         </div>`;
 
@@ -180,7 +180,7 @@ $(document).ready(function() {
                 let res;
                 try {
                     res = await $.ajax({
-                                url: `/admin/teams/${comp_id}/accept`, 
+                                url: `{{url('admin/teams/${comp_id}/accept')}}`, 
                                 method: 'PUT',
                                 data: {'_token': '{{ csrf_token() }}'}
                             });    
@@ -208,7 +208,7 @@ $(document).ready(function() {
                 let res;
                 try {
                     res = await $.ajax({
-                                url: `/admin/teams/${comp_id}/decline`, 
+                                url: `{{url('admin/teams/${comp_id}/decline')}}`, 
                                 method: 'PUT',
                                 data: {'_token': '{{ csrf_token() }}'}
                             });    

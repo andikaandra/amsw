@@ -100,7 +100,7 @@ $(document).ready(function() {
                 let res;
                 try {
                     res = await $.ajax({
-                                url: `/admin/submissions/${comp_id}/`, 
+                                url: `{{url('/admin/submissions/${comp_id}')}}`, 
                                 method: 'PUT',
                                 data: {'_token': '{{ csrf_token() }}'}
                             });    

@@ -1,4 +1,4 @@
-<aside class="aside-menu">
+<aside class="aside-menu" data-step="2" >
   <!-- Tab panes-->
   <div class="tab-content">
     <div class="tab-pane active" id="timeline" role="tabpanel">

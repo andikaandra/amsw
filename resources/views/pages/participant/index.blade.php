@@ -29,10 +29,12 @@
 </div>
 @endif @if(Auth::user()->status >= 6 && Auth::user()->competitions[0]->competition_status == 'final' ) @if (Auth::user()->competitions[0]->can_go_to_final
 == 'pending')
+<div class="alert alert-success">
 <p>The committe has viewed your work submission.</p>
 
 <p><strong>Congratulations</strong>, you are selected to continue to the Final. Please confirm your availability to attend the
   Final event <br>at: _____ <br>on: ______.<br>Please click <a href="{{url('participant/final-registration')}}">Here</a></p>
+</div>
 @endif @endif
 
 <div class="card card-content">
@@ -48,7 +50,7 @@
       </div>
     </div>
     <hr>
-    <div class="chart-wrapper mt-3" style="min-height:300px;">
+    <div class="chart-wrapper mt-3" data-step="1" style="min-height:300px;">
       {{-- Not verified yet --}} @if(Auth::user()->email_verification == 'unverified')
       <div class="email-unverified">
         <p>Hello <strong>{{Auth::user()->name}}</strong>. <br> Welcome to your AMSW user Dashboard. Please verify your account
@@ -84,9 +86,19 @@
       </div>
       @endif
     </div>
-  </div>
-  <div class="card-footer">
+@endsection
 
-  </div>
-</div>
+@section('script')
+<script>
+  $(function() {  
+    var hadTour = localStorage.getItem('firstTimeDashboard');
+    if(!hadTour){
+      introJs().oncomplete(function() {
+        localStorage.setItem('firstTimeDashboard', true);
+      }).onexit(function(){
+        localStorage.setItem('firstTimeDashboard', true);
+      }).start();
+    }
+  });
+</script>
 @endsection

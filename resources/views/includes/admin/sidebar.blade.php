@@ -28,7 +28,7 @@
         <ul class="nav-dropdown-items">
             <li class="nav-item">
                 <a class="nav-link" href="{{url('admin/registration/educational-video')}}">
-                <i class="nav-icon icon-puzzle"></i> Educational Video</a>
+                <i class="nav-icon fas fa-code-branch"></i> Educational Video</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('admin/registration/essay')}}">

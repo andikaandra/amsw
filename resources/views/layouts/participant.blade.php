@@ -21,6 +21,7 @@
     <!-- Main styles for this application-->
     <link href="{{asset('dashboard/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('dashboard/vendors/pace-progress/css/pace.min.css')}}" rel="stylesheet">
+    <link href="{{asset('introjs/introjs.css')}}" rel="stylesheet">
     <style>
       .card-content{
         box-shadow: 0px 0px 0px grey;
@@ -74,18 +75,6 @@
           <li class="breadcrumb-item">Home</li>
           <li class="breadcrumb-item">Participant</li>
           <li class="breadcrumb-item active">@yield('path')</li>
-
-{{--           <li class="breadcrumb-menu d-md-down-none">
-            <div class="btn-group" role="group" aria-label="Button group">
-              <a class="btn" href="#">
-                <i class="icon-speech"></i>
-              </a>
-              <a class="btn" href="./">
-                <i class="icon-graph"></i>  Dashboard</a>
-              <a class="btn" href="#">
-                <i class="icon-settings"></i>  Settings</a>
-            </div>
-          </li> --}}
         </ol>
         <div class="container-fluid">
           <div class="animated fadeIn">
@@ -127,7 +116,8 @@
     <!-- Plugins and scripts required by this view-->
     {{-- <script src="{{asset('dashboard/node_modules/chart.js/dist/Chart.min.js')}}"></script> --}}
 {{--     <script src="{{asset('dashboard/node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js')}}"></script> --}}
-    <script src="{{asset('dashboard/js/main.js')}}"></script>
+      <script src="{{asset('dashboard/js/main.js')}}"></script>
+      <script type="text/javascript" src="{{asset('introjs/intro.js')}}"></script>
     @yield('script')
   </body>
 </html>

@@ -14,7 +14,7 @@
                 <div class="comps">
                     <table class="table table-hover table-striped comps-table">
                         <thead>
-                            <tr>
+                            <tr class="bg-info">
                                 <th>Name</th>
                                 <th>Registration Status</th>
                                 <th>Submission Status</th>                                

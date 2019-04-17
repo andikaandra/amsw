@@ -14,7 +14,7 @@
                 <div class="essays">
                     <table class="table table-hover table-striped litrev-table">
                         <thead>
-                            <tr>
+                            <tr class="bg-info">
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Status</th>

@@ -143,10 +143,6 @@ $(document).ready(function() {
             return;
         }
 
-        // console.log(compData)
-
-        //TODO: Add auto format for Rupiah
-
         $("[name='waves']").val(compData.waves);
         $("[name='current_wave']").val(compData.current_wave);
         $("[name='registration_status']").val(compData.registration_status);
@@ -167,8 +163,7 @@ $(document).ready(function() {
     $(".comp-form form").submit(async function(e) {
         e.preventDefault();
 
-        const compData = $(this).serialize();
-        console.log(compData);
+        const compData = $(this).serialize();        
 
         const compId = $("#comp_id").val();
 

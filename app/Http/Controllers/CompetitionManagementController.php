@@ -25,7 +25,7 @@ class CompetitionManagementController extends Controller
         try {
             $this->_cmService->updateCompetition($comp_id, $request->only(['waves', 'current_wave', 'registration_status', 'final_registration_status','submission_status', 'registration_amount', 'final_amount']));
         } catch (\Exception $e) {
-            // TODO: logging
+            Log::emergency('Update competition: User Id: ' . Auth::user()->id . ', email: ' . Auth::user()->email . ' Error: ' . $e->getMessage());
             return response()->json(['message' => $e->getMessage()], 500);
         }
         return response()->json(['message' => 'succesfully updated competition'], 200);

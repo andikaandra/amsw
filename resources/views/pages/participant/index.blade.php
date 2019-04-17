@@ -24,11 +24,13 @@
             <h4 class="card-title mb-0">AMSW <?php echo date("Y"); ?></h4>
             <div class="small text-muted">Dashboard</div>
           </div>
-          <div class="col-sm-7 d-none d-md-block">
+          <div class="col-sm-7 d-none d-md-block text-right">
+            <i class="fas fa-question"></i> Help
           </div>          
         </div>
         <hr>
-        <div class="chart-wrapper mt-3" style="min-height:300px;">
+        <div class="chart-wrapper mt-3" style="min-height:300px;" data-step="1" data-intro="This is your dashboard. You will find relevant information like payment and account status,
+              submissions and many things">
           {{-- Not verified yet --}}
           @if(Auth::user()->email_verification == 'unverified')
           <div class="email-unverified">
@@ -63,4 +65,19 @@
 
       </div>
     </div>
+@endsection
+
+@section('script')
+<script>
+  $(function() {  
+    var hadTour = localStorage.getItem('firstTimeDashboard');
+    if(!hadTour){
+      introJs().oncomplete(function() {
+        // localStorage.setItem('firstTimeDashboard', true);
+      }).onexit(function(){
+        // localStorage.setItem('firstTimeDashboard', true);
+      }).start();
+    }
+  });
+</script>
 @endsection

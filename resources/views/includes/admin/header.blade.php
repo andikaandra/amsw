@@ -10,6 +10,7 @@
 <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
     <span class="navbar-toggler-icon"></span>
 </button>
+
 <ul class="nav navbar-nav ml-auto">
     <li class="nav-item d-md-down-none">
         <a class="nav-link" href="{{url('/')}}">
@@ -25,6 +26,7 @@
         @csrf
     </form>
 </ul>
+
 <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
     <span class="navbar-toggler-icon"></span>
 </button>

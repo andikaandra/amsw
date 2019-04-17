@@ -34,6 +34,12 @@ class ParticipantRepository implements IParticipantRepository
         return Competition::with(['participants', 'user.payments'])->find($id);
     }
 
+    public function getWaitingList($competition) {
+        return User::where('status', '>=', 6)
+        ->where('competition', $competition)
+        ->with('competitions')->get();
+    }
+
 
 }
 

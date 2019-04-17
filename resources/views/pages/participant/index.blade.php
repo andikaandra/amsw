@@ -17,6 +17,16 @@
 </div>
 @endif
 
+@if(\Session::has('success'))
+<div class="row">
+  <div class="col-md-12">
+      <div class="alert alert-success">
+        <p>{!! \Session::get('success') !!}</p>
+      </div>
+  </div>
+</div>
+@endif
+
     <div class="card card-content">
       <div class="card-body">
         <div class="row">
@@ -51,7 +61,12 @@
               @elseif(Auth::user()->status == 6 && Auth::user()->competitions[0]->competition_status == 'final'
               )
                 <p>The committe has viewed your work submission.</p>
-                <p><strong>Congratulations</strong>, you are selected to continue to the Final. Please confirm your availability to attend the Final event <br>at: _____ <br>on: ______.<br>Please click <a href="#">Here</a></p>
+                <p><strong>Congratulations</strong>, you are selected to continue to the Final. Please confirm your availability to attend the Final event <br>at: _____ <br>on: ______.<br>Please click <a href="{{url('participant/final-registration')}}">Here</a></p>
+                @if(Auth::user()->competitions[0]->can_go_to_final == 'no')
+                <p>You have confirmed your Final attendance. You aren't able to attend the final.</p>
+                @elseif(Auth::user()->competitions[0]->can_go_to_final == 'yes')
+                <p>You have confirmed your Final attendance. You are able to attend the final.</p>
+                @endif
               @endif
 
             @else

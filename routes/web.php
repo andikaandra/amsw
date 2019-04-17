@@ -65,6 +65,8 @@ Route::prefix('admin')->group(function() {
     Route::get('verify/submissions/public-poster', 'AdminController@pubposSubmission');
     Route::get('verify/submissions/research-paper', 'AdminController@researchPaperSubmission');
 
+    Route::get('waiting-list', 'WaitingListController@getWaitingList');
+    Route::get('waiting-list/essay', 'AdminController@essayWl');
 
     Route::get('download/submissions/{id}', 'SubmissionController@downloadSubmission');
 });
@@ -89,6 +91,10 @@ Route::prefix('participant')->middleware(['has_verify_email'])->group(function (
             Route::get('/submission', 'ParticipantController@submissionPage');
 
             Route::post('/upload/submission', 'ParticipantRegistrationController@uploadSubmission')->name('upload.submission');
+
+            // TODO: add middleware lolos_ke_final
+            Route::get('final-registration', 'ParticipantController@finalRegistration');
+            Route::put('final-registration', 'ParticipantRegistrationController@finalRegistration');
         });
     });
 });

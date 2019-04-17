@@ -63,5 +63,12 @@ class ParticipantController extends Controller
         return redirect('participant')->with('email_verified', 'Your e-mail has been verified!');
     }
 
+    public function finalRegistration(Request $request) {
+        if($request->page == 2)
+            return view('pages.participant.final-registration-2');       
+        else
+            return view('pages.participant.final-registration');
+    }
+
     
 }

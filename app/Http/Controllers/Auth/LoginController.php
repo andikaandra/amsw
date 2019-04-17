@@ -48,7 +48,7 @@ class LoginController extends Controller
         $userdata = array(
             'email'     => Input::get('email'),
             'password'  => Input::get('password')
-          );
+          );          
     
           if (Auth::attempt($userdata)) {
             if (Auth::user()->role == "admin") {

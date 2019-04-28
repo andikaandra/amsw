@@ -37,7 +37,7 @@
 </div>
 @endif @endif
 
-@if(Auth::user()->competition != NULL && Auth::User()->competitions[0]->verification_status == 'declined')
+@if(Auth::User()->competitions[0]->verification_status == 'declined')
 <div class="alert alert-danger">
     Unfortunately, your registration has been <strong>declined</strong> by the committee. Contact the committee for more details.
 </div>

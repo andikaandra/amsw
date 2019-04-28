@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Log;
 use Illuminate\Http\Request;
 use App\Contracts\ICompetitionManagement;
+use Auth;
 
 class CompetitionManagementController extends Controller
 {

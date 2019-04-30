@@ -82,7 +82,7 @@
         <p>You have confirmed your Final attendance. You aren't able to attend the final.</p>
         @elseif(Auth::user()->competitions[0]->can_go_to_final == 'yes') @if(Auth::user()->status == 8)
         <p>You have confirmed your Final attendance. The committee has reviewed your Final registration, <strong>accepted</strong>          your Final registration data, and you are able to attend the final.</p>
-        @elseif(Auth::user()->status == 7) @if (Auth::user()->competitions[0]->final_verification_status == 'declined')
+        @elseif(Auth::user()->status == 7) @if (Auth::user()->competition != NULL && Auth::user()->competitions[0]->final_verification_status == 'declined')
         <p>You have confirmed your Final attendance. The committee has <strong>declined</strong> your Final registration data.
           Contact the committee for details.</p>
         @else

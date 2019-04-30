@@ -24,7 +24,10 @@ Route::post('logout', 'Auth\LogoutController@logout');
 ROute::get('verify/email/{hash}', 'ParticipantController@verifyEmail');
 
 Route::get('/', 'HomepageController@index');
-
+Route::get('/email', function(){
+   return View::make("email.index");
+});
+Route::get('/email/verify/{token}', 'Auth\VerificationController@verify');
 
 
 // amin routes

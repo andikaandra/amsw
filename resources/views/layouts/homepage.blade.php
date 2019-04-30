@@ -1,26 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <!-- Required meta tags -->
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>AMSW</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AMSW <?php echo date("Y"); ?> | Faculty of Medicine Airlangga University</title>
+    <meta name="keywords" content="amsw, fkunair">
+    <meta name="author" content="Amswfkunair">
+    
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="{{asset('new-homepage/img/favicon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{asset('new-homepage/img/apple-touch-icon.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('new-homepage/img/apple-touch-icon-72x72.png')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('new-homepage/img/apple-touch-icon-114x114.png')}}">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{asset('homepage/css/bootstrap.css')}}">
-    <link rel="stylesheet" href="{{asset('homepage/vendors/linericon/style.css')}}">
-    <link rel="stylesheet" href="{{asset('homepage/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('homepage/vendors/owl-carousel/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('homepage/vendors/lightbox/simpleLightbox.css')}}">
-    <link rel="stylesheet" href="{{asset('homepage/vendors/nice-select/css/nice-select.css')}}">
-    <link rel="stylesheet" href="{{asset('homepage/vendors/animate-css/animate.css')}}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"  href="{{asset('new-homepage/css/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('new-homepage/fonts/font-awesome/css/font-awesome.css')}}">
 
-    <!-- main css -->
-    <link rel="stylesheet" href="{{asset('homepage/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('homepage/css/responsive.css')}}">
+    <!-- Slider
+    ================================================== -->
+    <link href="{{asset('new-homepage/css/owl.carousel.css')}}" rel="stylesheet" media="screen">
+    <link href="{{asset('new-homepage/css/owl.theme.css')}}" rel="stylesheet" media="screen">
+
+    <!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css"  href="{{asset('new-homepage/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('new-homepage/css/responsive.css')}}">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
     <style>
         .pace {
             -webkit-pointer-events: none;
@@ -45,9 +54,9 @@
             height: 2px;
         }
     </style>
-</head>
-
-<body>
+    <script type="text/javascript" src="{{asset('new-homepage/js/modernizr.custom.js')}}"></script>
+  </head>
+  <body>
 
     <!--================Header Menu Area =================-->
     @include('includes.homepage.header')
@@ -70,21 +79,16 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{asset('homepage/js/jquery-3.2.1.min.js')}}"></script>
-    <script src="{{asset('homepage/js/popper.js')}}"></script>
-    <script src="{{asset('homepage/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('homepage/js/stellar.js')}}"></script>
-    <script src="{{asset('homepage/vendors/lightbox/simpleLightbox.min.js')}}"></script>
-    <script src="{{asset('homepage/vendors/nice-select/js/jquery.nice-select.min.js')}}"></script>
-    <script src="{{asset('homepage/vendors/isotope/imagesloaded.pkgd.min.js')}}"></script>
-    <script src="{{asset('homepage/vendors/isotope/isotope-min.js')}}"></script>
-    <script src="{{asset('homepage/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('homepage/js/jquery.ajaxchimp.min.js')}}"></script>
-    <script src="{{asset('homepage/vendors/counter-up/jquery.waypoints.min.js')}}"></script>
-    <script src="{{asset('homepage/vendors/counter-up/jquery.counterup.js')}}"></script>
-    <script src="{{asset('homepage/js/mail-script.js')}}"></script>
-    <script src="{{asset('homepage/js/theme.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{asset('new-homepage/js/jquery.1.11.1.js')}}"></script>
 
+    <script type="text/javascript" src="{{asset('new-homepage/js/bootstrap.js')}}"></script>
+    <script type="text/javascript" src="{{asset('new-homepage/js/SmoothScroll.js')}}"></script>
+    <script type="text/javascript" src="{{asset('new-homepage/js/jquery.isotope.js')}}"></script>
+
+    <script src="{{asset('new-homepage/js/owl.carousel.js')}}"></script>
+
+    <script type="text/javascript" src="{{asset('new-homepage/js/main.js')}}"></script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

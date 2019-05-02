@@ -6,8 +6,7 @@
     <div id="tf-home" class="text-center">
         <div class="overlay">
             <div class="content">
-                <h1>Welcome on <strong><span class="color">Spirit8</span></strong></h1>
-                <p class="lead">We are a digital agency with <strong>years of experience</strong> and with <strong>extraordinary people</strong></p>
+                <h1>Airlangga Medical Scientific Week<br><strong><span class="color">AMSW<br></span> <?php echo date('Y'); ?></strong></h1>
                 <a href="#tf-about" class="fa fa-angle-down page-scroll"></a>
             </div>
         </div>
@@ -29,8 +28,8 @@
                             <hr>
                             <div class="clearfix"></div>
                         </div>
-                        <p class="intro">We love building and rebuilding brands through our  specific skills. Using colour, fonts, and illustration, we brand companies in a way they will never forget.</p>
-                        <ul class="about-list">
+                        <p class="intro text-justify">Airlangga Medical Scientific Week (AMSW) is an annual scientific event held by the Faculty of Medicine Airlangga University. AMSW opens opportunities for medical students in Indonesia and Around the world to submit their works in the form of research papers, literature reviews, scientific essays, and public posters. We are also holding non competition programs like International Symposium (open for public),hospitality night,Introduction of Institute of Tropical Disease and city tour. This year,we are collaborated with Asia Pasific Conference on problem based-learning in Health Science and Higher Education.</p>
+{{--                         <ul class="about-list">
                             <li>
                                 <span class="fa fa-dot-circle-o"></span>
                                 <strong>Mission</strong> - <em>We deliver uniqueness and quality</em>
@@ -43,7 +42,7 @@
                                 <span class="fa fa-dot-circle-o"></span>
                                 <strong>Clients</strong> - <em>Satisfied clients thanks to our experience</em>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
             </div>
@@ -158,10 +157,10 @@
 
     <!-- Services Section
     ==========================================-->
-    <div id="tf-services" class="text-center">
+{{--     <div id="tf-services" class="text-center">
         <div class="container">
             <div class="section-title center">
-                <h2>Take a look at <strong>our services</strong></h2>
+                <h2>Take a look at <strong>our Services</strong></h2>
                 <div class="line">
                     <hr>
                 </div>
@@ -172,32 +171,32 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6 service">
                     <i class="fa fa-desktop"></i>
-                    <h4><strong>Web design</strong></h4>
+                    <h4><strong>Web</strong></h4>
                     <p>The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
                 </div>
 
                 <div class="col-md-3 col-sm-6 service">
                     <i class="fa fa-mobile"></i>
-                    <h4><strong>Mobile Apps</strong></h4>
+                    <h4><strong>Mobile App</strong></h4>
                     <p>The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
                 </div>
 
                 <div class="col-md-3 col-sm-6 service">
                     <i class="fa fa-camera"></i>
-                    <h4><strong>Photography</strong></h4>
+                    <h4><strong>Desktop</strong></h4>
                     <p>The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
                 </div>
 
                 <div class="col-md-3 col-sm-6 service">
                     <i class="fa fa-bullhorn"></i>
-                    <h4><strong>Marketing</strong></h4>
+                    <h4><strong>IOS</strong></h4>
                     <p>The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
-    <!-- Clients Section
+{{--     <!-- Clients Section
     ==========================================-->
     <div id="tf-clients" class="text-center">
         <div class="overlay">
@@ -236,32 +235,34 @@
             </div>
         </div>
     </div>
-
+ --}}
     <!-- Portfolio Section
     ==========================================-->
     <div id="tf-works">
         <div class="container"> <!-- Container -->
             <div class="section-title text-center center">
-                <h2>Take a look at <strong>our services</strong></h2>
+                <h2>Take a look at <strong>our Events</strong></h2>
                 <div class="line">
                     <hr>
                 </div>
                 <div class="clearfix"></div>
-                <small><em>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</em></small>
+                <p>Click the icon to download the guideline <a role="button" href="https://drive.google.com/file/d/1v5RDC9Nd60H51JdVORzIXihIGL2vUWHC/view" target="_blank" class="btn btn-secondary">Here</a>. <br>Check out our full official guideline
+                For further information, contact our person for each competition branches below.</p>
             </div>
             <div class="space"></div>
 
             <div class="categories">
                 
                 <ul class="cat">
-                    <li class="pull-left"><h4>Filter by Type:</h4></li>
+                    <li class="pull-left"><h4>Last year Euphoria</h4></li>
                     <li class="pull-right">
                         <ol class="type">
-                            <li><a href="#" data-filter="*" class="active">All</a></li>
-                            <li><a href="#" data-filter=".web">Web Design</a></li>
-                            <li><a href="#" data-filter=".photography">Photography</a></li>
-                            <li><a href="#" data-filter=".app" >Mobile App</a></li>
-                            <li><a href="#" data-filter=".branding" >Branding</a></li>
+                            {{-- <li><a href="#" data-filter="*" class="active">All</a></li> --}}
+                            <li id="researchPaper"><a href="#" data-filter=".paper" class="active">Research Paper</a></li>
+                            <li><a href="#" data-filter=".litrev">Literature review</a></li>
+                            <li><a href="#" data-filter=".essay" >Scientific essay</a></li>
+                            <li><a href="#" data-filter=".pubpos" >Public Poster</a></li>
+                            <li><a href="#" data-filter=".videdu" >Educational Video</a></li>
                         </ol>
                     </li>
                 </ul>
@@ -269,8 +270,8 @@
             </div>
 
             <div id="lightbox" class="row">
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                <!-- ===========================================================================================-->
+                <div class="col-sm-6 col-md-3 col-lg-3 paper">
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="#">
@@ -278,15 +279,13 @@
                                     <h4>Logo Design</h4>
                                     <small>Branding</small>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/01.jpg')}}" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 photography app">
+                <div class="col-sm-6 col-md-3 col-lg-3 paper">
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="#">
@@ -294,15 +293,13 @@
                                     <h4>Logo Design</h4>
                                     <small>Branding</small>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/02.jpg')}}" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                <div class="col-sm-6 col-md-3 col-lg-3 paper">
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="#">
@@ -310,15 +307,13 @@
                                     <h4>Logo Design</h4>
                                     <small>Branding</small>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/03.jpg')}}" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                <div class="col-sm-6 col-md-3 col-lg-3 paper">
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="#">
@@ -326,15 +321,14 @@
                                     <h4>Logo Design</h4>
                                     <small>Branding</small>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/04.jpg')}}" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 web">
+                <!-- ===========================================================================================-->
+                <div class="col-sm-6 col-md-3 col-lg-3 litrev">
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="#">
@@ -342,15 +336,13 @@
                                     <h4>Logo Design</h4>
                                     <small>Branding</small>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/05.jpg')}}" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 app">
+                <div class="col-sm-6 col-md-3 col-lg-3 litrev">
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="#">
@@ -358,15 +350,13 @@
                                     <h4>Logo Design</h4>
                                     <small>Branding</small>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/06.jpg')}}" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 photography web">
+                <div class="col-sm-6 col-md-3 col-lg-3 litrev">
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="#">
@@ -374,15 +364,13 @@
                                     <h4>Logo Design</h4>
                                     <small>Branding</small>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/07.jpg')}}" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 web">
+                <div class="col-sm-6 col-md-3 col-lg-3 litrev">
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="#">
@@ -390,14 +378,184 @@
                                     <h4>Logo Design</h4>
                                     <small>Branding</small>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/08.jpg')}}" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
                 </div>
-
+                <!-- ===========================================================================================-->
+                <div class="col-sm-6 col-md-3 col-lg-3 essay">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <img src="{{asset('new-homepage/img/portfolio/02.jpg')}}" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-3 essay">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <img src="{{asset('new-homepage/img/portfolio/01.jpg')}}" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-3 essay">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <img src="{{asset('new-homepage/img/portfolio/08.jpg')}}" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-3 essay">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <img src="{{asset('new-homepage/img/portfolio/03.jpg')}}" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ===========================================================================================-->
+                <div class="col-sm-6 col-md-3 col-lg-3 pubpos">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <img src="{{asset('new-homepage/img/portfolio/06.jpg')}}" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-3 pubpos">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <img src="{{asset('new-homepage/img/portfolio/08.jpg')}}" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-3 pubpos">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <img src="{{asset('new-homepage/img/portfolio/01.jpg')}}" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-3 pubpos">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <img src="{{asset('new-homepage/img/portfolio/02.jpg')}}" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ===========================================================================================-->
+                <div class="col-sm-6 col-md-3 col-lg-3 videdu">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <img src="{{asset('new-homepage/img/portfolio/04.jpg')}}" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-3 videdu">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <img src="{{asset('new-homepage/img/portfolio/03.jpg')}}" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-3 videdu">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <img src="{{asset('new-homepage/img/portfolio/01.jpg')}}" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-3 videdu">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <img src="{{asset('new-homepage/img/portfolio/02.jpg')}}" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ===========================================================================================-->
             </div>
         </div>
     </div>
@@ -439,7 +597,7 @@
 
     <!-- Contact Section
     ==========================================-->
-    <div id="tf-contact" class="text-center">
+{{--     <div id="tf-contact" class="text-center">
         <div class="container">
 
             <div class="row">
@@ -481,5 +639,8 @@
             </div>
 
         </div>
-    </div>
+    </div> --}}
+@endsection
+
+@section('script')
 @endsection

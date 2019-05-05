@@ -9,10 +9,7 @@
     
     <!-- Favicons
     ================================================== -->
-    <link rel="shortcut icon" href="{{asset('new-homepage/img/favicon.ico')}}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{{asset('new-homepage/img/apple-touch-icon.png')}}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('new-homepage/img/apple-touch-icon-72x72.png')}}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('new-homepage/img/apple-touch-icon-114x114.png')}}">
+    <link rel="shortcut icon" type="image/png" href="{{asset('amsw-files/favicon.png')}}"/>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css"  href="{{asset('new-homepage/css/bootstrap.css')}}">
@@ -53,6 +50,27 @@
             width: 100%;
             height: 2px;
         }
+
+          .heartbeat {
+            animation: .8s infinite beatHeart;
+          }
+
+          @keyframes beatHeart {
+          0% {
+            transform: scale(1);
+          }
+          25% {
+            transform: scale(1.1);
+          }
+          40% {
+            transform: scale(1);
+          }
+          60% {
+            transform: scale(1.1);
+          }
+          100% {
+            transform: scale(1);
+          }
     </style>
     <script type="text/javascript" src="{{asset('new-homepage/js/modernizr.custom.js')}}"></script>
   </head>

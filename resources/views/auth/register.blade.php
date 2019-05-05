@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="{{ asset('homepage/login_register/images/icons/favicon.ico') }}" />
+    <link rel="shortcut icon" type="image/png" href="{{asset('amsw-files/favicon.png')}}"/>
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/vendor/bootstrap/css/bootstrap.min.css') }}">
     <!--===============================================================================================-->
@@ -62,7 +62,7 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-pic js-tilt" data-tilt>
-                    <img src="{{ asset('homepage/login_register/images/img-01.png') }}" alt="AMSW logo">
+                    <img src="{{asset('amsw-files/image-shadow.png')}}" alt="AMSW logo">
                 </div>
                 <form class="login100-form validate-form" method="POST" action="{{ url('register') }}">
                     @csrf

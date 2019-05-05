@@ -87,7 +87,7 @@ Route::prefix('admin')->middleware(['is_admin'])->group(function() {
 
 Route::middleware(['is_participant'])->group(function() {
     Route::get('/participant', 'ParticipantController@index');
-    Route::post('/finish-tour', 'ParticipantController@finishTour')->name('finish.tour');
+    Route::post('/participant/finish-tour', 'ParticipantController@finishTour')->name('finish.tour');
 
     Route::prefix('participant')->middleware(['has_verify_email'])->group(function () {
         Route::get('/registration', 'ParticipantController@registrationPage');

@@ -30,7 +30,7 @@ class VerificationController extends Controller
           throw new \Exception("Page not found", 404);
         }
 
-        if ($user->email_verification) {
+        if ($user->email_verification == 'verified') {
           return redirect('/login');
         }
         $user->email_verification = 'verified';

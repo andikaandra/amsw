@@ -31,7 +31,8 @@ class UserRegistered extends Mailable
     public function build()
     {
         return $this->view('email.index')->with([
-            'email_token' => $this->user->email_token
-        ])->subject('Email Verification');
+            'email_token' => $this->user->email_token,
+            'name' => $this->user->name
+        ])->subject('AMSW 2019 Account Verification');
     }
 }

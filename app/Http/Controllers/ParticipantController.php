@@ -34,7 +34,7 @@ class ParticipantController extends Controller
     }
 
     public function finishTour(Request $request) {
-        $this->_participantRegistrationService->completeTour(Auth::user()->id);
+        $user = $this->_participantRegistrationService->completeTour(Auth::user()->id);
         return response()->json(['message' => $user], 200);
     }
 

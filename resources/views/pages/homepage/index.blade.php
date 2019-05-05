@@ -6,7 +6,8 @@
     <div id="tf-home" class="text-center">
         <div class="overlay">
             <div class="content">
-                <h1>Airlangga Medical Scientific Week<br><strong><span class="color">AMSW<br></span> <?php echo date('Y'); ?></strong></h1>
+                <h1 style="cursor: default;">Airlangga Medical Scientific Week<br><strong><span class="color">AMSW<br></span> <?php echo date('Y'); ?></strong></h1>
+                {{-- <img src="{{asset('amsw-files/logo-fix-transparan-small.png')}}" style="height: 200px; width: auto;"> --}}
                 <a href="#tf-about" class="fa fa-angle-down page-scroll"></a>
             </div>
         </div>
@@ -18,7 +19,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{asset('new-homepage/img/02.png')}}" class="img-responsive">
+                    <img src="{{asset('amsw-files/image-shadow.png')}}" class="img-responsive" width="70%" style="margin: auto;">
+                    {{-- <img src="{{asset('new-homepage/img/02.png')}}" > --}}
                 </div>
                 <div class="col-md-6">
                     <div class="about-text">
@@ -28,7 +30,7 @@
                             <hr>
                             <div class="clearfix"></div>
                         </div>
-                        <p class="intro text-justify">Airlangga Medical Scientific Week (AMSW) is an annual scientific event held by the Faculty of Medicine Airlangga University. AMSW opens opportunities for medical students in Indonesia and Around the world to submit their works in the form of research papers, literature reviews, scientific essays, and public posters. We are also holding non competition programs like International Symposium (open for public),hospitality night,Introduction of Institute of Tropical Disease and city tour. This year,we are collaborated with Asia Pasific Conference on problem based-learning in Health Science and Higher Education.</p>
+                        <p class="intro text-justify">Airlangga Medical Scientific Week (<strong>AMSW</strong>) is an annual scientific event held by the Faculty of Medicine Airlangga University. AMSW opens opportunities for medical students in Indonesia and Around the world to submit their works in the form of research papers, literature reviews, scientific essays, and public posters. We are also holding non competition programs like International Symposium (open for public),hospitality night,Introduction of Institute of Tropical Disease and city tour. This year,we are collaborated with Asia Pasific Conference on problem based-learning in Health Science and Higher Education.</p>
 {{--                         <ul class="about-list">
                             <li>
                                 <span class="fa fa-dot-circle-o"></span>

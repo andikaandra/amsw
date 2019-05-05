@@ -1,7 +1,7 @@
 <nav id="footer">
     <div class="container">
         <div class="pull-left fnav">
-            <p>ALL RIGHTS RESERVED. COPYRIGHT © <script>document.write(new Date().getFullYear());</script></p>
+            <p>Copyright AMSW <script>document.write(new Date().getFullYear());</script> | Handcrafted & Nurtured with huge <i class="fa fa-heart heartbeat" style="color: red; border:none; font-size: 14px" aria-hidden="true"></i> by Software Silo</p>
         </div>
         <div class="pull-right fnav">
             <ul class="footer-social">

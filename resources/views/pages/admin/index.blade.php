@@ -92,6 +92,7 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                     <input type="hidden" name="comp_id" id="comp_id">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}"">
                 </form>                
             </div>
         </div>
@@ -172,7 +173,6 @@ $(document).ready(function() {
                 method: 'put',
                 data: compData,
                 dataType: 'json',
-                _token: '{{csrf_token()}}',
                 url: '{{url('admin/competitions')}}/' + compId
             });
         } catch (error) {

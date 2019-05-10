@@ -91,8 +91,8 @@
         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
           <tr>
             <td align="center" valign="top" style="padding: 36px 24px;">
-              <a href="https://sendgrid.com" target="_blank" style="display: inline-block;">
-                <img src="./img/paste-logo-light@2x.png" alt="Logo" border="0" width="48" style="display: block; width: 48px; max-width: 48px; min-width: 48px;">
+              <a href="#" target="_blank" style="display: inline-block;">
+              <img src="{{asset('amsw-files/image-shadow.png')}}" alt="Logo" border="0" width="48" style="display: block; width: 200px;">
               </a>
             </td>
           </tr>
@@ -127,7 +127,7 @@
                     <table border="0" cellpadding="0" cellspacing="0">
                       <tr>
                         <td align="center" bgcolor="#1a82e2" style="border-radius: 6px;">
-                          <a href="{{url("email/verify")."/$email_token"}}" target="_blank" style="display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px;">Verify Email</a>
+                          <a href="{{url("email/verify")."/$email_token"}}" target="_blank" style="display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px; background: #a02929;">Verify Email</a>
                         </td>
                       </tr>
                     </table>

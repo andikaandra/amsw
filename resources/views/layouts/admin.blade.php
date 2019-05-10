@@ -94,7 +94,7 @@
           </div>
         </div>
       </main>
-      <aside class="aside-menu">
+      {{-- <aside class="aside-menu">
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">
@@ -134,7 +134,7 @@
             </div>
           </div>
         </div>
-      </aside>
+      </aside> --}}
     </div>
     <footer class="app-footer">
       <div>

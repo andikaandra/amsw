@@ -111,15 +111,15 @@
     }
   }
 
-  $(function() {  
-    var hadTour = {{Auth::user()->has_complete_tour}};
-    if(!hadTour){
-      introJs().oncomplete(function() {
-        completeTour();
-      }).onexit(function(){
-        completeTour();
-      }).start();
-    }
-  });
+  // $(function() {  
+  //   var hadTour = {{Auth::user()->has_complete_tour}};
+  //   if(!hadTour){
+  //     introJs().oncomplete(function() {
+  //       completeTour();
+  //     }).onexit(function(){
+  //       completeTour();
+  //     }).start();
+  //   }
+  // });
 </script>
 @endsection

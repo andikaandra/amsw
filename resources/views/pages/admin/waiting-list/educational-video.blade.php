@@ -137,10 +137,10 @@ $(document).ready(function() {
                 <input type="text" readonly class="form-control" value="${payment[0].bank_name}">
                 <label for="">Amount Transferred</label>
                 <input type="text" readonly class="form-control price" value="${parseInt(payment[0].amount)}">  
-                <a class="btn btn-warning" target='_blank' href="{{url('admin/payments/${payment[0].id}')}}">Check Payment </a>
-                <br>
                 <label for="">Travel Plan Link</label>
                 <input type="text" readonly class="form-control travel" value="${payment[1].travel_plan}">
+                <br>
+                <a class="btn btn-warning" target='_blank' href="{{url('admin/payments/${payment[0].id}')}}">Check Payment </a>
             </div>
         </div>`;
 

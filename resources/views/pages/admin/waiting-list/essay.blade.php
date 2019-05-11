@@ -162,6 +162,7 @@ $(document).ready(function() {
                 <label for="">Amount Transferred</label>
                 <input type="text" readonly class="form-control price" value="${parseInt(payment[0].amount)}">  
                 <a class="text-info" target='_blank' href="{{url('admin/payments/${payment[0].id}')}}">Check Payment </a>
+                <br>
                 <label for="">Travel Plan Link</label>
                 <input type="text" readonly class="form-control travel" value="${payment[1].travel_plan}">
             </div>

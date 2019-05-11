@@ -132,12 +132,15 @@ $(document).ready(function() {
             <div class="form-group">
                 <h5><strong>Payment</strong></h5>   
                 <label for="">Bank Account Name</label>
-                <input type="text" readonly class="form-control" value="${payment.bank_account_name}">
+                <input type="text" readonly class="form-control" value="${payment[0].bank_account_name}">
                 <label for="">Bank Name</label>
-                <input type="text" readonly class="form-control" value="${payment.bank_name}">
+                <input type="text" readonly class="form-control" value="${payment[0].bank_name}">
                 <label for="">Amount Transferred</label>
-                <input type="text" readonly class="form-control price" value="${parseInt(payment.amount)}">  
-                <a class="text-info" target='_blank' href="{{url('admin/payments/${payment.id}')}}">Check Payment </a>
+                <input type="text" readonly class="form-control price" value="${parseInt(payment[0].amount)}">  
+                <label for="">Travel Plan Link</label>
+                <input type="text" readonly class="form-control travel" value="${payment[1].travel_plan}">
+                <br>
+                <a class="btn btn-warning" target='_blank' href="{{url('admin/payments/${payment[0].id}')}}">Check Payment </a>
             </div>
         </div>`;
 

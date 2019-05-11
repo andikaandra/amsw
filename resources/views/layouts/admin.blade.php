@@ -94,7 +94,7 @@
           </div>
         </div>
       </main>
-      <aside class="aside-menu">
+      {{-- <aside class="aside-menu">
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">
@@ -134,7 +134,7 @@
             </div>
           </div>
         </div>
-      </aside>
+      </aside> --}}
     </div>
     <footer class="app-footer">
       <div>
@@ -149,8 +149,8 @@
     <script src="{{asset('dashboard/node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('dashboard/node_modules/@coreui/coreui/dist/js/coreui.min.js')}}"></script>
     <!-- Plugins and scripts required by this view-->
-    <script src="{{asset('dashboard/node_modules/chart.js/dist/Chart.min.js')}}"></script>
-    <script src="{{asset('dashboard/node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js')}}"></script>
+    {{-- <script src="{{asset('dashboard/node_modules/chart.js/dist/Chart.min.js')}}"></script> --}}
+    {{-- <script src="{{asset('dashboard/node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js')}}"></script> --}}
     <script src="{{asset('dashboard/js/main.js')}}"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/alertify.min.js"></script>    

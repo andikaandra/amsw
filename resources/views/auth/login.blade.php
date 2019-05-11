@@ -37,7 +37,7 @@
                 <form class="login100-form validate-form" method="POST" action="{{ url('login') }}">
                     @csrf
                     <span class="login100-form-title">
-                        Login to AMSW
+                        Login to AMSW 2019
                     </span> @if (\Session::has('message'))
                     <div class="alert alert-danger text-center" role="alert">
                         <h6 style="font-size: 12px">{!! \Session::get('message') !!}</h6>

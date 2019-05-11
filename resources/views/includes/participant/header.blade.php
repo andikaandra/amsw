@@ -3,20 +3,19 @@
     <span class="navbar-toggler-icon"></span>
 </button>
 <a class="navbar-brand" href="{{url('/participant')}}">
-{{--     <img class="navbar-brand-full" src="{{asset('dashboard/img/brand/logo.svg')}}" width="89" height="25" alt="AMSW Logo">
-    <img class="navbar-brand-minimized" src="{{asset('dashboard/img/brand/sygnet.svg')}}" width="30" height="30" alt="AMSW Logo"> --}}
-    AMSW
+    <img class="navbar-brand-full" src="{{asset('amsw-files/logo-fix-transparan.png')}}" width="50" alt="AMSW Logo">    
+    AMSW 2019
 </a>
 <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
     <span class="navbar-toggler-icon"></span>
 </button>
 <ul class="nav navbar-nav ml-auto">
-    <li class="nav-item d-md-down-none">
+    {{-- <li class="nav-item d-md-down-none">
         <a class="nav-link" href="{{url('/')}}">
             <i class="fa fa-home" aria-hidden="true"></i> Home
         </a>
-    </li>
-    <li class="nav-item d-md-down-none mx-5">
+    </li> --}}
+    <li class="nav-item mx-2">
         <a class="nav-link" href="{{ url('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             <i class="fa fa-lock" aria-hidden="true"></i> Logout
         </a>

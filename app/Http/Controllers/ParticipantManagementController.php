@@ -56,10 +56,10 @@ class ParticipantManagementController extends Controller
     }
 
     public function getFinalPayment($user_id) {
-        return response()->json(
-            Payment::where('user_id', $user_id)->where('payment_type', 'final')
-            ->first()
-        );
+        $payment = Payment::where('user_id', $user_id)->where('payment_type', 'final')
+        ->first();
+        $comp = Competition::where('user_id', $user_id)->first();
+        return response()->json([$payment, $comp]);
     }
 
     public function declineFinalRegistration($comp_id) {        

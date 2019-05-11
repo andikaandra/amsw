@@ -113,8 +113,8 @@
       <!--End of Tawk.to Script-->
 
     <!-- Plugins and scripts required by this view-->
-    {{-- <script src="{{asset('dashboard/node_modules/chart.js/dist/Chart.min.js')}}"></script> --}}
-{{--     <script src="{{asset('dashboard/node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js')}}"></script> --}}
+      <script src="{{asset('dashboard/node_modules/chart.js/dist/Chart.min.js')}}"></script>
+      <script src="{{asset('dashboard/node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js')}}"></script>
       <script src="{{asset('dashboard/js/main.js')}}"></script>
       <script type="text/javascript" src="{{asset('introjs/intro.js')}}"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js" integrity="sha256-u7MY6EG5ass8JhTuxBek18r5YG6pllB9zLqE4vZyTn4=" crossorigin="anonymous"></script>

@@ -8,7 +8,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{url('/')}}">AMSW</a>
+          <a href="#" class="navbar-left"><img src="{{asset('amsw-files/logo-fix-transparan-small.png')}}" style="height: 64px; width: auto;"></a>
+          <a class="navbar-brand" href="{{url('/')}}" style="margin-top: 5px;">
+            AMSW  
+          </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

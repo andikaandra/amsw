@@ -42,7 +42,7 @@
         }
 
         .pace .pace-progress {
-            background: #ebd4cc;
+            background: #d55c5a;
             position: fixed;
             z-index: 2000;
             top: 0;
@@ -71,8 +71,14 @@
           100% {
             transform: scale(1);
           }
+        }
+
+        #tf-menu.navbar-default .navbar-nav > li > a:hover {
+          color: #d55c5a;
+        }
     </style>
     <script type="text/javascript" src="{{asset('new-homepage/js/modernizr.custom.js')}}"></script>
+    @yield('style')
   </head>
   <body>
 

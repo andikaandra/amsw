@@ -1,5 +1,21 @@
 @extends('layouts.homepage')
 
+@section('style')
+<style>
+
+.portfolio-item {
+    padding: 15px;
+    border-radius: 5px;
+}
+.categories .type .active {
+    font-size: 18px;
+}
+#tf-team .item .thumbnail:hover > img.img-circle.team-img {
+    cursor: pointer;
+}
+</style>
+@endsection
+
 @section('content')
     <!-- Home Page
     ==========================================-->
@@ -30,7 +46,9 @@
                             <hr>
                             <div class="clearfix"></div>
                         </div>
-                        <p class="intro text-justify">Airlangga Medical Scientific Week (<strong>AMSW</strong>) is an annual scientific event held by the Faculty of Medicine Airlangga University. AMSW opens opportunities for medical students in Indonesia and Around the world to submit their works in the form of research papers, literature reviews, scientific essays, and public posters. We are also holding non competition programs like International Symposium (open for public),hospitality night,Introduction of Institute of Tropical Disease and city tour. This year,we are collaborated with Asia Pasific Conference on problem based-learning in Health Science and Higher Education.</p>
+                        <p class="intro text-justify">
+                            Airlangga Medical Scientific Week (<strong>AMSW</strong>) is an annual scientific event held by the Faculty of Medicine Airlangga University. AMSW opens opportunities for medical students in Indonesia and around the world to submit their works in the form of research papers, literature reviews, scientific essays, public posters and education videos. We are also holding non-competition programs like International Symposium (open for public), Gala dinner, and City tour.
+                        </p>
 {{--                         <ul class="about-list">
                             <li>
                                 <span class="fa fa-dot-circle-o"></span>
@@ -156,107 +174,26 @@
             </div>
         </div>
     </div>
-
-    <!-- Services Section
-    ==========================================-->
-{{--     <div id="tf-services" class="text-center">
-        <div class="container">
-            <div class="section-title center">
-                <h2>Take a look at <strong>our Services</strong></h2>
-                <div class="line">
-                    <hr>
-                </div>
-                <div class="clearfix"></div>
-                <small><em>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</em></small>
-            </div>
-            <div class="space"></div>
-            <div class="row">
-                <div class="col-md-3 col-sm-6 service">
-                    <i class="fa fa-desktop"></i>
-                    <h4><strong>Web</strong></h4>
-                    <p>The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                </div>
-
-                <div class="col-md-3 col-sm-6 service">
-                    <i class="fa fa-mobile"></i>
-                    <h4><strong>Mobile App</strong></h4>
-                    <p>The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                </div>
-
-                <div class="col-md-3 col-sm-6 service">
-                    <i class="fa fa-camera"></i>
-                    <h4><strong>Desktop</strong></h4>
-                    <p>The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                </div>
-
-                <div class="col-md-3 col-sm-6 service">
-                    <i class="fa fa-bullhorn"></i>
-                    <h4><strong>IOS</strong></h4>
-                    <p>The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
-{{--     <!-- Clients Section
-    ==========================================-->
-    <div id="tf-clients" class="text-center">
-        <div class="overlay">
-            <div class="container">
-
-                <div class="section-title center">
-                    <h2>Some of <strong>our Clients</strong></h2>
-                    <div class="line">
-                        <hr>
-                    </div>
-                </div>
-                <div id="clients" class="owl-carousel owl-theme">
-                    <div class="item">
-                        <img src="{{asset('new-homepage/img/client/01.png')}}">
-                    </div>
-                    <div class="item">
-                        <img src="{{asset('new-homepage/img/client/02.png')}}">
-                    </div>
-                    <div class="item">
-                        <img src="{{asset('new-homepage/img/client/03.png')}}">
-                    </div>
-                    <div class="item">
-                        <img src="{{asset('new-homepage/img/client/04.png')}}">
-                    </div>
-                    <div class="item">
-                        <img src="{{asset('new-homepage/img/client/05.png')}}">
-                    </div>
-                    <div class="item">
-                        <img src="{{asset('new-homepage/img/client/06.png')}}">
-                    </div>
-                    <div class="item">
-                        <img src="{{asset('new-homepage/img/client/07.png')}}">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
- --}}
     <!-- Portfolio Section
     ==========================================-->
     <div id="tf-works">
         <div class="container"> <!-- Container -->
             <div class="section-title text-center center">
-                <h2>Take a look at <strong>our Events</strong></h2>
+                <h2>Take a look at <strong>our competitions</strong></h2>
                 <div class="line">
                     <hr>
                 </div>
                 <div class="clearfix"></div>
-                <p>Click the icon to download the guideline <a role="button" href="https://drive.google.com/file/d/1v5RDC9Nd60H51JdVORzIXihIGL2vUWHC/view" target="_blank" class="btn btn-secondary">Here</a>. <br>Check out our full official guideline
-                For further information, contact our person for each competition branches below.</p>
+               <p>
+                Integer ac nulla sit amet orci vehicula ornare vitae ut ipsum. Suspendisse elit nisi, egestas a fermentum vitae, gravida nec sapien. Maecenas quis massa ut augue elementum placerat quis vestibulum metus. Nunc at lobortis nibh. Aliquam fermentum finibus feugiat. Nunc elit nibh, luctus a nulla sit amet, cursus posuere justo.
+               </p>
             </div>
             <div class="space"></div>
 
             <div class="categories">
                 
                 <ul class="cat">
-                    <li class="pull-left"><h4>Last year Euphoria</h4></li>
+                    <li class="pull-left"><h4>Competition Branches</h4></li>
                     <li class="pull-right">
                         <ol class="type">
                             {{-- <li><a href="#" data-filter="*" class="active">All</a></li> --}}
@@ -273,17 +210,17 @@
 
             <div id="lightbox" class="row">
                 <!-- ===========================================================================================-->
-                <div class="col-sm-6 col-md-3 col-lg-3 paper">
+                {{-- <div class="col-sm-6 col-md-3 col-lg-3 paper">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <div>
                                 <div class="hover-text">
                                     <h4>Logo Design</h4>
                                     <small>Branding</small>
                                     <div class="clearfix"></div>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/01.jpg')}}" class="img-responsive" alt="...">
-                            </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -300,7 +237,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> --}}                                        
                 <div class="col-sm-6 col-md-3 col-lg-3 paper">
                     <div class="portfolio-item">
                         <div class="hover-bg">
@@ -329,78 +266,72 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-6 paper">
+                        <h4 class="title">Research Paper</h4>
+                        <div class="portfolio-item paper">
+                            <div>
+                                <p class="text-justify">
+                                    Research Paper is paper competition in the form of abstract in the preliminary round. Abstract is based on research result, and closed for original research, case report, analytical study, even meta-analysis. This competition is intended to facillitate young researchers from all health major to express their idea to establish approaches especially in tropical disease’s eradication and widespread control. So, we invite active pre-clinical and clinical undergraduate student in health major around the world to challenge their work here.
+                                </p>
+                                <a href="#">Download Guideline</a>
+                                <p>Contact Person:</p>
+                                <ul>
+                                    <li>ID Line: juliana_kuroba</li>
+                                    <li>Phone: +6282388419600</li>
+                                </ul>
+                            </div>                        
+                        </div>
+                    </div>
+
+
                 <!-- ===========================================================================================-->
                 <div class="col-sm-6 col-md-3 col-lg-3 litrev">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <img src="{{asset('new-homepage/img/portfolio/05.jpg')}}" class="img-responsive" alt="...">
-                            </a>
+                        <div class="portfolio-item">
+                            <div class="hover-bg">
+                                <a href="#">
+                                    <div class="hover-text">
+                                        <h4>Logo Design</h4>
+                                        <small>Branding</small>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <img src="{{asset('new-homepage/img/portfolio/03.jpg')}}" class="img-responsive" alt="...">
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 litrev">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <img src="{{asset('new-homepage/img/portfolio/06.jpg')}}" class="img-responsive" alt="...">
-                            </a>
+                    <div class="col-sm-6 col-md-3 col-lg-3 litrev">
+                        <div class="portfolio-item">
+                            <div class="hover-bg">
+                                <a href="#">
+                                    <div class="hover-text">
+                                        <h4>Logo Design</h4>
+                                        <small>Branding</small>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <img src="{{asset('new-homepage/img/portfolio/04.jpg')}}" class="img-responsive" alt="...">
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 litrev">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <img src="{{asset('new-homepage/img/portfolio/07.jpg')}}" class="img-responsive" alt="...">
-                            </a>
+    
+                    <div class="col-sm-6 col-md-6 col-lg-6 litrev">
+                        <h4 class="title">Literature Review</h4>
+                        <div class="portfolio-item litrev">
+                            <div>
+                                <p class="text-justify">
+                                    Literature Review is both a summary and explanation of the complete and current state of knowledge on a limited topic as found in academic books and journal articles. It is important to formulate a research afterward. Many great inventions are discovered from a good literature review. So it is a great chance for you who have brilliant idea to overcome problems in medical field. It is open for international pre-clinical undergraduate student in health major.
+                                </p>
+                                <a href="#">Download Guideline</a>
+                                <p>Contact Person:</p>
+                                <ul>
+                                    <li>ID Line: rakaihsanulhaj</li>
+                                    <li>Phone: +6287878425284</li>
+                                </ul>
+                            </div>                        
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 litrev">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <img src="{{asset('new-homepage/img/portfolio/08.jpg')}}" class="img-responsive" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                </div>
                 <!-- ===========================================================================================-->
-                <div class="col-sm-6 col-md-3 col-lg-3 essay">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <img src="{{asset('new-homepage/img/portfolio/02.jpg')}}" class="img-responsive" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-sm-6 col-md-3 col-lg-3 essay">
                     <div class="portfolio-item">
                         <div class="hover-bg">
@@ -429,35 +360,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 essay">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <img src="{{asset('new-homepage/img/portfolio/03.jpg')}}" class="img-responsive" alt="...">
-                            </a>
+                <div class="col-sm-6 col-md-6 col-lg-6 essay">
+                        <h4 class="title">Scientific Essay</h4>
+                        <div class="portfolio-item essay">
+                            <div>
+                                <p class="text-justify">
+                                    An essay is, generally, a piece of writing that gives the author’s own argument about an issue. Scientific essay limit the argument to be evidence-based. It is made in order to enrich our knowledge in science and technology and to see problems from holistic perspective. It is open for national participants.                                                 
+                                </p>
+                                <a href="#">Download Guideline</a>
+                                <p>Contact Person:</p>
+                                <ol>
+                                    <li>ID Line: naila_adibah </li>
+                                    <li>Phone: +6285655309020</li>
+                                </ol>
+
+                            </div>                        
                         </div>
                     </div>
-                </div>
                 <!-- ===========================================================================================-->
-                <div class="col-sm-6 col-md-3 col-lg-3 pubpos">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <img src="{{asset('new-homepage/img/portfolio/06.jpg')}}" class="img-responsive" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-sm-6 col-md-3 col-lg-3 pubpos">
                     <div class="portfolio-item">
                         <div class="hover-bg">
@@ -486,18 +406,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 pubpos">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <img src="{{asset('new-homepage/img/portfolio/02.jpg')}}" class="img-responsive" alt="...">
-                            </a>
-                        </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 pubpos">
+                    <h4 class="title">Public Poster</h4>
+                    <div class="portfolio-item pubpos">
+                        <div>
+                            <p class="text-justify">
+                                <strong>Public poster</strong> is a public piece of paper conveying information through text, graphic, or image. It is very useful to help Indonesian government in the form of healthcare promotion and prevention. Be free to express your idea in any creative way possible. Public poster is open for national participants.
+                            </p>
+                            <a href="#">Download Guideline</a>
+                            <p>Contact Person:</p>
+                            <ol>
+                                <li>ID Line: aryaiv </li>
+                                <li>Phone: +62895335227998</li>                                                                
+                            </ol>
+                        </div>                        
                     </div>
                 </div>
                 <!-- ===========================================================================================-->
@@ -529,32 +451,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 videdu">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <img src="{{asset('new-homepage/img/portfolio/01.jpg')}}" class="img-responsive" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 videdu">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <img src="{{asset('new-homepage/img/portfolio/02.jpg')}}" class="img-responsive" alt="...">
-                            </a>
-                        </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 videdu">
+                    <h4 class="title">Educational Video</h4>
+                    <div class="portfolio-item videdu">
+                        <div>
+                            <p class="text-justify">
+                                Nullam sit amet mattis est. Aliquam justo magna, egestas et pellentesque sit amet, fermentum ut arcu. Proin eu dignissim sem. Vivamus vehicula augue ligula, ornare rutrum nisi facilisis vel. Ut fermentum nisi tempus dolor finibus vulputate. Sed molestie scelerisque tortor, nec lobortis arcu vehicula eu. Mauris vitae lacus lorem. 
+                            </p>
+                            <a href="#">Download Guideline</a>
+                            <p>Contact Person:</p>
+                            <ol>
+                                Nullam sit amet mattis est. Aliquam justo magna                                                      
+                            </ol>
+                        </div>                        
                     </div>
                 </div>
                 <!-- ===========================================================================================-->
@@ -568,7 +477,7 @@
         <div class="overlay">
             <div class="container">
                 <div class="section-title center">
-                    <h2><strong>Our clients’</strong> testimonials</h2>
+                    <h2><strong>Our participants'</strong> testimonials</h2>
                     <div class="line">
                         <hr>
                     </div>
@@ -578,17 +487,17 @@
                         <div id="testimonial" class="owl-carousel owl-theme">
                             <div class="item">
                                 <h5>This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</h5>
-                                <p><strong>Dean Martin</strong>, CEO Acme Inc.</p>
+                                <p><strong>Dean Martin</strong>, 2018</p>
                             </div>
 
                             <div class="item">
                                 <h5>This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</h5>
-                                <p><strong>Dean Martin</strong>, CEO Acme Inc.</p>
+                                <p><strong>Dean Martin</strong>, 2018</p>
                             </div>
 
                             <div class="item">
                                 <h5>This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</h5>
-                                <p><strong>Dean Martin</strong>, CEO Acme Inc.</p>
+                                <p><strong>Dean Martin</strong>, 2018</p>
                             </div>
                         </div>
                     </div>

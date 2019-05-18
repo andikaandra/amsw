@@ -16,6 +16,25 @@
 a {
   outline:none !important;
 }
+
+img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+
+
 </style>
 @endsection
 
@@ -38,7 +57,7 @@ a {
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{asset('amsw-files/image-shadow.png')}}" class="img-responsive wow slideInLeft js-tilt" data-wow-duration="1s" width="70%" style="margin: auto;">
+                    <img src="{{asset('amsw-files/image-shadow.png')}}" class="vert-move img-responsive" width="70%" style="margin: auto;">
                     {{-- <img src="{{asset('new-homepage/img/02.png')}}" > --}}
                 </div>
                 <div class="col-md-6">
@@ -49,7 +68,7 @@ a {
                             <hr>
                             <div class="clearfix"></div>
                         </div>
-                        <p class="intro text-justify">
+                        <p class="intro text-justify wow fadeInUp">
                             Airlangga Medical Scientific Week (<strong>AMSW</strong>) is an annual scientific event held by the Faculty of Medicine Airlangga University. AMSW opens opportunities for medical students in Indonesia and around the world to submit their works in the form of research papers, literature reviews, scientific essays, public posters and education videos. We are also holding non-competition programs like International Symposium (open for public), Gala dinner, and City tour.
                         </p>
 {{--                         <ul class="about-list">
@@ -196,11 +215,10 @@ a {
             <div class="categories">
                 
                 <ul class="cat">
-                    <li class="pull-left"><h4>Competition Branches</h4></li>
+                    <li class="pull-left"><h3><strong>Competition Branches</strong></h3></li>
                     <li class="pull-right">
                         <ol class="type">
-                            {{-- <li><a href="#" data-filter="*" class="active">All</a></li> --}}
-                            <li id="researchPaper"><a href="#" data-filter=".paper" class="active">Research Paper</a></li>
+                            <li id="researchPaper"><a href="#" data-filter=".paper">Research Paper</a></li>
                             <li><a href="#" data-filter=".litrev">Literature review</a></li>
                             <li><a href="#" data-filter=".essay" >Scientific essay</a></li>
                             <li><a href="#" data-filter=".pubpos" >Public Poster</a></li>
@@ -210,37 +228,8 @@ a {
                 </ul>
                 <div class="clearfix"></div>
             </div>
-
+            <br><br>
             <div id="lightbox" class="row">
-                <!-- ===========================================================================================-->
-                {{-- <div class="col-sm-6 col-md-3 col-lg-3 paper">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <div>
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <img src="{{asset('new-homepage/img/portfolio/01.jpg')}}" class="img-responsive" alt="...">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 paper">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <img src="{{asset('new-homepage/img/portfolio/02.jpg')}}" class="img-responsive" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                </div> --}}                                        
                 <div class="col-sm-6 col-md-3 col-lg-3 paper">
                     <div class="portfolio-item">
                         <div class="hover-bg">
@@ -250,7 +239,7 @@ a {
                                     {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
-                                <img src="{{asset('new-homepage/img/portfolio/03.jpg')}}" class="img-responsive" alt="...">
+                                <img src="{{asset('amsw-files/galery/research-paper1.jpg')}}" class="img-responsive" alt="..." style="height: 80%; width: auto; object-fit: cover">
                             </a>
                         </div>
                     </div>
@@ -264,7 +253,7 @@ a {
                                     {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
-                                <img src="{{asset('new-homepage/img/portfolio/04.jpg')}}" class="img-responsive" alt="...">
+                                <img src="{{asset('amsw-files/galery/research-paper2.jpg')}}" class="img-responsive" alt="..." style="height: 80%; width: auto; object-fit: cover">
                             </a>
                         </div>
                     </div>
@@ -298,7 +287,7 @@ a {
                                         {{-- <small>Branding</small> --}}
                                         <div class="clearfix"></div>
                                     </div>
-                                    <img src="{{asset('new-homepage/img/portfolio/03.jpg')}}" class="img-responsive" alt="...">
+                                    <img src="{{asset('amsw-files/galery/literature-review1.jpg')}}" class="img-responsive" alt="..." style="height: 80%; width: auto; object-fit: cover">
                                 </a>
                             </div>
                         </div>
@@ -312,7 +301,7 @@ a {
                                         {{-- <small>Branding</small> --}}
                                         <div class="clearfix"></div>
                                     </div>
-                                    <img src="{{asset('new-homepage/img/portfolio/04.jpg')}}" class="img-responsive" alt="...">
+                                    <img src="{{asset('amsw-files/galery/literature-review2.jpg')}}" class="img-responsive" alt="..." style="height: 80%; width: auto; object-fit: cover">
                                 </a>
                             </div>
                         </div>
@@ -344,7 +333,7 @@ a {
                                     {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
-                                <img src="{{asset('new-homepage/img/portfolio/01.jpg')}}" class="img-responsive" alt="...">
+                                <img src="{{asset('amsw-files/galery/scientific-essay1.jpg')}}" class="img-responsive" alt="..." style="height: 80%; width: auto; object-fit: cover">
                             </a>
                         </div>
                     </div>
@@ -358,7 +347,7 @@ a {
                                     {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
-                                <img src="{{asset('new-homepage/img/portfolio/08.jpg')}}" class="img-responsive" alt="...">
+                                <img src="{{asset('amsw-files/galery/scientific-essay2.jpg')}}" class="img-responsive" alt="..." style="height: 80%; width: auto; object-fit: cover">
                             </a>
                         </div>
                     </div>
@@ -372,10 +361,10 @@ a {
                                 </p>
                                 <a href="#">Download Guideline</a>
                                 <p>Contact Person:</p>
-                                <ol>
+                                <ul>
                                     <li>ID Line: naila_adibah </li>
                                     <li>Phone: +6285655309020</li>
-                                </ol>
+                                </ul>
 
                             </div>                        
                         </div>
@@ -390,7 +379,7 @@ a {
                                     {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
-                                <img src="{{asset('new-homepage/img/portfolio/08.jpg')}}" class="img-responsive" alt="...">
+                                <img src="{{asset('amsw-files/galery/public-poster1.jpg')}}" class="img-responsive" alt="..." style="height: 80%; width: auto; object-fit: cover">
                             </a>
                         </div>
                     </div>
@@ -404,7 +393,7 @@ a {
                                     {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
-                                <img src="{{asset('new-homepage/img/portfolio/01.jpg')}}" class="img-responsive" alt="...">
+                                <img src="{{asset('amsw-files/galery/public-poster2.jpg')}}" class="img-responsive" alt="..." style="height: 80%; width: auto; object-fit: cover">
                             </a>
                         </div>
                     </div>
@@ -418,10 +407,10 @@ a {
                             </p>
                             <a href="#">Download Guideline</a>
                             <p>Contact Person:</p>
-                            <ol>
+                            <ul>
                                 <li>ID Line: aryaiv </li>
                                 <li>Phone: +62895335227998</li>                                                                
-                            </ol>
+                            </ul>
                         </div>                        
                     </div>
                 </div>
@@ -435,7 +424,7 @@ a {
                                     {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
-                                <img src="{{asset('new-homepage/img/portfolio/04.jpg')}}" class="img-responsive" alt="...">
+                                <img src="{{asset('amsw-files/galery/educational-video1.jpg')}}" class="img-responsive" alt="..." style="height: 80%; width: auto; object-fit: cover">
                             </a>
                         </div>
                     </div>
@@ -449,7 +438,7 @@ a {
                                     {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
-                                <img src="{{asset('new-homepage/img/portfolio/03.jpg')}}" class="img-responsive" alt="...">
+                                <img src="{{asset('amsw-files/galery/educational-video2.jpg')}}" class="img-responsive" alt="..." style="height: 80%; width: auto; object-fit: cover">
                             </a>
                         </div>
                     </div>
@@ -463,9 +452,9 @@ a {
                             </p>
                             <a href="#">Download Guideline</a>
                             <p>Contact Person:</p>
-                            <ol>
-                                Nullam sit amet mattis est. Aliquam justo magna                                                      
-                            </ol>
+                            <ul>
+                                <li>Nullam sit amet mattis est. Aliquam justo magna</li>
+                            </ul>
                         </div>                        
                     </div>
                 </div>
@@ -480,7 +469,7 @@ a {
         <div class="overlay">
             <div class="container">
                 <div class="section-title center">
-                    <h2><strong>Our participants'</strong> testimonials</h2>
+                    <h2><strong>Non Competition</strong> programs</h2>
                     <div class="line">
                         <hr>
                     </div>
@@ -489,18 +478,18 @@ a {
                     <div class="col-md-8 col-md-offset-2">
                         <div id="testimonial" class="owl-carousel owl-theme">
                             <div class="item">
-                                <h5>This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</h5>
-                                <p><strong>Dean Martin</strong>, 2018</p>
+                                <h3>Symposium</h3>
+                                <p>A meeting or conference for the public discussion of some topics especially about our grand theme Tropical Medicine. We are inviting national speakers to this conference, so it is a great chance for you to exchange ideas with the experts and enrich understanding about the topic in various point of view.</p>
                             </div>
 
                             <div class="item">
-                                <h5>This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</h5>
-                                <p><strong>Dean Martin</strong>, 2018</p>
+                                <h3>City Night Tour</h3>
+                                <p>Here is a space to refresh our mind from the formal agendas. We provide facilitation to explore Surabaya city at night.</p>
                             </div>
 
                             <div class="item">
-                                <h5>This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</h5>
-                                <p><strong>Dean Martin</strong>, 2018</p>
+                                <h3>Welcome Dinner</h3>
+                                <p>We are holding a gala dinner with all of the finalists and committees. Please enjoy our hospitality through various performances such traditional dance, music, etc. It is also a place to enlarge your relation among medical and health major students.</p>
                             </div>
                         </div>
                     </div>
@@ -522,7 +511,7 @@ a {
                 </div>
             </div>
         </div>
-        <section class="cd-h-timeline js-cd-h-timeline margin-bottom--md" style="display: block;">
+        <section class="cd-h-timeline js-cd-h-timeline margin-bottom--md wow fadeInUpBig" style="display: block;">
             <div class="cd-h-timeline__container containerss">
               <div class="cd-h-timeline__dates">
                 <div class="cd-h-timeline__line">

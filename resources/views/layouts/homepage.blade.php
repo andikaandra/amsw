@@ -4,8 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AMSW <?php echo date("Y"); ?> | Faculty of Medicine Airlangga University</title>
-    <meta name="keywords" content="amsw, fkunair">
-    <meta name="author" content="Amswfkunair">
+
+         
+    <meta name="title" content="AMSW 2019">
+    <meta name="description" content=" Airlangga Medical Scientific Week (AMSW) is an annual scientific event held by the Faculty of Medicine Airlangga University. Made by Software Silo.">
+    <meta name="keywords" content="AMSW 2019, AMSW, FK UNAIR, Software Silo">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="3 days">
+    <meta name="author" content="Software Silo">
     
     <!-- Favicons
     ================================================== -->
@@ -75,6 +83,45 @@
 
         #tf-menu.navbar-default .navbar-nav > li > a:hover {
           color: #d55c5a;
+        }
+
+
+        body {
+            -moz-animation: fadein 2s; /* Firefox */
+            -webkit-animation: fadein 2s; /* Safari and Chrome */
+            -o-animation: fadein 2s; /* Opera */
+        }
+        @keyframes fadein {
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
+        @-moz-keyframes fadein { /* Firefox */
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
+        @-webkit-keyframes fadein { /* Safari and Chrome */
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
+        @-o-keyframes fadein { /* Opera */
+            from {
+                opacity:0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
     <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">

@@ -29,6 +29,12 @@ Route::get('/email', function(){
 });
 Route::get('/email/verify/{token}', 'Auth\VerificationController@verify');
 
+Route::get('/research-paper', 'HomepageController@researchPaper');
+Route::get('/literature-review', 'HomepageController@literatureReview');
+Route::get('/scientific-essay', 'HomepageController@scientificEssay');
+Route::get('/public-poster', 'HomepageController@publicPoster');
+Route::get('/educational-video', 'HomepageController@educationalVideo');
+
 
 // amin routes
 Route::prefix('admin')->middleware(['is_admin'])->group(function() {

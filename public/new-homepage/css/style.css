@@ -205,6 +205,7 @@ ul.about-list li span{
 .section-title h2,
 .section-title.center h2{
 	font-weight: 300;
+	line-height: 1.1;
 }
 .section-title.center .line{
 	border-top: 4px solid #d55c5a;

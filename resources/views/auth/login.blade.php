@@ -36,9 +36,11 @@
                 </div>
                 <form class="login100-form validate-form" method="POST" action="{{ url('login') }}">
                     @csrf
+                    <img src="{{asset('amsw-files/image-shadow.png')}}" class="d-block d-md-none" alt="AMSW logo" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
                     <span class="login100-form-title">
                         Login to AMSW 2019
-                    </span> @if (\Session::has('message'))
+                    </span> 
+                    @if (\Session::has('message'))
                     <div class="alert alert-danger text-center" role="alert">
                         <h6 style="font-size: 12px">{!! \Session::get('message') !!}</h6>
                     </div>

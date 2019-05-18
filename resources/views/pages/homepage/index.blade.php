@@ -35,12 +35,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{asset('amsw-files/image-shadow.png')}}" class="img-responsive" width="70%" style="margin: auto;">
+                    <img src="{{asset('amsw-files/image-shadow.png')}}" class="img-responsive wow slideInLeft js-tilt" data-wow-duration="2s" width="70%" style="margin: auto;">
                     {{-- <img src="{{asset('new-homepage/img/02.png')}}" > --}}
                 </div>
                 <div class="col-md-6">
                     <div class="about-text">
-                        <div class="section-title">
+                        <div class="section-title wow fadeInUp" data-wow-duration="2s">
                             <h4>About us</h4>
                             <h2>Some words <strong>about us</strong></h2>
                             <hr>
@@ -243,8 +243,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
+                                    <h4>Research Paper</h4>
+                                    {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/03.jpg')}}" class="img-responsive" alt="...">
@@ -257,8 +257,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
+                                    <h4>Research Paper</h4>
+                                    {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/04.jpg')}}" class="img-responsive" alt="...">
@@ -268,7 +268,7 @@
                 </div>
 
                 <div class="col-sm-6 col-md-6 col-lg-6 paper">
-                        <h4 class="title">Research Paper</h4>
+                        <h4 class="title" style="font-weight: bold">Research Paper</h4>
                         <div class="portfolio-item paper">
                             <div>
                                 <p class="text-justify">
@@ -291,8 +291,8 @@
                             <div class="hover-bg">
                                 <a href="#">
                                     <div class="hover-text">
-                                        <h4>Logo Design</h4>
-                                        <small>Branding</small>
+                                        <h4>Literature Review</h4>
+                                        {{-- <small>Branding</small> --}}
                                         <div class="clearfix"></div>
                                     </div>
                                     <img src="{{asset('new-homepage/img/portfolio/03.jpg')}}" class="img-responsive" alt="...">
@@ -305,8 +305,8 @@
                             <div class="hover-bg">
                                 <a href="#">
                                     <div class="hover-text">
-                                        <h4>Logo Design</h4>
-                                        <small>Branding</small>
+                                        <h4>Literature Review</h4>
+                                        {{-- <small>Branding</small> --}}
                                         <div class="clearfix"></div>
                                     </div>
                                     <img src="{{asset('new-homepage/img/portfolio/04.jpg')}}" class="img-responsive" alt="...">
@@ -316,7 +316,7 @@
                     </div>
     
                     <div class="col-sm-6 col-md-6 col-lg-6 litrev">
-                        <h4 class="title">Literature Review</h4>
+                        <h4 class="title" style="font-weight: bold">Literature Review</h4>
                         <div class="portfolio-item litrev">
                             <div>
                                 <p class="text-justify">
@@ -337,8 +337,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
+                                    <h4>Scientific Essay</h4>
+                                    {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/01.jpg')}}" class="img-responsive" alt="...">
@@ -351,8 +351,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
+                                    <h4>Scientific Essay</h4>
+                                    {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/08.jpg')}}" class="img-responsive" alt="...">
@@ -361,7 +361,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6 essay">
-                        <h4 class="title">Scientific Essay</h4>
+                        <h4 class="title" style="font-weight: bold">Scientific Essay</h4>
                         <div class="portfolio-item essay">
                             <div>
                                 <p class="text-justify">
@@ -383,8 +383,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
+                                    <h4>Public Poster</h4>
+                                    {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/08.jpg')}}" class="img-responsive" alt="...">
@@ -397,8 +397,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
+                                    <h4>Public Poster</h4>
+                                    {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/01.jpg')}}" class="img-responsive" alt="...">
@@ -407,7 +407,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6 pubpos">
-                    <h4 class="title">Public Poster</h4>
+                    <h4 class="title" style="font-weight: bold">Public Poster</h4>
                     <div class="portfolio-item pubpos">
                         <div>
                             <p class="text-justify">
@@ -428,8 +428,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
+                                    <h4>Educational Video</h4>
+                                    {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/04.jpg')}}" class="img-responsive" alt="...">
@@ -442,8 +442,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
+                                    <h4>Educational Video</h4>
+                                    {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
                                 <img src="{{asset('new-homepage/img/portfolio/03.jpg')}}" class="img-responsive" alt="...">
@@ -452,7 +452,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6 videdu">
-                    <h4 class="title">Educational Video</h4>
+                    <h4 class="title" style="font-weight: bold">Educational Video</h4>
                     <div class="portfolio-item videdu">
                         <div>
                             <p class="text-justify">

@@ -68,7 +68,8 @@
                     @csrf
                     <span class="login100-form-title">
                         Create your account
-                    </span> @if ($errors->has('email'))
+                    </span> 
+                    @if ($errors->has('email'))
                     <div class="alert alert-danger text-center" role="alert">
                         <h6 style="font-size: 12px">{!! $errors->first('email') !!}</h6>
                     </div>

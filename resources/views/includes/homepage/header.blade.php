@@ -23,6 +23,7 @@
             {{-- <li><a href="#tf-services" class="page-scroll">Services</a></li> --}}
             <li><a href="#tf-works" class="page-scroll">Events</a></li>
             <li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li>
+            <li><a href="#tf-contact" class="page-scroll">Timeline</a></li>
             {{-- <li><a href="#tf-contact" class="page-scroll">Contact</a></li> --}}
             @guest
                 <li><a class="page-scroll" href="{{('login')}}"><strong>Login</strong></a></li>

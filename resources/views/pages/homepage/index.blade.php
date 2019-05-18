@@ -13,6 +13,9 @@
 #tf-team .item .thumbnail:hover > img.img-circle.team-img {
     cursor: pointer;
 }
+a {
+  outline:none !important;
+}
 </style>
 @endsection
 
@@ -35,7 +38,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{asset('amsw-files/image-shadow.png')}}" class="img-responsive wow slideInLeft js-tilt" data-wow-duration="2s" width="70%" style="margin: auto;">
+                    <img src="{{asset('amsw-files/image-shadow.png')}}" class="img-responsive wow slideInLeft js-tilt" data-wow-duration="1s" width="70%" style="margin: auto;">
                     {{-- <img src="{{asset('new-homepage/img/02.png')}}" > --}}
                 </div>
                 <div class="col-md-6">
@@ -508,49 +511,110 @@
 
     <!-- Contact Section
     ==========================================-->
-{{--     <div id="tf-contact" class="text-center">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-
-                    <div class="section-title center">
-                        <h2>Feel free to <strong>contact us</strong></h2>
-                        <div class="line">
-                            <hr>
-                        </div>
-                        <div class="clearfix"></div>
-                        <small><em>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</em></small>            
+    <div id="tf-contact" class="text-center">
+        <div class="overlay">
+            <div class="container">
+                <div class="section-title center">
+                    <h2>Events <strong>Timeline</strong></h2>
+                    <div class="line">
+                        <hr>
                     </div>
-
-                    <form>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Message</label>
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn tf-btn btn-default">Submit</button>
-                    </form>
-
                 </div>
             </div>
-
         </div>
-    </div> --}}
+        <section class="cd-h-timeline js-cd-h-timeline margin-bottom--md" style="display: block;">
+            <div class="cd-h-timeline__container containerss">
+              <div class="cd-h-timeline__dates">
+                <div class="cd-h-timeline__line">
+                  <ol style="list-style: none;">
+                    <li><a href="#0" data-date="19/05/2019" class="cd-h-timeline__date cd-h-timeline__date--selected">May 19, 2019</a></li>
+                    <li><a href="#0" data-date="09/06/2019" class="cd-h-timeline__date">June 9, 2019</a></li>
+                    <li><a href="#0" data-date="06/08/2019" class="cd-h-timeline__date">August 6, 2019</a></li>
+                    <li><a href="#0" data-date="04/09/2019" class="cd-h-timeline__date">September 4, 2019</a></li>
+                    <li><a href="#0" data-date="11/10/2019" class="cd-h-timeline__date">October 11, 2019</a></li>
+                    <li><a href="#0" data-date="12/10/2019" class="cd-h-timeline__date">October 12, 2019</a></li>
+                    <li><a href="#0" data-date="13/10/2019" class="cd-h-timeline__date">Ocotber 13, 2019</a></li>
+                  </ol>
+
+                  <span class="cd-h-timeline__filling-line" aria-hidden="true"></span>
+                </div> <!-- .cd-h-timeline__line -->
+              </div> <!-- .cd-h-timeline__dates -->
+                
+              <ul style="list-style: none;">
+                <li><a href="#0" class="text--replace cd-h-timeline__navigation cd-h-timeline__navigation--prev cd-h-timeline__navigation--inactive">Prev</a></li>
+                <li><a href="#0" class="text--replace cd-h-timeline__navigation cd-h-timeline__navigation--next">Next</a></li>
+              </ul>
+            </div> <!-- .cd-h-timeline__containerss -->
+
+            <div class="cd-h-timeline__events">
+              <ol style="list-style: none;">
+                <li class="cd-h-timeline__event cd-h-timeline__event--selected text-component">
+                  <div class="cd-h-timeline__event-content containerss">
+                    {{-- <h2 class="cd-h-timeline__event-title">Horizontal Timeline</h2> --}}
+                    <em class="cd-h-timeline__event-date">May 19th, 2019</em>
+                    <p class="cd-h-timeline__event-description text--subtle"> 
+                      First Waves Registration
+                    </p>
+                  </div>
+                </li>
+                <li class="cd-h-timeline__event text-component">
+                  <div class="cd-h-timeline__event-content containerss">
+                    {{-- <h2 class="cd-h-timeline__event-title">Horizontal Timeline</h2> --}}
+                    <em class="cd-h-timeline__event-date">June 9th, 2019</em>
+                    <p class="cd-h-timeline__event-description text--subtle"> 
+                      Second Waves Registration
+                    </p>
+                  </div>
+                </li>
+                <li class="cd-h-timeline__event text-component">
+                  <div class="cd-h-timeline__event-content containerss">
+                    {{-- <h2 class="cd-h-timeline__event-title">Horizontal Timeline</h2> --}}
+                    <em class="cd-h-timeline__event-date">August 6th, 2019</em>
+                    <p class="cd-h-timeline__event-description text--subtle"> 
+                      Deadline
+                    </p>
+                  </div>
+                </li>
+                <li class="cd-h-timeline__event text-component">
+                  <div class="cd-h-timeline__event-content containerss">
+                    {{-- <h2 class="cd-h-timeline__event-title">Horizontal Timeline</h2> --}}
+                    <em class="cd-h-timeline__event-date">September 4th, 2019</em>
+                    <p class="cd-h-timeline__event-description text--subtle"> 
+                      Finalist Announcement
+                    </p>
+                  </div>
+                </li>
+                <li class="cd-h-timeline__event text-component">
+                  <div class="cd-h-timeline__event-content containerss">
+                    {{-- <h2 class="cd-h-timeline__event-title">Horizontal Timeline</h2> --}}
+                    <em class="cd-h-timeline__event-date">October 11th, 2019</em>
+                    <p class="cd-h-timeline__event-description text--subtle"> 
+                      Technical Meeting
+                    </p>
+                  </div>
+                </li>
+                <li class="cd-h-timeline__event text-component">
+                  <div class="cd-h-timeline__event-content containerss">
+                    {{-- <h2 class="cd-h-timeline__event-title">Horizontal Timeline</h2> --}}
+                    <em class="cd-h-timeline__event-date">October 12th, 2019</em>
+                    <p class="cd-h-timeline__event-description text--subtle"> 
+                      Final Round
+                    </p>
+                  </div>
+                </li>
+                <li class="cd-h-timeline__event text-component">
+                  <div class="cd-h-timeline__event-content containerss">
+                    {{-- <h2 class="cd-h-timeline__event-title">Horizontal Timeline</h2> --}}
+                    <em class="cd-h-timeline__event-date">October 13th, 2019</em>
+                    <p class="cd-h-timeline__event-description text--subtle"> 
+                      Winner Announcement and Awarding
+                    </p>
+                  </div>
+                </li>
+              </ol>
+            </div> <!-- .cd-h-timeline__events -->
+        </section>
+    </div>
 @endsection
 
 @section('script')

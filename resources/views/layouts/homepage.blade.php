@@ -78,6 +78,8 @@
         }
     </style>
     <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
+    <script>document.getElementsByTagName("html")[0].className += " js";</script>
+    <link rel="stylesheet" href="{{asset('horizontal-timeline-master/assets/css/style.css')}}">
     <script type="text/javascript" src="{{asset('new-homepage/js/modernizr.custom.js')}}"></script>
     @yield('style')
   </head>
@@ -140,6 +142,9 @@
             scale: 1
         })
     </script>
+    <script src="{{('horizontal-timeline-master/assets/js/util.js')}}"></script> <!-- util functions included in the CodyHouse framework -->
+    <script src="{{('horizontal-timeline-master/assets/js/swipe-content.js')}}"></script> <!-- A Vanilla JavaScript plugin to detect touch interactions -->
+    <script src="{{('horizontal-timeline-master/assets/js/main.js')}}"></script>
     @yield('script')
     <!--End of Tawk.to Script-->
 </body>

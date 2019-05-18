@@ -5,9 +5,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="AMSW - FK UNAIR">
+ 
+    <meta name="title" content="AMSW 2019">
+    <meta name="description" content=" Airlangga Medical Scientific Week (AMSW) is an annual scientific event held by the Faculty of Medicine Airlangga University. Made by Software Silo.">
+    <meta name="keywords" content="AMSW 2019, AMSW, FK UNAIR, Software Silo">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="3 days">
     <meta name="author" content="Software Silo">
-    <meta name="keyword" content="Medicine Competition University">
 
     <title>AMSW <?php echo date("Y"); ?> Dashboard</title>
     

@@ -1,6 +1,11 @@
 @extends('layouts.homepage')
 
 @section('style')
+<style>
+    .lineheight{
+        line-height: 1.8em;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -33,7 +38,7 @@
                             <hr>
                             <div class="clearfix"></div>
                         </div>
-                        <p class="intro text-justify wow fadeInUp">
+                        <p class="intro text-justify wow fadeInUp" style="line-height: 2.0em">
                             Airlangga Medical Scientific Week (<strong>AMSW</strong>) is an annual scientific event held by the Faculty of Medicine Airlangga University. AMSW opens opportunities for medical students in Indonesia and around the world to submit their works in the form of research papers, literature reviews, scientific essays, public posters and education videos. We are also holding non-competition programs like International Symposium (open for public), Gala dinner, and City tour.
                         </p>
 {{--                         <ul class="about-list">
@@ -72,7 +77,7 @@
                         <div id="team" class="owl-carousel owl-theme">
                             <div class="item">
                                 <div class="caption">
-                                    <h4 style="font-weight: bold; line-height: 1.4em">Medical management encounter disaster/disaster medicine enroll innovation, prevention, and curative management to minimalize unwanted things/victim.</h4>
+                                    <h4 class="lineheight" style="font-weight: bold">Medical management encounter disaster/disaster medicine enroll innovation, prevention, and curative management to minimalize unwanted things/victim.</h4>
                                     <br>
                                     <p class="text-justify">This sub-theme alludes to initial actions in critically ill patients outside the hospital such as sudden cardiac arrest, severe anemia, respiratory tract disorders, suicide attempts.</p>
                                 </div>
@@ -80,14 +85,14 @@
 
                             <div class="item">
                                 <div class="caption">
-                                    <h4 style="font-weight: bold; line-height: 1.4em">Pre-hospital management involving provision of critical care in a resource limited and physically challenging setting.</h4>
+                                    <h4 class="lineheight" style="font-weight: bold">Pre-hospital management involving provision of critical care in a resource limited and physically challenging setting.</h4>
                                     <br>
                                     <p class="text-justify">Innovations or blueprints of the modern world medical technology scope that are expected to help critical patients get out of their critical zones such as biomolecular, radiographic, and other assistive devices.</p>
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <h4 style="font-weight: bold; line-height: 1.4em">Advanced management intra-hospital and inter-hospital to simply rescuing victim and transferring promptly.</h4>
+                                    <h4 class="lineheight" style="font-weight: bold">Advanced management intra-hospital and inter-hospital to simply rescuing victim and transferring promptly.</h4>
                                     <br>
                                     <p class="text-justify">Preventive, diagnostic, curative, and educative for critically ill patients due to metabolic, infectious, shock, accident, cranial trauma, and other internal (non-traumatic) and external (traumatic) emergency causes.</p>
                                 </div>
@@ -95,7 +100,7 @@
 
                             <div class="item">
                                 <div class="caption">
-                                    <h4 style="font-weight: bold; line-height: 1.4em">Best traumatology or non-traumatology emergency management planning in face up indisposition and evade homeostatic damage.</h4>
+                                    <h4 class="lineheight" style="font-weight: bold">Best traumatology or non-traumatology emergency management planning in face up indisposition and evade homeostatic damage.</h4>
                                     <br>
                                     <p class="text-justify">preventive, curative, and educational strategies that are creative or innovative or effective or efficient for volunteers of humanity or victim of disaster in dealing with disasters related to many people and minimal health facilities such as the impact of landslide victims, cholera outbreaks in refuge area, and other related.</p>
                                 </div>
@@ -171,7 +176,7 @@
 
                 <div class="col-sm-6 col-md-6 col-lg-6 paper">
                         <h4 class="title" style="font-weight: bold">Research Paper</h4>
-                        <div class="portfolio-item paper">
+                        <div class="portfolio-item paper lineheight">
                             <div>
                                 <p class="text-justify">
                                     Research Paper is paper competition in the form of abstract in the preliminary round. Abstract is based on research result, and closed for original research, case report, analytical study, even meta-analysis. This competition is intended to facillitate young researchers from all health major to express their idea to establish approaches especially in tropical disease’s eradication and widespread control. So, we invite active pre-clinical and clinical undergraduate student in health major around the world to challenge their work here.
@@ -219,7 +224,7 @@
     
                     <div class="col-sm-6 col-md-6 col-lg-6 litrev">
                         <h4 class="title" style="font-weight: bold">Literature Review</h4>
-                        <div class="portfolio-item litrev">
+                        <div class="portfolio-item litrev lineheight">
                             <div>
                                 <p class="text-justify">
                                     Literature Review is both a summary and explanation of the complete and current state of knowledge on a limited topic as found in academic books and journal articles. It is important to formulate a research afterward. Many great inventions are discovered from a good literature review. So it is a great chance for you who have brilliant idea to overcome problems in medical field. It is open for international pre-clinical undergraduate student in health major.
@@ -264,7 +269,7 @@
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6 essay">
                         <h4 class="title" style="font-weight: bold">Scientific Essay</h4>
-                        <div class="portfolio-item essay">
+                        <div class="portfolio-item essay lineheight">
                             <div>
                                 <p class="text-justify">
                                     An essay is, generally, a piece of writing that gives the author’s own argument about an issue. Scientific essay limit the argument to be evidence-based. It is made in order to enrich our knowledge in science and technology and to see problems from holistic perspective. It is open for national participants.                                                 
@@ -310,7 +315,7 @@
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6 pubpos">
                     <h4 class="title" style="font-weight: bold">Public Poster</h4>
-                    <div class="portfolio-item pubpos">
+                    <div class="portfolio-item pubpos lineheight">
                         <div>
                             <p class="text-justify">
                                 <strong>Public poster</strong> is a public piece of paper conveying information through text, graphic, or image. It is very useful to help Indonesian government in the form of healthcare promotion and prevention. Be free to express your idea in any creative way possible. Public poster is open for national participants.
@@ -355,7 +360,7 @@
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6 videdu">
                     <h4 class="title" style="font-weight: bold">Educational Video</h4>
-                    <div class="portfolio-item videdu">
+                    <div class="portfolio-item videdu lineheight">
                         <div>
                             <p class="text-justify">
                                 Nullam sit amet mattis est. Aliquam justo magna, egestas et pellentesque sit amet, fermentum ut arcu. Proin eu dignissim sem. Vivamus vehicula augue ligula, ornare rutrum nisi facilisis vel. Ut fermentum nisi tempus dolor finibus vulputate. Sed molestie scelerisque tortor, nec lobortis arcu vehicula eu. Mauris vitae lacus lorem. 
@@ -421,7 +426,7 @@
                 </div>
             </div>
         </div>
-        <section class="cd-h-timeline js-cd-h-timeline margin-bottom--md wow fadeInUpBig" style="display: block;">
+        <section class="cd-h-timeline js-cd-h-timeline margin-bottom--md wow fadeInUp" style="display: block;">
             <div class="cd-h-timeline__container containerss">
               <div class="cd-h-timeline__dates">
                 <div class="cd-h-timeline__line">

@@ -29,11 +29,11 @@ Route::get('/email', function(){
 });
 Route::get('/email/verify/{token}', 'Auth\VerificationController@verify');
 
-Route::get('/research-paper', 'HomepageController@researchPaper');
-Route::get('/literature-review', 'HomepageController@literatureReview');
-Route::get('/scientific-essay', 'HomepageController@scientificEssay');
-Route::get('/public-poster', 'HomepageController@publicPoster');
-Route::get('/educational-video', 'HomepageController@educationalVideo');
+Route::get('download/guidebook-research-paper', 'HomepageController@researchPaperGuidebook');
+Route::get('download/guidebook-literature-review', 'HomepageController@literatureReviewGuidebook');
+Route::get('download/guidebook-essay', 'HomepageController@scientificEssayGuidebook');
+Route::get('download/guidebook-public-poster', 'HomepageController@publicPosterGuidebook');
+Route::get('download/guidebook-educational-video', 'HomepageController@educationalVideoGuidebook');
 
 
 // amin routes

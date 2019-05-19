@@ -95,7 +95,7 @@
 
     //todo : add rule
 
-    $('#rule-list').html(text);
+    // $('#rule-list').html(text);
   });
 
 

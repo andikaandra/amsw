@@ -121,9 +121,6 @@
                     <hr>
                 </div>
                 <div class="clearfix"></div>
-               <p>
-                Integer ac nulla sit amet orci vehicula ornare vitae ut ipsum. Suspendisse elit nisi, egestas a fermentum vitae, gravida nec sapien. Maecenas quis massa ut augue elementum placerat quis vestibulum metus. Nunc at lobortis nibh. Aliquam fermentum finibus feugiat. Nunc elit nibh, luctus a nulla sit amet, cursus posuere justo.
-               </p>
             </div>
             <div class="space"></div>
 
@@ -137,7 +134,7 @@
                             <li><a href="#" data-filter=".litrev">Literature review</a></li>
                             <li><a href="#" data-filter=".essay" >Scientific essay</a></li>
                             <li><a href="#" data-filter=".pubpos" >Public Poster</a></li>
-                            <li><a href="#" data-filter=".videdu" >Educational Video</a></li>
+                            <li><a href="#" data-filter=".videdu" >Video Champaign</a></li>
                         </ol>
                     </li>
                 </ul>
@@ -181,7 +178,7 @@
                                 <p class="text-justify">
                                     Research Paper is paper competition in the form of abstract in the preliminary round. Abstract is based on research result, and closed for original research, case report, analytical study, even meta-analysis. This competition is intended to facillitate young researchers from all health major to express their idea to establish approaches especially in tropical disease’s eradication and widespread control. So, we invite active pre-clinical and clinical undergraduate student in health major around the world to challenge their work here.
                                 </p>
-                                <a href="#">Download Guideline</a>
+                                <a href="{{url('download/guidebook-research-paper')}}">Download Guideline</a>
                                 <p>Contact Person:</p>
                                 <ul>
                                     <li>ID Line: juliana_kuroba</li>
@@ -229,7 +226,7 @@
                                 <p class="text-justify">
                                     Literature Review is both a summary and explanation of the complete and current state of knowledge on a limited topic as found in academic books and journal articles. It is important to formulate a research afterward. Many great inventions are discovered from a good literature review. So it is a great chance for you who have brilliant idea to overcome problems in medical field. It is open for international pre-clinical undergraduate student in health major.
                                 </p>
-                                <a href="#">Download Guideline</a>
+                                <a href="{{url('download/guidebook-literature-review')}}">Download Guideline</a>
                                 <p>Contact Person:</p>
                                 <ul>
                                     <li>ID Line: rakaihsanulhaj</li>
@@ -274,7 +271,7 @@
                                 <p class="text-justify">
                                     An essay is, generally, a piece of writing that gives the author’s own argument about an issue. Scientific essay limit the argument to be evidence-based. It is made in order to enrich our knowledge in science and technology and to see problems from holistic perspective. It is open for national participants.                                                 
                                 </p>
-                                <a href="#">Download Guideline</a>
+                                <a href="{{url('download/guidebook-essay')}}">Download Guideline</a>
                                 <p>Contact Person:</p>
                                 <ul>
                                     <li>ID Line: naila_adibah </li>
@@ -320,7 +317,7 @@
                             <p class="text-justify">
                                 <strong>Public poster</strong> is a public piece of paper conveying information through text, graphic, or image. It is very useful to help Indonesian government in the form of healthcare promotion and prevention. Be free to express your idea in any creative way possible. Public poster is open for national participants.
                             </p>
-                            <a href="#">Download Guideline</a>
+                            <a href="{{url('download/guidebook-public-poster')}}">Download Guideline</a>
                             <p>Contact Person:</p>
                             <ul>
                                 <li>ID Line: aryaiv </li>
@@ -335,7 +332,7 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>Educational Video</h4>
+                                    <h4>Video Champaign</h4>
                                     {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
@@ -349,7 +346,7 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>Educational Video</h4>
+                                    <h4>Video Champaign</h4>
                                     {{-- <small>Branding</small> --}}
                                     <div class="clearfix"></div>
                                 </div>
@@ -359,16 +356,17 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6 videdu">
-                    <h4 class="title" style="font-weight: bold">Educational Video</h4>
+                    <h4 class="title" style="font-weight: bold">Video Champaign</h4>
                     <div class="portfolio-item videdu lineheight">
                         <div>
                             <p class="text-justify">
-                                Nullam sit amet mattis est. Aliquam justo magna, egestas et pellentesque sit amet, fermentum ut arcu. Proin eu dignissim sem. Vivamus vehicula augue ligula, ornare rutrum nisi facilisis vel. Ut fermentum nisi tempus dolor finibus vulputate. Sed molestie scelerisque tortor, nec lobortis arcu vehicula eu. Mauris vitae lacus lorem. 
+                                Video Champaign is an audio-visual media, for learning or invitation aimed in the community. Use of video education as a learning media can provide clarity message and people can see the learning objects concretely. Video educational media also increase the motivation and awareness of the community. It is open for national participants.
                             </p>
-                            <a href="#">Download Guideline</a>
+                            <a href="{{url('download/guidebook-educational-video')}}">Download Guideline</a>
                             <p>Contact Person:</p>
                             <ul>
-                                <li>Nullam sit amet mattis est. Aliquam justo magna</li>
+                                <li>ID Line: lauriencia </li>
+                                <li>Phone: +628232836725</li>
                             </ul>
                         </div>                        
                     </div>
@@ -431,8 +429,8 @@
               <div class="cd-h-timeline__dates">
                 <div class="cd-h-timeline__line">
                   <ol style="list-style: none;">
-                    <li><a href="#0" data-date="19/05/2019" class="cd-h-timeline__date cd-h-timeline__date--selected">May 19, 2019</a></li>
-                    <li><a href="#0" data-date="09/06/2019" class="cd-h-timeline__date">June 9, 2019</a></li>
+                    <li><a href="#0" data-date="20/05/2019" class="cd-h-timeline__date cd-h-timeline__date--selected">May 20, 2019</a></li>
+                    <li><a href="#0" data-date="21/06/2019" class="cd-h-timeline__date">June 21, 2019</a></li>
                     <li><a href="#0" data-date="06/08/2019" class="cd-h-timeline__date">August 6, 2019</a></li>
                     <li><a href="#0" data-date="04/09/2019" class="cd-h-timeline__date">September 4, 2019</a></li>
                     <li><a href="#0" data-date="11/10/2019" class="cd-h-timeline__date">October 11, 2019</a></li>
@@ -455,7 +453,7 @@
                 <li class="cd-h-timeline__event cd-h-timeline__event--selected text-component">
                   <div class="cd-h-timeline__event-content containerss">
                     {{-- <h2 class="cd-h-timeline__event-title">Horizontal Timeline</h2> --}}
-                    <em class="cd-h-timeline__event-date">May 19th, 2019</em>
+                    <em class="cd-h-timeline__event-date">May 20th, 2019</em>
                     <p class="cd-h-timeline__event-description text--subtle"> 
                       First Waves Registration
                     </p>
@@ -464,7 +462,7 @@
                 <li class="cd-h-timeline__event text-component">
                   <div class="cd-h-timeline__event-content containerss">
                     {{-- <h2 class="cd-h-timeline__event-title">Horizontal Timeline</h2> --}}
-                    <em class="cd-h-timeline__event-date">June 9th, 2019</em>
+                    <em class="cd-h-timeline__event-date">June 21st, 2019</em>
                     <p class="cd-h-timeline__event-description text--subtle"> 
                       Second Waves Registration
                     </p>

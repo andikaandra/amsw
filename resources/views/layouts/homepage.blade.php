@@ -30,7 +30,7 @@
 
     <!-- Stylesheet
     ================================================== -->
-    <link rel="stylesheet" type="text/css"  href="{{asset('new-homepage/css/style.css')}}">
+    <link rel="stylesheet" type="text/css"  href="{{asset('new-homepage/css/style.css?v=1')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('new-homepage/css/responsive.css')}}">
 
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
@@ -162,7 +162,7 @@
 
     <script src="{{asset('new-homepage/js/owl.carousel.js')}}"></script>
 
-    <script type="text/javascript" src="{{asset('new-homepage/js/main.js')}}"></script>
+    <script type="text/javascript" src="{{asset('new-homepage/js/main.js?v=1')}}"></script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

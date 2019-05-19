@@ -22,7 +22,7 @@
 
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/css/util.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/css/main.css?v=1') }}">
     <!--===============================================================================================-->
 </head>
 

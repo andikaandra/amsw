@@ -11,28 +11,23 @@ class HomepageController extends Controller
     }
 
     public function researchPaperGuidebook() {
-        return "Guidebook not found";
-        return response()->download(storage_path("app/public/comitee-files/research-paper-guidebook.zip"));
+        return response()->download(storage_path("app/public/comitee-files/AMSW-2019-registration-guideline.zip"));
     }
 
 	public function literatureReviewGuidebook() {
-        return "Guidebook not found";
-    return response()->download(storage_path("app/public/comitee-files/literature-review-guidebook.zip"));
+        return response()->download(storage_path("app/public/comitee-files/AMSW-2019-registration-guideline.zip"));
     }
 
 	public function scientificEssayGuidebook() {
-        return "Guidebook not found";
-        return response()->download(storage_path("app/public/comitee-files/essay-guidebook.zip"));
+        return response()->download(storage_path("app/public/comitee-files/AMSW-2019-registration-guideline.zip"));
     }
 
 	public function publicPosterGuidebook() {
-        return "Guidebook not found";
-    return response()->download(storage_path("app/public/comitee-files/public-poster-guidebook.zip"));
+        return response()->download(storage_path("app/public/comitee-files/AMSW-2019-registration-guideline.zip"));
     }
 
 	public function educationalVideoGuidebook() {
-        return "Guidebook not found";
-        return response()->download(storage_path("app/public/comitee-files/video-champaign-guidebook.zip"));
+        return response()->download(storage_path("app/public/comitee-files/AMSW-2019-registration-guideline.zip"));
     }
 
 }

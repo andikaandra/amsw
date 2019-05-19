@@ -52,7 +52,7 @@ class ParticipantController extends Controller
     }
 
     public function getCVTemplate() {
-        return response()->download(storage_path("app/public/files/curriculum_vitae_template.docx"));
+        return response()->download(storage_path("app/public/comitee-files/curriculum_vitae_template.docx"));
     }
 
     public function verifyEmail($hash) {

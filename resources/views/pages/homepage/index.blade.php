@@ -1,41 +1,6 @@
 @extends('layouts.homepage')
 
 @section('style')
-<style>
-
-.portfolio-item {
-    padding: 15px;
-    border-radius: 5px;
-}
-.categories .type .active {
-    font-size: 18px;
-}
-#tf-team .item .thumbnail:hover > img.img-circle.team-img {
-    cursor: pointer;
-}
-a {
-  outline:none !important;
-}
-
-img.vert-move {
-    -webkit-animation: mover 1s infinite  alternate;
-    animation: mover 1s infinite  alternate;
-}
-img.vert-move {
-    -webkit-animation: mover 1s infinite  alternate;
-    animation: mover 1s infinite  alternate;
-}
-@-webkit-keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-15px); }
-}
-@keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-15px); }
-}
-
-
-</style>
 @endsection
 
 @section('content')
@@ -97,102 +62,47 @@ img.vert-move {
         <div class="overlay">
             <div class="container">
                 <div class="section-title center">
-                    <h2>Meet <strong>our team</strong></h2>
+                    <h2>Sub <strong>Theme</strong></h2>
                     <div class="line">
                         <hr>
                     </div>
                 </div>
-
-                <div id="team" class="owl-carousel owl-theme row">
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="{{asset('new-homepage/img/team/01.jpg')}}" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Jenn Gwapa</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div id="team" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <div class="caption">
+                                    <h4 style="font-weight: bold; line-height: 1.4em">Medical management encounter disaster/disaster medicine enroll innovation, prevention, and curative management to minimalize unwanted things/victim.</h4>
+                                    <br>
+                                    <p class="text-justify">This sub-theme alludes to initial actions in critically ill patients outside the hospital such as sudden cardiac arrest, severe anemia, respiratory tract disorders, suicide attempts.</p>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="{{asset('new-homepage/img/team/02.jpg')}}" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Jenn Gwapa</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
+                            <div class="item">
+                                <div class="caption">
+                                    <h4 style="font-weight: bold; line-height: 1.4em">Pre-hospital management involving provision of critical care in a resource limited and physically challenging setting.</h4>
+                                    <br>
+                                    <p class="text-justify">Innovations or blueprints of the modern world medical technology scope that are expected to help critical patients get out of their critical zones such as biomolecular, radiographic, and other assistive devices.</p>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="{{asset('new-homepage/img/team/03.jpg')}}" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Jenn Gwapa</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
+                            <div class="item">
+                                <div class="caption">
+                                    <h4 style="font-weight: bold; line-height: 1.4em">Advanced management intra-hospital and inter-hospital to simply rescuing victim and transferring promptly.</h4>
+                                    <br>
+                                    <p class="text-justify">Preventive, diagnostic, curative, and educative for critically ill patients due to metabolic, infectious, shock, accident, cranial trauma, and other internal (non-traumatic) and external (traumatic) emergency causes.</p>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="{{asset('new-homepage/img/team/04.jpg')}}" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Jenn Gwapa</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="{{asset('new-homepage/img/team/04.jpg')}}" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Jenn Gwapa</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="{{asset('new-homepage/img/team/01.jpg')}}" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Jenn Gwapa</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="{{asset('new-homepage/img/team/02.jpg')}}" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Jenn Gwapa</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="{{asset('new-homepage/img/team/03.jpg')}}" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Jenn Gwapa</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
+                            <div class="item">
+                                <div class="caption">
+                                    <h4 style="font-weight: bold; line-height: 1.4em">Best traumatology or non-traumatology emergency management planning in face up indisposition and evade homeostatic damage.</h4>
+                                    <br>
+                                    <p class="text-justify">preventive, curative, and educational strategies that are creative or innovative or effective or efficient for volunteers of humanity or victim of disaster in dealing with disasters related to many people and minimal health facilities such as the impact of landslide victims, cholera outbreaks in refuge area, and other related.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>

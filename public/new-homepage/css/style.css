@@ -180,7 +180,7 @@ ul.about-list li span{
 
 /* Team Section */
 #tf-team{
-	background: url(../img/03.jpg);
+	background: url(../../amsw-files/galery/subtheme-bg.jpg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -566,7 +566,40 @@ nav#footer p{
 	color: #8c8c8c;
 	transition: all 0.5s;
 }
-#footer i.fa:hover{
+/*#footer i.fa:hover{
 	background: #d55c5a;
 	border-color: #d55c5a;
 	color: #ffffff;
+}*/
+
+
+.portfolio-item {
+    padding: 15px;
+    border-radius: 5px;
+}
+.categories .type .active {
+    font-size: 18px;
+}
+#tf-team .item .thumbnail:hover > img.img-circle.team-img {
+    cursor: pointer;
+}
+a {
+  outline:none !important;
+}
+
+img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}

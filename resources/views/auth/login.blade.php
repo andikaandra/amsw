@@ -108,7 +108,7 @@
     <script src="{{ asset('homepage/login_register/vendor/tilt/tilt.jquery.min.js') }}"></script>
     <script>
         $('.js-tilt').tilt({
-            scale: 1.1
+            scale: 1.0
         })
     </script>
     <!--===============================================================================================-->

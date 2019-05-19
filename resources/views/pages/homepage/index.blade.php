@@ -67,7 +67,7 @@
                         <hr>
                     </div>
                 </div>
-                <div class="row">
+{{--                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div id="team" class="owl-carousel owl-theme">
                             <div class="item">
@@ -102,7 +102,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

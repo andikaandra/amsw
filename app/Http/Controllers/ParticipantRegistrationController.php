@@ -79,7 +79,7 @@ class ParticipantRegistrationController extends Controller
 
                 $validator = Validator::make($data, [
                     'nama_pengirim' =>  'required|max:255',
-                    'jumlah_tf' => 'required|max:10',
+                    'jumlah_tf' => 'required|max:10|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
                     'nama_bank' => 'required|max:255',
                     'bukti_pembayaran' => 'required|max:2000|image',
                     'comp_id' => 'required',

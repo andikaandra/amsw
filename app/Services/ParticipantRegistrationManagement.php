@@ -58,7 +58,7 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
             'university' =>  'required|max:255',
             'nama_bank' => 'required|max:255',
             'nama_pengirim' => 'required|max:255',
-            'jumlah_tf' => 'required|max:10',
+            'jumlah_tf' => 'required|max:10|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
             'user' =>  'required',
             'jumlah_peserta' => 'required|numeric|min:3|max:6',
             'bukti_pembayaran' => 'required|image|max:2000'

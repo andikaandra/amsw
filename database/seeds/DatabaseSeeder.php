@@ -39,18 +39,18 @@ class DatabaseSeeder extends Seeder
         ]);
         
         // participants
-        for ($i=0; $i < 10; $i++) { 
+        // for ($i=0; $i < 10; $i++) {
             // $comps = ['Essay', 'Literature Review', 'Public Poster', 'Research Paper', 'Educational Video'];
             // $comp_num = mt_rand(0, 4);
-            $user = User::create([
-                'name' => $faker->name,
-                'email' => $faker->freeEmail,
-                'password' => bcrypt('secret'),
-                'role' => 'participant',
-                'status' => 1,
-                'email_verification' => 'verified',
-                'email_token' => $faker->ipv6
-            ]);
+            // $user = User::create([
+            //     'name' => $faker->name,
+            //     'email' => $faker->freeEmail,
+            //     'password' => bcrypt('secret'),
+            //     'role' => 'participant',
+            //     'status' => 1,
+            //     'email_verification' => 'verified',
+            //     'email_token' => $faker->ipv6
+            // ]);
 
             // Payment::create([
             //     'competition' => $comps[$comp_num],
@@ -61,7 +61,7 @@ class DatabaseSeeder extends Seeder
             //     'amount' =>mt_rand(120000, 155000),
             //     'user_id' => $user->id
             // ]);
-        }
+        // }
 
         // admins
 
@@ -71,7 +71,7 @@ class DatabaseSeeder extends Seeder
             User::create([
                 'name' => $faker->name,
                 'email' => 'admin' . $i . '@gmail.com',
-                'password' => bcrypt('secret'),
+                'password' => bcrypt('amswyahud2019'),
                 'role' => 'admin',
                 'status' => 1,
                 'email_verification' => 'verified',

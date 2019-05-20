@@ -102,7 +102,7 @@ class ParticipantRegistrationController extends Controller
                     'payment_type' => 'final',
                     'bank_account_name' => $request->nama_pengirim,
                     'bank_name' => $request->nama_bank,
-                    'amount' => $request->jumlah_tf,
+                    'amount' => $data['jumlah_tf'],
                     'user_id' => Auth::user()->id
                 ]);
 

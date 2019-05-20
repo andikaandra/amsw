@@ -33,7 +33,8 @@
 <p>The committe has viewed your work submission.</p>
 
 <p><strong>Congratulations</strong>, you are selected to continue to the Final. Please confirm your availability to attend the
-  Final event <br>at: _____ <br>on: ______.<br>Please click <a href="{{url('participant/final-registration')}}">Here</a></p>
+  Final event <br>at: Universitas Airlangga <br>on: 
+  October 12th, 2019.<br>Please click <a href="{{url('participant/final-registration')}}">Here</a></p>
 </div>
 @endif @endif
 
@@ -75,9 +76,10 @@
         >= 6 && Auth::user()->competitions[0]->competition_status == 'final' ) @if (Auth::user()->competitions[0]->can_go_to_final
         == 'pending')
         <p>The committe has viewed your work submission.</p>
-
+        
         <p><strong>Congratulations</strong>, you are selected to continue to the Final. Please confirm your availability to
-          attend the Final event <br>at: _____ <br>on: ______.<br>Please click <a href="{{url('participant/final-registration')}}">Here</a></p>
+          attend the Final event <br>at: Universitas Airlangga <br>on: 
+          October 12th, 2019.<br>Please click <a href="{{url('participant/final-registration')}}">Here</a></p>
         @endif @if(Auth::user()->competitions[0]->can_go_to_final == 'no')
         <p>You have confirmed your Final attendance. You aren't able to attend the final.</p>
         @elseif(Auth::user()->competitions[0]->can_go_to_final == 'yes') @if(Auth::user()->status == 8)

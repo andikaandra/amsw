@@ -30,8 +30,8 @@
         </div>        
     </div>
     <div class="col-md-6">
-        <div class="chart-wrapper mt-3">        
-            <p>Will you be able to attend the final on _____ at ______ ?</p>
+        <div class="chart-wrapper mt-3">
+            <p>Will you be able to attend the final on October 12th, 2019. at Universitas Airlangga ?</p>
             <form action="" method="POST">
                 <a href="{{url('participant/final-registration?page=2')}}" class="btn btn-success" style="width: 100px">Yes</a>
                 <input type="hidden" name="_method" value="PUT">       

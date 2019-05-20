@@ -22,7 +22,7 @@
 
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/css/util.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/css/main.css?v=1') }}">
     <!--===============================================================================================-->
 </head>
 
@@ -108,7 +108,7 @@
     <script src="{{ asset('homepage/login_register/vendor/tilt/tilt.jquery.min.js') }}"></script>
     <script>
         $('.js-tilt').tilt({
-            scale: 1.1
+            scale: 1.0
         })
     </script>
     <!--===============================================================================================-->

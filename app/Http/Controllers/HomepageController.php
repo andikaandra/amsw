@@ -10,24 +10,24 @@ class HomepageController extends Controller
         return view('pages.homepage.index');
     }
 
-    public function researchPaper() {
-        return view('pages.homepage.researchPaper');
+    public function researchPaperGuidebook() {
+        return response()->download(storage_path("app/public/comitee-files/AMSW-2019-registration-guideline.zip"));
     }
 
-	public function literatureReview() {
-        return view('pages.homepage.literatureReview');
+	public function literatureReviewGuidebook() {
+        return response()->download(storage_path("app/public/comitee-files/AMSW-2019-registration-guideline.zip"));
     }
 
-	public function scientificEssay() {
-        return view('pages.homepage.scientificEssay');
+	public function scientificEssayGuidebook() {
+        return response()->download(storage_path("app/public/comitee-files/AMSW-2019-registration-guideline.zip"));
     }
 
-	public function publicPoster() {
-        return view('pages.homepage.publicPoster');
+	public function publicPosterGuidebook() {
+        return response()->download(storage_path("app/public/comitee-files/AMSW-2019-registration-guideline.zip"));
     }
 
-	public function educationalVideo() {
-        return view('pages.homepage.educationalVideo');
+	public function educationalVideoGuidebook() {
+        return response()->download(storage_path("app/public/comitee-files/AMSW-2019-registration-guideline.zip"));
     }
 
 }

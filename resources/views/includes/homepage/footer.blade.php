@@ -6,8 +6,8 @@
         <div class="pull-right fnav">
             <ul class="footer-social">
                 <li><a target="_blank" href="https://www.facebook.com/amsw.fkunair.9"><i class="fa fa-facebook"></i></a></li>
-                <li><a target="_blank" href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a target="_blank" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a target="_blank" href="https://www.instagram.com/amswfkunair/"><i class="fa fa-instagram"></i></a></li>
+                <li><a target="_blank" href="https://twitter.com/fkunair?lang=en"><i class="fa fa-twitter"></i></a></li>
             </ul>
         </div>
     </div>

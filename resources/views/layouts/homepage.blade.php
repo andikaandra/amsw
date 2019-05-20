@@ -30,7 +30,7 @@
 
     <!-- Stylesheet
     ================================================== -->
-    <link rel="stylesheet" type="text/css"  href="{{asset('new-homepage/css/style.css')}}">
+    <link rel="stylesheet" type="text/css"  href="{{asset('new-homepage/css/style.css?v=1')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('new-homepage/css/responsive.css')}}">
 
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
@@ -125,6 +125,8 @@
         }
     </style>
     <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
+    <script>document.getElementsByTagName("html")[0].className += " js";</script>
+    <link rel="stylesheet" href="{{asset('horizontal-timeline-master/assets/css/style.css')}}">
     <script type="text/javascript" src="{{asset('new-homepage/js/modernizr.custom.js')}}"></script>
     @yield('style')
   </head>
@@ -160,7 +162,7 @@
 
     <script src="{{asset('new-homepage/js/owl.carousel.js')}}"></script>
 
-    <script type="text/javascript" src="{{asset('new-homepage/js/main.js')}}"></script>
+    <script type="text/javascript" src="{{asset('new-homepage/js/main.js?v=1')}}"></script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -187,6 +189,9 @@
             scale: 1
         })
     </script>
+    <script src="{{('horizontal-timeline-master/assets/js/util.js')}}"></script> <!-- util functions included in the CodyHouse framework -->
+    <script src="{{('horizontal-timeline-master/assets/js/swipe-content.js')}}"></script> <!-- A Vanilla JavaScript plugin to detect touch interactions -->
+    <script src="{{('horizontal-timeline-master/assets/js/main.js')}}"></script>
     @yield('script')
     <!--End of Tawk.to Script-->
 </body>

@@ -18,7 +18,7 @@
         
       </div>
       <div class="card-body text-justify">
-        <h5 class="card-title">Rules : </h5>
+        {{-- <h5 class="card-title">Rules : </h5> --}}
         <ul id="rule-list">
         </ul>
         <a href="" id="rule-link" class="btn btn-info text-white btn-sm float-right"></a>

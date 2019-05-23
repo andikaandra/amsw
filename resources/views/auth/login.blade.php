@@ -32,11 +32,11 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-pic js-tilt" data-tilt>
-                    <img src="{{asset('amsw-files/image-shadow.png')}}" alt="AMSW logo">
+                    <img src="{{asset('amsw-files/logo-fix-transparan-new.jpg')}}" alt="AMSW logo">
                 </div>
                 <form class="login100-form validate-form" method="POST" action="{{ url('login') }}">
                     @csrf
-                    <img src="{{asset('amsw-files/image-shadow.png')}}" class="d-block d-md-none" alt="AMSW logo" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+                    <img src="{{asset('amsw-files/logo-fix-transparan-new.jpg')}}" class="d-block d-md-none" alt="AMSW logo" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
                     <span class="login100-form-title">
                         Login to AMSW 2019
                     </span> 

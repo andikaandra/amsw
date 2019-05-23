@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{asset('amsw-files/image-shadow.png')}}" class="vert-move img-responsive" width="70%" style="margin: auto;">
+                    <img src="{{asset('amsw-files/logo-fix-transparan-new.jpg')}}" class="vert-move img-responsive" width="70%" style="margin: auto;">
                     {{-- <img src="{{asset('new-homepage/img/02.png')}}" > --}}
                 </div>
                 <div class="col-md-6">
@@ -41,6 +41,11 @@
                         <p class="intro text-justify wow fadeInUp" style="line-height: 2.0em">
                             Airlangga Medical Scientific Week (<strong>AMSW</strong>) is an annual scientific event held by the Faculty of Medicine Airlangga University. AMSW opens opportunities for medical students in Indonesia and around the world to submit their works in the form of research papers, literature reviews, scientific essays, public posters and education videos. We are also holding non-competition programs like International Symposium (open for public), Gala dinner, and City tour.
                         </p>
+                        <hr>
+                        <p class="intro wow fadeInUp" style="line-height: 2.0em; font-size: 18px">
+                            This year's theme : <strong>“Emergency Medicine: Comprehensive Approach to Build Safe Community“</strong>.
+                        </p>
+
 {{--                         <ul class="about-list">
                             <li>
                                 <span class="fa fa-dot-circle-o"></span>
@@ -77,32 +82,32 @@
                         <div id="team" class="owl-carousel owl-theme">
                             <div class="item">
                                 <div class="caption">
-                                    <h4 class="lineheight" style="font-weight: bold">Medical management encounter disaster/disaster medicine enroll innovation, prevention, and curative management to minimalize unwanted things/victim.</h4>
+                                    <h4 class="lineheight" style="font-weight: bold">Pre hospital Emergency Management.</h4>
                                     <br>
-                                    <p class="text-justify">This sub-theme alludes to initial actions in critically ill patients outside the hospital such as sudden cardiac arrest, severe anemia, respiratory tract disorders, suicide attempts.</p>
+{{--                                     <p class="text-justify">This sub-theme alludes to initial actions in critically ill patients outside the hospital such as sudden cardiac arrest, severe anemia, respiratory tract disorders, suicide attempts.</p> --}}
                                 </div>
                             </div>
 
                             <div class="item">
                                 <div class="caption">
-                                    <h4 class="lineheight" style="font-weight: bold">Pre-hospital management involving provision of critical care in a resource limited and physically challenging setting.</h4>
+                                    <h4 class="lineheight" style="font-weight: bold">Traumatology Emergency Management.</h4>
                                     <br>
-                                    <p class="text-justify">Innovations or blueprints of the modern world medical technology scope that are expected to help critical patients get out of their critical zones such as biomolecular, radiographic, and other assistive devices.</p>
+{{--                                     <p class="text-justify">Innovations or blueprints of the modern world medical technology scope that are expected to help critical patients get out of their critical zones such as biomolecular, radiographic, and other assistive devices.</p> --}}
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <h4 class="lineheight" style="font-weight: bold">Advanced management intra-hospital and inter-hospital to simply rescuing victim and transferring promptly.</h4>
+                                    <h4 class="lineheight" style="font-weight: bold">Non Traumatology Emergency Management.</h4>
                                     <br>
-                                    <p class="text-justify">Preventive, diagnostic, curative, and educative for critically ill patients due to metabolic, infectious, shock, accident, cranial trauma, and other internal (non-traumatic) and external (traumatic) emergency causes.</p>
+{{--                                     <p class="text-justify">Preventive, diagnostic, curative, and educative for critically ill patients due to metabolic, infectious, shock, accident, cranial trauma, and other internal (non-traumatic) and external (traumatic) emergency causes.</p> --}}
                                 </div>
                             </div>
 
                             <div class="item">
                                 <div class="caption">
-                                    <h4 class="lineheight" style="font-weight: bold">Best traumatology or non-traumatology emergency management planning in face up indisposition and evade homeostatic damage.</h4>
+                                    <h4 class="lineheight" style="font-weight: bold">Basic Disaster Emergency Management.</h4>
                                     <br>
-                                    <p class="text-justify">preventive, curative, and educational strategies that are creative or innovative or effective or efficient for volunteers of humanity or victim of disaster in dealing with disasters related to many people and minimal health facilities such as the impact of landslide victims, cholera outbreaks in refuge area, and other related.</p>
+{{--                                     <p class="text-justify">preventive, curative, and educational strategies that are creative or innovative or effective or efficient for volunteers of humanity or victim of disaster in dealing with disasters related to many people and minimal health facilities such as the impact of landslide victims, cholera outbreaks in refuge area, and other related.</p> --}}
                                 </div>
                             </div>
                         </div>

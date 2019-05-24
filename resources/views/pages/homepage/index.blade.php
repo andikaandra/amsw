@@ -82,7 +82,7 @@
                         <div id="team" class="owl-carousel owl-theme">
                             <div class="item">
                                 <div class="caption">
-                                    <h4 class="lineheight" style="font-weight: bold">Pre hospital Emergency Management.</h4>
+                                    <h4 class="lineheight" style="font-weight: bold">Pre hospital Emergency Management</h4>
                                     <br>
 {{--                                     <p class="text-justify">This sub-theme alludes to initial actions in critically ill patients outside the hospital such as sudden cardiac arrest, severe anemia, respiratory tract disorders, suicide attempts.</p> --}}
                                 </div>
@@ -90,14 +90,14 @@
 
                             <div class="item">
                                 <div class="caption">
-                                    <h4 class="lineheight" style="font-weight: bold">Traumatology Emergency Management.</h4>
+                                    <h4 class="lineheight" style="font-weight: bold">Traumatology Emergency Management</h4>
                                     <br>
 {{--                                     <p class="text-justify">Innovations or blueprints of the modern world medical technology scope that are expected to help critical patients get out of their critical zones such as biomolecular, radiographic, and other assistive devices.</p> --}}
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="caption">
-                                    <h4 class="lineheight" style="font-weight: bold">Non Traumatology Emergency Management.</h4>
+                                    <h4 class="lineheight" style="font-weight: bold">Non Traumatology Emergency Management</h4>
                                     <br>
 {{--                                     <p class="text-justify">Preventive, diagnostic, curative, and educative for critically ill patients due to metabolic, infectious, shock, accident, cranial trauma, and other internal (non-traumatic) and external (traumatic) emergency causes.</p> --}}
                                 </div>
@@ -105,7 +105,7 @@
 
                             <div class="item">
                                 <div class="caption">
-                                    <h4 class="lineheight" style="font-weight: bold">Basic Disaster Emergency Management.</h4>
+                                    <h4 class="lineheight" style="font-weight: bold">Basic Disaster Emergency Management</h4>
                                     <br>
 {{--                                     <p class="text-justify">preventive, curative, and educational strategies that are creative or innovative or effective or efficient for volunteers of humanity or victim of disaster in dealing with disasters related to many people and minimal health facilities such as the impact of landslide victims, cholera outbreaks in refuge area, and other related.</p> --}}
                                 </div>

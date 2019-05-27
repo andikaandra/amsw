@@ -22,7 +22,7 @@ class ParticipantRegistrationController extends Controller
     public function resetData(Request $request) {
       // return $request;
         try {
-          $this->_participantRegistrationService->resetData($request->user_id);
+          $this->_participantRegistrationService->resetData(Auth::user()->id);
         } catch (\Exception $e) {
             $eMessage = 'Reset Data - User: ' . $request->user_id . ', error: ' . $e->getMessage();
             Log::emergency($eMessage);

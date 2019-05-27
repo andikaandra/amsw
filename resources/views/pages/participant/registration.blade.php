@@ -22,8 +22,12 @@
           <form id="reset" method="post" action="{{route('reset.data')}}">
             @csrf
           <div class="alert alert-info">
-            <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register <strong>{{Auth::user()->competition}}</strong> is <strong>Rp {{ number_format($lomba->registration_amount + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
-          <hr>
+            @if(Auth::user()->competition!='Research Paper')
+              <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register <strong>{{Auth::user()->competition}}</strong> is <strong>Rp {{ number_format($lomba->registration_amount + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
+            @elseif(Auth::user()->competition=='Research Paper')
+              <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. Registration for <strong>{{Auth::user()->competition}}</strong> is free, please complete your information.</p>
+            @endif
+            <hr>
              @if(Auth::user()->status < 4 )
               After you click submit button you cannot undo the changes. If you would like to start over, you may <a href="#" style="text-decoration: none;" onclick="$('#reset').submit(); return false;" id="submit">Click here to reset</a>
              @endif

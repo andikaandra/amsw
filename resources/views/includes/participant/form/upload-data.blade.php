@@ -19,25 +19,27 @@
     
   </div>
   <hr>
-  <div class="form-group">
-    <label for="nama_bank">Bank name</label>
-    <input type="text" class="form-control" name="nama_bank" placeholder="ex : BNI" required>
-  </div>
-  <div class="form-group">
-    <label for="nama_pengirim">Account Sender</label>
-    <input type="text" class="form-control" name="nama_pengirim" placeholder="Account Sender" required>
-    <small class="text-muted">The bank account name used to transfer</small>
-  </div>
-  <div class="form-group">
-    <label for="jumlah_tf">Amount</label>
-    <input type="text" class="form-control price" name="jumlah_tf" placeholder="Amount" required>
-    <small class="text-muted">The amount you transferred</small>
-  </div>
-  <div class="form-group">
-    <label for="">Proof of Payment</label>
-    <br><input type="file" name="bukti_pembayaran" accept="image/*" value="" required><br>
-    <small class="form-text text-muted">JPG or PNG. Max size 1 mb</small>
-  </div>
+  @if(Auth::user()->competition!='Research Paper')
+    <div class="form-group">
+      <label for="nama_bank">Bank name</label>
+      <input type="text" class="form-control" name="nama_bank" placeholder="ex : BNI" required>
+    </div>
+    <div class="form-group">
+      <label for="nama_pengirim">Account Sender</label>
+      <input type="text" class="form-control" name="nama_pengirim" placeholder="Account Sender" required>
+      <small class="text-muted">The bank account name used to transfer</small>
+    </div>
+    <div class="form-group">
+      <label for="jumlah_tf">Amount</label>
+      <input type="text" class="form-control price" name="jumlah_tf" placeholder="Amount" required>
+      <small class="text-muted">The amount you transferred</small>
+    </div>
+    <div class="form-group">
+      <label for="">Proof of Payment</label>
+      <br><input type="file" name="bukti_pembayaran" accept="image/*" value="" required><br>
+      <small class="form-text text-muted">JPG or PNG. Max size 1 mb</small>
+    </div>
+  @endif
   <input type="hidden" name="user" value="{{Auth::user()->id}}">
   <input type="hidden" id="jumlah_peserta" name="jumlah_peserta" value="">
   <small class="text-danger">* By submitting this form, you cannot reset your registration data</small><br>

@@ -153,22 +153,23 @@ $(document).ready(function() {
             
         }
 
-        const payment = compData[0].user.payments[0];        
+        // const payment = compData[0].user.payments[0];        
 
-        const payment_html = `<div class="payment">
-            <div class="form-group">
-                <h5><strong>Payment</strong></h5>                            
-                <label for="">Bank Account Name</label>
-                <input type="text" readonly class="form-control" value="${payment.bank_account_name}">
-                <label for="">Bank Name</label>
-                <input type="text" readonly class="form-control" value="${payment.bank_name}">
-                <label for="">Amount Transferred</label>
-                <input type="text" readonly class="form-control price" value="${parseInt(payment.amount)}">  
-                <a class="text-info" target='_blank' href="{{url('admin/payments/${payment.id}')}}">Check Payment </a>
-            </div>
-        </div>`;
+        // const payment_html = `<div class="payment">
+        //     <div class="form-group">
+        //         <h5><strong>Payment</strong></h5>                            
+        //         <label for="">Bank Account Name</label>
+        //         <input type="text" readonly class="form-control" value="${payment.bank_account_name}">
+        //         <label for="">Bank Name</label>
+        //         <input type="text" readonly class="form-control" value="${payment.bank_name}">
+        //         <label for="">Amount Transferred</label>
+        //         <input type="text" readonly class="form-control price" value="${parseInt(payment.amount)}">  
+        //         <a class="text-info" target='_blank' href="{{url('admin/payments/${payment.id}')}}">Check Payment </a>
+        //     </div>
+        // </div>`;
 
-        $(".registration-form").html(participants_html + payment_html);
+        $(".registration-form").html(participants_html);
+        // $(".registration-form").html(participants_html + payment_html);
         $('.price').unmask().mask('0.000.000.000.000', {reverse: true});
 
         $(".modal.registration").modal('show');

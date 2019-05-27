@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Competition;
 
 class AdminController extends Controller
 {
     public function index() {
-        return view('pages.admin.index');
+        $satu = Competition::where('type', 'Essay')->count();
+        $dua = Competition::where('type', 'Literature Review')->count();
+        $tiga = Competition::where('type', 'Public Poster')->count();
+        $empat = Competition::where('type', 'Research Paper')->count();
+        $lima = Competition::where('type', 'Educational Video')->count();
+
+        return view('pages.admin.index', compact('satu', 'dua', 'tiga', 'empat', 'lima'));
     }
 
     public function essayRegistration() {

@@ -3,6 +3,58 @@
 @section('path', 'Home')
 
 @section('content')
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-4 col-md-3">
+        <div class="card card-content">
+            <div class="card-header text-center bg-info">
+                Essay
+            </div>
+            <div class="card-body text-center">
+                {{$satu}} Teams
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-4 col-md-3">
+        <div class="card card-content">
+            <div class="card-header text-center bg-info">
+                Literature Review
+            </div>
+            <div class="card-body text-center">
+                {{$dua}} Teams
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-4 col-md-3">
+        <div class="card card-content">
+            <div class="card-header text-center bg-info">
+                Public Poster
+            </div>
+            <div class="card-body text-center">
+                {{$tiga}} Teams
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-4 col-md-3">
+        <div class="card card-content">
+            <div class="card-header text-center bg-info">
+                Research Paper
+            </div>
+            <div class="card-body text-center">
+                {{$empat}} Teams
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-4 col-md-3">
+        <div class="card card-content">
+            <div class="card-header text-center bg-info">
+                Educational Video
+            </div>
+            <div class="card-body text-center">
+                {{$lima}} Teams
+            </div>
+        </div>
+    </div>
+</div>                
 <div class="row">
     <div class="col-lg-12 col-md-12">
 

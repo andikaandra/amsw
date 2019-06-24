@@ -42,7 +42,7 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
         if (Auth::user()->status>=2) {
             return redirect('participant')->withErrors(['Error'=>'Whoops, something wrong!']);
         }
-        $this->_participantsRegistration->chooseCabang($data['user'], $data['competition']);
+        $this->_participantsRegistration->chooseCabang(Auth::user()->id, $data['competition']);
     }
 
     public function uploadData(array $data){
@@ -51,25 +51,66 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
         if (!$status) {
             return redirect('participant')->withErrors(['Error'=>"We're sorry. The registration for " . Auth::user()->competition . " isn't opened yet."]);
         }
-        
-        $data['jumlah_tf'] = str_replace('.','',$data['jumlah_tf']);
 
-        $validator = Validator::make($data, [
-            'university' =>  'required|max:255',
-            'nama_bank' => 'required|max:255',
-            'nama_pengirim' => 'required|max:255',
-            'jumlah_tf' => 'required|max:10|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
-            'user' =>  'required',
-            'jumlah_peserta' => 'required|numeric|min:3|max:6',
-            'bukti_pembayaran' => 'required|image|max:2000'
-        ]);        
+        if (Auth::user()->competition!='Research Paper') {        
+            $data['jumlah_tf'] = str_replace('.','',$data['jumlah_tf']);
+        }
+
+        if (Auth::user()->competition=='Essay') {
+            $validator = Validator::make($data, [
+                'university' =>  'required|max:255',
+                'nama_bank' => 'required|max:255',
+                'nama_pengirim' => 'required|max:255',
+                'jumlah_tf' => 'required|max:10|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
+                'jumlah_peserta' => 'required|numeric|min:3|max:6',
+                'bukti_pembayaran' => 'required|image|max:2000'
+            ]);
+        }
+        elseif (Auth::user()->competition=='Literature Review') {
+            $validator = Validator::make($data, [
+                'university' =>  'required|max:255',
+                'nama_bank' => 'required|max:255',
+                'nama_pengirim' => 'required|max:255',
+                'jumlah_tf' => 'required|max:10|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
+                'jumlah_peserta' => 'required|numeric|min:3|max:6',
+                'bukti_pembayaran' => 'required|image|max:2000'
+            ]);
+        }
+        elseif (Auth::user()->competition=='Public Poster') {
+            $validator = Validator::make($data, [
+                'university' =>  'required|max:255',
+                'nama_bank' => 'required|max:255',
+                'nama_pengirim' => 'required|max:255',
+                'jumlah_tf' => 'required|max:10|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
+                'jumlah_peserta' => 'required|numeric|min:3|max:6',
+                'bukti_pembayaran' => 'required|image|max:2000'
+            ]);
+        }
+        elseif (Auth::user()->competition=='Research Paper') {
+            $validator = Validator::make($data, [
+                'university' =>  'required|max:255',
+            ]);
+        }
+        elseif (Auth::user()->competition=='Educational Video') {
+            $validator = Validator::make($data, [
+                'university' =>  'required|max:255',
+                'nama_bank' => 'required|max:255',
+                'nama_pengirim' => 'required|max:255',
+                'jumlah_tf' => 'required|max:10|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
+                'jumlah_peserta' => 'required|numeric|min:3|max:6',
+                'bukti_pembayaran' => 'required|image|max:2000'
+            ]);
+        }
+        else{
+            return redirect()->back();
+        }
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
 
-        $this->_participantsRegistration->changeUniversity($data['user'], $data['university']);
+        $this->_participantsRegistration->changeUniversity(Auth::user()->id, $data['university']);
 
         $rules = [];
 
@@ -84,9 +125,9 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $competition = $this->_participantsRegistration->newCompetition($data['user'], Auth::user()->competition);
+        $competition = $this->_participantsRegistration->newCompetition(Auth::user()->id, Auth::user()->competition);
 
-        $user = $this->_participantsRegistration->changeStatus($data['user'], 3);
+        $user = $this->_participantsRegistration->changeStatus(Auth::user()->id, 3);
 
         for ($i=1; $i <=$data['jumlah_peserta'] ; $i++) {
             $file_path = $data['file' . $i]->store('public/file-participants');
@@ -94,9 +135,12 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
             $this->_participantsRegistration->newParticipant($competition->id, $data['nama'.$i], $file_path);
         }
 
-        $path = $data['bukti_pembayaran']->store('public/payments');
-        
-        $this->_participantsRegistration->newPayment(['user_id' => $data['user'], 'competition' => Auth::user()->competition, 'file_path' => str_replace("public","", $path), 'bank_account_name' => $data['nama_pengirim'], 'bank_name' => $data['nama_bank'], 'payment_type' => 'group', 'amount' => str_replace('.','',$data['jumlah_tf'])]);
+        if (Auth::user()->competition!='Research Paper') {
+            $path = $data['bukti_pembayaran']->store('public/payments');
+            
+            $this->_participantsRegistration->newPayment(['user_id' => Auth::user()->id, 'competition' => Auth::user()->competition, 'file_path' => str_replace("public","", $path), 'bank_account_name' => $data['nama_pengirim'], 'bank_name' => $data['nama_bank'], 'payment_type' => 'group', 'amount' => str_replace('.','',$data['jumlah_tf'])]);
+        }
+
 
     }
 
@@ -132,9 +176,9 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
             $path = str_replace("public","", $data['file']->store('public/submissions'));
         }
         
-        $this->_participantsRegistration->newSubmission(['competition_id' => Auth::user()->competitions[0]->id, 'competition_user_id' => $data['user'], 'title' => $data['title'], 'description' => $data['description'], 'file_path' => $path]);
+        $this->_participantsRegistration->newSubmission(['competition_id' => Auth::user()->competitions[0]->id, 'competition_user_id' => Auth::user()->id, 'title' => $data['title'], 'description' => $data['description'], 'file_path' => $path]);
 
-        $user = $this->_participantsRegistration->changeStatus($data['user'], 5);
+        $user = $this->_participantsRegistration->changeStatus(Auth::user()->id, 5);
     }
 }
 

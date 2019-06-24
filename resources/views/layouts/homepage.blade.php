@@ -192,6 +192,16 @@
     <script src="{{('horizontal-timeline-master/assets/js/util.js')}}"></script> <!-- util functions included in the CodyHouse framework -->
     <script src="{{('horizontal-timeline-master/assets/js/swipe-content.js')}}"></script> <!-- A Vanilla JavaScript plugin to detect touch interactions -->
     <script src="{{('horizontal-timeline-master/assets/js/main.js')}}"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131788430-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-131788430-2');
+    </script>
+    
     @yield('script')
     <!--End of Tawk.to Script-->
 </body>

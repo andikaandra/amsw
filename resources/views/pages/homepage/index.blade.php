@@ -476,7 +476,8 @@
                 <li class="cd-h-timeline__event text-component">
                   <div class="cd-h-timeline__event-content containerss">
                     {{-- <h2 class="cd-h-timeline__event-title">Horizontal Timeline</h2> --}}
-                    <em class="cd-h-timeline__event-date">August 6th, 2019</em>
+                    {{-- <em class="cd-h-timeline__event-date">August 6th, 2019</em> --}}
+                    <em class="cd-h-timeline__event-date">July 21st, 2019</em>
                     <p class="cd-h-timeline__event-description text--subtle"> 
                       Deadline
                     </p>

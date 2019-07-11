@@ -440,7 +440,7 @@
                     <li><a href="#0" data-date="04/09/2019" class="cd-h-timeline__date">September 4, 2019</a></li>
                     <li><a href="#0" data-date="11/10/2019" class="cd-h-timeline__date">October 11, 2019</a></li>
                     <li><a href="#0" data-date="12/10/2019" class="cd-h-timeline__date">October 12, 2019</a></li>
-                    <li><a href="#0" data-date="13/10/2019" class="cd-h-timeline__date">Ocotber 13, 2019</a></li>
+                    <li><a href="#0" data-date="13/10/2019" class="cd-h-timeline__date">October 13, 2019</a></li>
                   </ol>
 
                   <span class="cd-h-timeline__filling-line" aria-hidden="true"></span>

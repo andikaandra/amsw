@@ -42,7 +42,7 @@
           -webkit-transition:  box-shadow .2s ease-in;
       }
       .form-control:disabled, .form-control[readonly] {
-        background: #fff;
+        /*background: #fff;*/
       }
 
       .heartbeat {

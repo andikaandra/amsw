@@ -101,6 +101,12 @@
             </li>
         </ul>
     </li>
+
+        <li class="nav-title">Settings</li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('admin/settings')}}">
+                <i class="nav-icon icon-wrench"></i> Account</a>
+        </li>
    
     </ul>
 </nav>

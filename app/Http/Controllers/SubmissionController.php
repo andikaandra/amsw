@@ -29,7 +29,8 @@ class SubmissionController extends Controller
 
     public function downloadSubmission($id) {
         $submission = $this->_smService->downloadSubmission($id);
-        return response()->download(storage_path('app') .'/public/' . $submission->file_path, $submission->title . '.zip');
+        $submissionFilePath = filter_var($submission->file_path, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+        return response()->download(storage_path('app') .'/public/' . $submissionFilePath, $submission->title . '.zip');
 
     }
 }

@@ -201,7 +201,7 @@
 
         gtag('config', 'UA-131788430-2');
     </script>
-    
+
     @yield('script')
     <!--End of Tawk.to Script-->
 </body>

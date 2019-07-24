@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contracts\ISubmissionManagement;
+use Log;
 
 class SubmissionController extends Controller
 {
@@ -29,7 +30,8 @@ class SubmissionController extends Controller
 
     public function downloadSubmission($id) {
         $submission = $this->_smService->downloadSubmission($id);
-        $submissionTitle = filter_var($submission->title, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+        $submissionTitle = preg_replace('/[[:^print:]]/', '', $submission->title);
+        Log::info($submissionTitle);
         return response()->download(storage_path('app') .'/public/' . $submission->file_path, $submissionTitle . '.zip');
 
     }

@@ -152,14 +152,14 @@ class ParticipantRegistrationManagement implements IParticipantRegistrationManag
         //todo: spesifikasikan jumlah max size sesuai cabang (kalau ada)
         if (Auth::user()->competition == "Educational Video") {
             $validator = Validator::make($data, [
-                'title' => 'required|max:128',
+                'title' => 'required|max:500',
                 'description' => 'required|max:2000',
-                'file' => 'required|max:255'
+                'file' => 'required|max:8000'
             ]);
         }
         else{
             $validator = Validator::make($data, [
-                'title' => 'required|max:128',
+                'title' => 'required|max:500',
                 'description' => 'required|max:2000',
                 'file' => 'bail|required|max:8000|mimes:zip'
             ]);

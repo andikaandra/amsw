@@ -30,8 +30,11 @@
             @endif
             <div class="alert alert-info final-alert">
                 <p>
-                    The amount you must transfer to attend the Final is <strong>                         Rp {{ number_format(\App\Models\CompetitionManagement::where('name', Auth::user()->competition)->first()->final_amount + Auth::user()->id + 000 ,2,',','.')}}
+                    The amount you must transfer to attend the Final is <strong>  Rp {{ $finalPayment }}
                     </strong>
+                </p>
+                <p>
+                    You are in final registration wave: {{$wave}}
                 </p>
             </div>
         </div>        
@@ -73,7 +76,7 @@
                         <small class="text-danger">* By submitting this form, you cannot reset your final registration data.</small><br>                          
                     </div>
                     <button class="btn btn-sm btn-info text-white" type="submit">
-                    <i class="far fa-paper-plane"></i>&nbsp; Submit
+                      <i class="far fa-paper-plane"></i>&nbsp; Submit
                     </button>
                 </form>
             </div>

@@ -23,7 +23,9 @@
         <div class="col-md-12">
             <div class="alert alert-info final-alert" style="display: none">
                 <p>
-                    The amount you must transfer to attend the Final is <strong>                         Rp {{ number_format(\App\Models\CompetitionManagement::where('name', Auth::user()->competition)->first()->final_amount + Auth::user()->id + 000 ,2,',','.')}}
+                    The amount you must transfer to attend the Final is
+                    <strong>
+                        Rp {{ number_format(\App\Models\CompetitionManagement::where('name', Auth::user()->competition)->first()->final_amount + Auth::user()->id + 000 ,2,',','.')}}
                     </strong>
                 </p>
             </div>

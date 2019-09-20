@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Log;
 use Auth;
 use App\Models\User;
@@ -70,17 +71,31 @@ class ParticipantController extends Controller
     }
 
     public function finalRegistration(Request $request) {
-        $waiting_list_open = CompetitionManagement::where('name', Auth::user()->competition)->first()->final_registration_status;
-        
-        if($waiting_list_open == 'close') {
-            return redirect('participant')->with('waiting_list_close', 'Sorry, final registration is still closed. Please wait. Contact the committee for details.');
+//        $waiting_list_open = CompetitionManagement::where('name', Auth::user()->competition)->first()->final_registration_status;
+
+        $comp = CompetitionManagement::where('name', Auth::user()->competition)->first();
+
+        $finalWave1Start = Carbon::createFromFormat('Y-m-d H:i:s', $comp->final_wave_1_start);
+        $finalWave1End = Carbon::createFromFormat('Y-m-d H:i:s', $comp->final_wave_1_end);
+
+        $finalWave2Start = Carbon::createFromFormat('Y-m-d H:i:s', $comp->final_wave_2_start);
+        $finalWave2End = Carbon::createFromFormat('Y-m-d H:i:s', $comp->final_wave_2_end);
+
+        if (Carbon::now()->isBetween($finalWave1Start, $finalWave1End)) {
+            $finalPayment = number_format($comp->final_wave_1_amount + Auth::user()->id + 000 ,2,',','.');
+            $wave = "1";
+        } else if (Carbon::now()->isBetween($finalWave2Start, $finalWave2End)) {
+            $finalPayment = number_format($comp->final_wave_2_amount + Auth::user()->id + 000 ,2,',','.');
+            $wave = "2";
         }
 
-        if($request->page == 2)
-            return view('pages.participant.final-registration-2');       
-        else
-            return view('pages.participant.final-registration');
+        if (Carbon::now()->isBetween($finalWave1Start, $finalWave1End) || Carbon::now()->isBetween($finalWave2Start, $finalWave2End)) {
+            if($request->page == 2)
+                return view('pages.participant.final-registration-2', ['finalPayment' => $finalPayment, 'wave' => $wave]);
+            else
+                return view('pages.participant.final-registration');
+        } else {
+            return redirect('participant')->with('waiting_list_close', 'Sorry, final registration is still closed. Please wait. Contact the committee for details.');
+        }
     }
-
-    
 }

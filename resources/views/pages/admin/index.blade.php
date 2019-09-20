@@ -129,23 +129,23 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="final_registration_status">Final Registration Status</label>
-                        <select name="final_registration_status" id="final_registration_status" class="form-control" required>
-                            <option value="close">Close</option>
-                            <option value="open">Open</option>
-                        </select>
-                    </div>
+{{--                    <div class="form-group">--}}
+{{--                        <label for="final_registration_status">Final Registration Status</label>--}}
+{{--                        <select name="final_registration_status" id="final_registration_status" class="form-control" required>--}}
+{{--                            <option value="close">Close</option>--}}
+{{--                            <option value="open">Open</option>--}}
+{{--                        </select>--}}
+{{--                    </div>--}}
 
                     <div class="form-group">
                         <label for="registration_amount">Registration Amount</label>
                         <input type="text" name="registration_amount" id="registration_amount" class="form-control price" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="final_amount">Final Amount</label>
-                        <input type="text" name="final_amount" id="final_amount" class="form-control price" required>
-                    </div>
+{{--                    <div class="form-group">--}}
+{{--                        <label for="final_amount">Final Amount</label>--}}
+{{--                        <input type="text" name="final_amount" id="final_amount" class="form-control price" required>--}}
+{{--                    </div>--}}
                     
                     <div class="form-group">
                         <label for="final_wave_1_start">Final Wave 1 Start Date and Time</label><br>

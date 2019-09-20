@@ -16,10 +16,10 @@
     <br>Uploaded file has to be zip format.
   @endif
   @if ($errors->has('title'))
-    <br>Title may not exceed 256 characters
+    <br>Title may not exceed 512 characters
   @endif
   @if ($errors->has('description'))
-    <br>Description may not exceed 700 characters
+    <br>Description may not exceed 1800 characters
   @endif
 </div>
 @elseif(\Session::has('success'))
@@ -70,7 +70,7 @@
                     <div id="editor">
                         <p>Describe your submission.</p>
                     </div>
-                    <small id="charNum">0</small>/<small>700</small>
+                    <small id="charNum">0</small>/<small>1800</small>
 
                     <input type="hidden" name="description">
 
@@ -120,9 +120,9 @@
 
       quill.on('text-change', function(delta, old, source) {
         const desc_len = quill.getLength();
-        if (quill.getLength() > 700) {
-          quill.deleteText(700, quill.getLength());
-          $('#charNum').text(700);
+        if (quill.getLength() > 1800) {
+          quill.deleteText(1800, quill.getLength());
+          $('#charNum').text(1800);
 
         } else {
 

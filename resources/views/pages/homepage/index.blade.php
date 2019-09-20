@@ -436,11 +436,11 @@
                   <ol style="list-style: none;">
                     <li><a href="#0" data-date="20/05/2019" class="cd-h-timeline__date cd-h-timeline__date--selected">May 20, 2019</a></li>
                     <li><a href="#0" data-date="21/06/2019" class="cd-h-timeline__date">June 21, 2019</a></li>
-                    <li><a href="#0" data-date="06/08/2019" class="cd-h-timeline__date">August 6, 2019</a></li>
+                    <li><a href="#0" data-date="06/08/2019" class="cd-h-timeline__date">July 21, 2019</a></li>
                     <li><a href="#0" data-date="04/09/2019" class="cd-h-timeline__date">September 4, 2019</a></li>
                     <li><a href="#0" data-date="11/10/2019" class="cd-h-timeline__date">October 11, 2019</a></li>
                     <li><a href="#0" data-date="12/10/2019" class="cd-h-timeline__date">October 12, 2019</a></li>
-                    <li><a href="#0" data-date="13/10/2019" class="cd-h-timeline__date">Ocotber 13, 2019</a></li>
+                    <li><a href="#0" data-date="13/10/2019" class="cd-h-timeline__date">October 13, 2019</a></li>
                   </ol>
 
                   <span class="cd-h-timeline__filling-line" aria-hidden="true"></span>
@@ -476,7 +476,8 @@
                 <li class="cd-h-timeline__event text-component">
                   <div class="cd-h-timeline__event-content containerss">
                     {{-- <h2 class="cd-h-timeline__event-title">Horizontal Timeline</h2> --}}
-                    <em class="cd-h-timeline__event-date">August 6th, 2019</em>
+                    {{-- <em class="cd-h-timeline__event-date">August 6th, 2019</em> --}}
+                    <em class="cd-h-timeline__event-date">July 21st, 2019</em>
                     <p class="cd-h-timeline__event-description text--subtle"> 
                       Deadline
                     </p>

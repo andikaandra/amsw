@@ -87,6 +87,9 @@ Route::prefix('admin')->middleware(['is_admin'])->group(function() {
     Route::put('final-registration/accept/teams/{comp_id}', 'ParticipantManagementController@acceptFinalRegistration');
     Route::put('final-registration/decline/teams/{comp_id}', 'ParticipantManagementController@declineFinalRegistration');
 
+    Route::get('settings', 'AccountSettingsController@accountSettingsPage');
+    Route::post('settings', 'AccountSettingsController@changePassword');
+
 
 });
 
@@ -118,6 +121,8 @@ Route::middleware(['is_participant'])->group(function() {
                 });
             });
         });
+        Route::get('settings', 'AccountSettingsController@accountSettingsPageParticipant');
+        Route::post('settings', 'AccountSettingsController@changePasswordParticipant');
     });
 });
 

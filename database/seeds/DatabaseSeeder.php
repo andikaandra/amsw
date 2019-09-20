@@ -39,29 +39,29 @@ class DatabaseSeeder extends Seeder
         ]);
         
         // participants
-        // for ($i=0; $i < 10; $i++) {
-            // $comps = ['Essay', 'Literature Review', 'Public Poster', 'Research Paper', 'Educational Video'];
-            // $comp_num = mt_rand(0, 4);
-            // $user = User::create([
-            //     'name' => $faker->name,
-            //     'email' => $faker->freeEmail,
-            //     'password' => bcrypt('secret'),
-            //     'role' => 'participant',
-            //     'status' => 1,
-            //     'email_verification' => 'verified',
-            //     'email_token' => $faker->ipv6
-            // ]);
+         for ($i=0; $i < 10; $i++) {
+             $comps = ['Essay', 'Literature Review', 'Public Poster', 'Research Paper', 'Educational Video'];
+             $comp_num = mt_rand(0, 4);
+             $user = User::create([
+                 'name' => $faker->name,
+                 'email' => $faker->freeEmail,
+                 'password' => bcrypt('secret'),
+                 'role' => 'participant',
+                 'status' => 1,
+                 'email_verification' => 'verified',
+                 'email_token' => $faker->ipv6
+             ]);
 
-            // Payment::create([
-            //     'competition' => $comps[$comp_num],
-            //     'file_path' => $faker->address,
-            //     'payment_type' => 'group',
-            //     'bank_account_name' => $faker->name,
-            //     'bank_name' => $faker->company,
-            //     'amount' =>mt_rand(120000, 155000),
-            //     'user_id' => $user->id
-            // ]);
-        // }
+             Payment::create([
+                 'competition' => $comps[$comp_num],
+                 'file_path' => $faker->address,
+                 'payment_type' => 'group',
+                 'bank_account_name' => $faker->name,
+                 'bank_name' => $faker->company,
+                 'amount' =>mt_rand(120000, 155000),
+                 'user_id' => $user->id
+             ]);
+         }
 
         // admins
 
@@ -79,32 +79,32 @@ class DatabaseSeeder extends Seeder
             ]);
         }
         // competition
-        // for ($i=0; $i < 3; $i++) {
-        //     $comps = ['Essay', 'Literature Review', 'Public Poster', 'Research Paper', 'Educational Video'];
-        //     $comp_num = mt_rand(0, 4);
-        //     $comp = Competition::create([
-        //         'type' => $comps[$comp_num],
-        //         'payment_status' => 'unverified',
-        //         'competition_status' => 'group',
-        //         'verification_status' => 'unverified',
-        //         'wave' => 1,
-        //         'user_id' => ($i+1)
-        //     ]);
+         for ($i=0; $i < 3; $i++) {
+             $comps = ['Essay', 'Literature Review', 'Public Poster', 'Research Paper', 'Educational Video'];
+             $comp_num = mt_rand(0, 4);
+             $comp = Competition::create([
+                 'type' => $comps[$comp_num],
+                 'payment_status' => 'unverified',
+                 'competition_status' => 'group',
+                 'verification_status' => 'unverified',
+                 'wave' => 1,
+                 'user_id' => ($i+1)
+             ]);
             
-            // participants
-            // for ($j=0; $j < 3; $j++) {
-            //     $comps = ['Essay', 'Literature Review', 'Public Poster', 'Research Paper', 'Educational Video'];
-            //     $comp_num = mt_rand(0, 4);
+//             participants
+             for ($j=0; $j < 3; $j++) {
+                 $comps = ['Essay', 'Literature Review', 'Public Poster', 'Research Paper', 'Educational Video'];
+                 $comp_num = mt_rand(0, 4);
 
-            //     Participant::create([
-            //         'name' => $faker->name,
-            //         'file_path' => $faker->address,
-            //         'competition_id' => $comp->id
-            //     ]);
+                 Participant::create([
+                     'name' => $faker->name,
+                     'file_path' => $faker->address,
+                     'competition_id' => $comp->id
+                 ]);
               
-            // }
+             }
 
-        // }
+         }
 
       
     }

@@ -29,8 +29,8 @@ class CompetitionManagement extends Migration
             $table->dateTime('final_wave_2_start')->nullable()->default(null);
             $table->dateTime('final_wave_2_end')->nullable()->default(null);
 
-            $table->decimal('final_wave_1_amount')->nullable()->default(null);
-            $table->decimal('final_wave_2_amount')->nullable()->default(null);
+            $table->decimal('final_wave_1_amount', 15, 2)->nullable()->default(null);
+            $table->decimal('final_wave_2_amount', 15, 2)->nullable()->default(null);
 
             $table->timestamps();
         });

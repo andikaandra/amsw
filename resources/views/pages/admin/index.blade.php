@@ -323,8 +323,6 @@ $(document).ready(function() {
 
         if( ('' + finalWave2End.getHours()).length == 1 ) {
             finalWave2EndTime = "0" + finalWave2EndTime;
-        } else {
-            finalWave2EndTime = "0" + finalWave2EndTime;
         }
 
         $("#final_wave_1_start_datepicker").datepicker('setDate', finalWave1Start);

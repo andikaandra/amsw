@@ -94,7 +94,7 @@
       </div>
       @endif
         <p>
-            Guideline Finalist can be read <a href="https://drive.google.com/open?id=1Ql7WZYTLgkl71xywntFJDfkmJMGGlsre">here</a>
+            Guideline Finalist can be read <a href="https://drive.google.com/open?id=1Ql7WZYTLgkl71xywntFJDfkmJMGGlsre">here</a>.
         </p>
     </div>
 @endsection

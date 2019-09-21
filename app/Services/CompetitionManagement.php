@@ -18,7 +18,7 @@ class CompetitionManagement implements ICompetitionManagement
     
     public function updateCompetition($id, array $data) {
         $data['registration_amount'] = str_replace('.','',$data['registration_amount']);
-        $data['final_amount'] = str_replace('.','',$data['final_amount']);
+        // $data['final_amount'] = str_replace('.','',$data['final_amount']);
         $data['final_wave_1_amount'] = str_replace('.','',$data['final_amount_wave_1']);
         $data['final_wave_2_amount'] = str_replace('.','',$data['final_amount_wave_2']);
 

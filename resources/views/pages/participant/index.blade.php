@@ -80,6 +80,9 @@
         <p><strong>Congratulations</strong>, you are selected to continue to the Final. Please confirm your availability to
           attend the Final event <br>at: Universitas Airlangga <br>on: 
           October 12th, 2019.<br>Please click <a href="{{url('participant/final-registration')}}">Here</a></p>
+        <p>
+            You can read the Guideline Finalist <a href="https://drive.google.com/open?id=1Ql7WZYTLgkl71xywntFJDfkmJMGGlsre">here</a>
+        </p>
         @endif @if(Auth::user()->competitions[0]->can_go_to_final == 'no')
         <p>You have confirmed your Final attendance. You aren't able to attend the final.</p>
         @elseif(Auth::user()->competitions[0]->can_go_to_final == 'yes') @if(Auth::user()->status == 8)
